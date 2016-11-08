@@ -1,0 +1,14 @@
+// scss-lint:disable Comment
+/* IMPORTANT If you add stylesheets to this file, ensure that also add them to _application_ie.scss
+ *           using an "@import" instead of "require" statement
+ *
+ *= require ./variables
+ *= require ./_elements
+ *= require pafs_core/application
+ *= require ./_devise
+ *= require ./_flash_alerts
+ *= require ./_font_awesome
+ *= require ./_layout
+ *= require ./_tables
+ *= require ./_user_bar
+*/

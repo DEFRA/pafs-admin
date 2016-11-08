@@ -20,4 +20,9 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  admin_label: "Administrator"
+  save_label: "Save"
+  cancel_label: "Cancel"
+  add_user_label: "Add new user"
+  global_proposition_header: "Project Application and Funding Service Admin"
+  logout_link: "Sign out"

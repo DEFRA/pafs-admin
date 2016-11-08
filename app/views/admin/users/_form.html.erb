@@ -1,0 +1,41 @@
+<%= pafs_form_for [:admin, @user] do |f| %>
+  <%= f.error_header %>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <%= f.text_field :first_name, class: "form-control form-wide" %>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <%= f.text_field :last_name, class: "form-control form-wide" %>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <%= f.text_field :email, class: "form-control form-wide" %>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <%= f.fields_for :user_areas do |uaf| %>
+        <%= uaf.hidden_field :primary %>
+        <%#= uaf.label :area_id, class: "form-label-bold" %>
+        <%= uaf.select :area_id,
+          grouped_options_for_select(grouped_areas, uaf.object.area_id),
+          { prompt: "Select an area" },
+          { class: "form-control form-wide area-select" } %>
+      <% end %>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <%= f.check_box :admin, label: t("admin_label") %>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-one-third actions">
+      <%= f.submit t("save_label"), class: 'button' %>
+      <%= link_to t("cancel_label"), admin_users_path, class: 'button button-secondary', role: "button" %>
+    </div>
+  </div>
+<% end %>

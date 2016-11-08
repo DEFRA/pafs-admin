@@ -19,6 +19,12 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 
+# jquery select box plugin wrapper
+# gem "select2-rails"
+
+# pagination
+gem "kaminari"
+
 gem "dotenv-rails"
 gem "devise",           "~> 3.5.2"
 gem "devise_invitable", "~> 1.5.2"

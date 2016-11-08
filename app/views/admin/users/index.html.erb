@@ -1,0 +1,49 @@
+<h1 class="heading-large">Manage users</h1>
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <%= form_tag(admin_users_path, method: "get", class: "search-bar") do %>
+      <%= label_tag(:q, "Search: ") %>
+      <%= text_field_tag(:q, params[:q] || "", class: "form-control") %>
+      <%= hidden_field_tag(:o, params[:o]) %>
+      <%= hidden_field_tag(:d, params[:d]) %>
+      <%= submit_tag("Search", class: "button button-secondary") %>
+    <% end %>
+  </div>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th data-sortable="name">Name</th>
+      <th data-sortable="email">Email</th>
+      <th data-sortable="area">Area</th>
+      <th>Admin?</th>
+      <th><span class="visually-hidden">Action</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.full_name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.primary_area.name %></td>
+        <td><%= admin_flag_for user %></td>
+        <td><%= link_to "Edit", edit_admin_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="grid-row page-nav">
+  <div class="column-one-third">
+    <%= page_entries_info @users %>
+  </div>
+  <div class="column-two-thirds">
+    <div class="pagination-area">
+      <%= paginate @users, left: 0, right: 0, window: 2 %>
+    </div>
+  </div>
+</div>
+<div class="grid-row">
+  <div class="column-two-thirds actions">
+    <%= link_to t("add_user_label"), new_admin_user_path, class: "button" %>
+  </div>
+</div>

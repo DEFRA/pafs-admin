@@ -1,0 +1,42 @@
+@import 'typography';
+@import 'colours';
+
+.user-bar {
+  @include core-16;
+  border-bottom: 1px solid $grey-2;
+  margin-top: 0.5em;
+  text-align: right;
+
+  @include media(mobile) {
+    padding-bottom: 0.5em;
+    text-align: left;
+  }
+
+  .user-menu {
+    display: inline-block;
+
+    li {
+      display: inline;
+      float: left;
+      list-style-type: none;
+      margin-left: 1.25em;
+
+      @include media(mobile) {
+        display: block;
+        float: none;
+        margin-bottom: 0.25em;
+        margin-left: 0;
+      }
+    }
+  }
+
+  #dashboard-link-container {
+    float: left;
+    margin-top: 0.5em;
+    vertical-align: baseline;
+  }
+
+  #user-info-container {
+    text-align: right;
+  }
+}
