@@ -15,12 +15,16 @@ module ApplicationHelper
     Rails.application.config.x.revision
   end
 
-  def admin_flag_for(user)
-    if user.admin?
+  def flag_for(bool)
+    if bool
       "Y"
     else
       ""
     end
+  end
+
+  def disabled_class(user)
+    "disabled" if user.disabled?
   end
 
   def migrate_devise_errors_for(resource)

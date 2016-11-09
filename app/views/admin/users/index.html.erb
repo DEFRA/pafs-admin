@@ -16,18 +16,22 @@
       <th data-sortable="name">Name</th>
       <th data-sortable="email">Email</th>
       <th data-sortable="area">Area</th>
-      <th>Admin?</th>
+      <th>Admin</th>
+      <th>Disabled</th>
       <th><span class="visually-hidden">Action</span></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
-      <tr>
+      <tr class="<%= disabled_class(user) %>">
         <td><%= user.full_name %></td>
         <td><%= user.email %></td>
         <td><%= user.primary_area.name %></td>
-        <td><%= admin_flag_for user %></td>
-        <td><%= link_to "Edit", edit_admin_user_path(user) %></td>
+        <td><%= flag_for user.admin? %></td>
+        <td><%= flag_for user.disabled? %></td>
+        <td><%= link_to "Edit", edit_admin_user_path(user) %>
+          <span class="visually-hidden"> details for <%= user.full_name %></span>
+        </td>
       </tr>
     <% end %>
   </tbody>

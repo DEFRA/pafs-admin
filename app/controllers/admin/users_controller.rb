@@ -33,8 +33,12 @@ class Admin::UsersController < ApplicationController
   def create
     # invite the user
     # area = PafsCore::Area.find_by(id: user_params[:area_id])
-    @user = User.invite!(user_params)
+    @user = User.invite!(user_params) do |u|
+      u.skip_invitation = true
+    end
     if @user.valid?
+      AccountRequestMailer.account_created_email(@user).deliver_now
+      @user.invitation_sent_at = Time.now.utc
       redirect_to admin_users_path
     else
       render "new"
@@ -59,7 +63,7 @@ class Admin::UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :admin,
+    params.require(:user).permit(:first_name, :last_name, :email, :admin, :disabled,
                                 user_areas_attributes: [:id, :area_id, :user_id, :primary])
   end
 

@@ -27,11 +27,19 @@
       <% end %>
     </div>
   </div>
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <%= f.check_box :admin, label: t("admin_label") %>
+  <%= f.form_group(:base) do %>
+    <%= f.error_message(:base) %>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <%= f.check_box :admin, label: t("admin_label") %>
+      </div>
     </div>
-  </div>
+    <div class="grid-row with-headroom">
+      <div class="column-two-thirds">
+        <%= f.check_box :disabled, label: t("disable_account_label") %>
+      </div>
+    </div>
+  <% end %>
   <div class="grid-row">
     <div class="column-one-third actions">
       <%= f.submit t("save_label"), class: 'button' %>

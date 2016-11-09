@@ -24,5 +24,6 @@ en:
   save_label: "Save"
   cancel_label: "Cancel"
   add_user_label: "Add new user"
+  disable_account_label: "Disable account"
   global_proposition_header: "Project Application and Funding Service Admin"
   logout_link: "Sign out"

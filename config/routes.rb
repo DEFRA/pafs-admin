@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users
+    resources :users, except: :delete
   end
   devise_for :users, controllers: { passwords: "passwords" }
 

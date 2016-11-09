@@ -46,6 +46,14 @@
   }
 }
 
+.with-headroom {
+  margin-top: 1em;
+}
+
+.disabled > td {
+  color: $grey-1;
+}
+
 // this is in elements/_helpers.scss
 // Content visually hidden
 // .visuallyhidden {
