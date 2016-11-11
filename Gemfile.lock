@@ -1,12 +1,16 @@
 GIT
   remote: https://github.com/EnvironmentAgency/pafs_core
-  revision: 7e1b1a670682760fcf717873b70e01ee2d22d099
+  revision: 70a034f726fb6605e42845dc2b230e68a58e047d
   branch: develop
   specs:
     pafs_core (0.0.2)
       aws-sdk (~> 2)
+      axlsx (~> 2.1.0.pre)
+      axlsx_rails
       clamav-client (~> 3.0)
+      rack-cors
       rails (~> 4.2.5.1)
+      roo (~> 2.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -51,12 +55,19 @@ GEM
       airbrake-ruby (~> 1.6)
     airbrake-ruby (1.6.0)
     arel (6.0.3)
-    aws-sdk (2.6.18)
-      aws-sdk-resources (= 2.6.18)
-    aws-sdk-core (2.6.18)
+    aws-sdk (2.6.19)
+      aws-sdk-resources (= 2.6.19)
+    aws-sdk-core (2.6.19)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.6.18)
-      aws-sdk-core (= 2.6.18)
+    aws-sdk-resources (2.6.19)
+      aws-sdk-core (= 2.6.19)
+    axlsx (2.1.0.pre)
+      htmlentities (~> 4.3.1)
+      nokogiri (>= 1.4.1)
+      rubyzip (~> 1.1.7)
+    axlsx_rails (0.5.0)
+      actionpack (>= 3.1)
+      axlsx (>= 2.0.1)
     bcrypt (3.1.11)
     benchmark-ips (2.7.2)
     binding_of_caller (0.7.2)
@@ -141,6 +152,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     iniparse (1.4.2)
     jbuilder (2.6.0)
@@ -198,7 +210,8 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    rack (1.6.4)
+    rack (1.6.5)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.5.1)
@@ -243,6 +256,9 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    roo (2.4.0)
+      nokogiri (~> 1)
+      rubyzip (~> 1.1, < 2.0.0)
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -266,6 +282,7 @@ GEM
     rspec-support (3.5.0)
     ruby-prof (0.16.2)
     ruby_dep (1.5.0)
+    rubyzip (1.1.7)
     sass (3.4.22)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
