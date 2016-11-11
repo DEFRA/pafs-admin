@@ -35,6 +35,9 @@ gem "govuk_template", "~> 0.17.0"
 gem "govuk_frontend_toolkit", "~> 4.10.0"
 gem "govuk_elements_rails"
 
+# TODO: remove this once mapping sorted
+gem "cumberland", "~> 0.0.1", git: "https://github.com/EnvironmentAgency/cumberland"
+
 # active job backend
 gem "sucker_punch", "~> 2.0"
 

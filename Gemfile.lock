@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/EnvironmentAgency/cumberland
+  revision: 8dbbd674b4f3b27292261a5a746773df13b78a91
+  specs:
+    cumberland (0.0.1)
+      ffi-proj4 (~> 0.2)
+
+GIT
   remote: https://github.com/EnvironmentAgency/pafs_core
   revision: 70a034f726fb6605e42845dc2b230e68a58e047d
   branch: develop
@@ -124,6 +131,8 @@ GEM
     faker (1.6.6)
       i18n (~> 0.5)
     ffi (1.9.14)
+    ffi-proj4 (0.2.0)
+      ffi (>= 1.0.0)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -350,6 +359,7 @@ DEPENDENCIES
   capybara
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
+  cumberland (~> 0.0.1)!
   database_cleaner
   devise (~> 3.5.2)
   devise_invitable (~> 1.5.2)
