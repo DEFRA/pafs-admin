@@ -32,16 +32,15 @@ class Admin::UsersController < ApplicationController
 
   def create
     # invite the user
-    # area = PafsCore::Area.find_by(id: user_params[:area_id])
     @user = User.invite!(user_params) do |u|
       u.skip_invitation = true
     end
     if @user.valid?
       AccountRequestMailer.account_created_email(@user).deliver_now
-      @user.invitation_sent_at = Time.now.utc
+      @user.update_attributes(invitation_sent_at: Time.now.utc)
       redirect_to admin_users_path
     else
-      render "new"
+      render :new
     end
   end
 
@@ -58,7 +57,14 @@ class Admin::UsersController < ApplicationController
     end
   end
 
-  def destroy
+  def reinvite
+    @user = User.find(params[:id])
+    @user.invite!(current_user) do |u|
+      u.skip_invitation = true
+    end
+    AccountRequestMailer.account_created_email(@user).deliver_now
+    @user.update_attributes(invitation_sent_at: Time.now.utc)
+    redirect_to edit_admin_user_path(@user)
   end
 
 private

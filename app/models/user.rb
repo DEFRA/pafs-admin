@@ -2,9 +2,11 @@
 class User < PafsCore::User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :invitable, :database_authenticatable, #:registerable, :rememberable
-         :recoverable, :trackable, :validatable, :timeoutable
+  devise :database_authenticatable, #:registerable, :rememberable
+         :recoverable, :trackable, :validatable, :timeoutable,
+         :invitable, validate_on_invite: true
 
+  # validates :email, presence: true
   validate :the_last_admin_isnt_disabled
 
   accepts_nested_attributes_for :user_areas
@@ -32,13 +34,16 @@ class User < PafsCore::User
     where(admin: true)
   end
 
+  def self.active
+    where(disabled: false)
+  end
+
   private
   def the_last_admin_isnt_disabled
     if admin_changed?(to: false) || disabled_changed?(to: true)
       errors.add(:base,
-                 "^No other administrators found. "\
-                 "Please ensure at least one admin is present") unless
-        User.where.not(id: id).admins.count.positive?
+                 "^Ensure at least one adminstrator is available") unless
+        User.where.not(id: id).admins.active.count.positive?
     end
   end
 end

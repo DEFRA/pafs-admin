@@ -23,6 +23,14 @@ module ApplicationHelper
     end
   end
 
+  def date_or(dt, txt)
+    if dt.nil?
+      txt || ""
+    else
+      dt.strftime("%-d %B %Y @ %H:%M:%S")
+    end
+  end
+
   def disabled_class(user)
     "disabled" if user.disabled?
   end

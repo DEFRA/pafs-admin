@@ -27,3 +27,9 @@ en:
   disable_account_label: "Disable account"
   global_proposition_header: "Project Application and Funding Service Admin"
   logout_link: "Sign out"
+  activerecord:
+    attributes:
+      user:
+        invitation_sent_at: "Invitation sent"
+        invitation_accepted_at: "Invitation accepted"
+        last_sign_in_at: "Last sign in"
