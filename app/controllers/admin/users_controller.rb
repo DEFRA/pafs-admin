@@ -31,13 +31,15 @@ class Admin::UsersController < ApplicationController
   end
 
   def create
-    # invite the user
-    @user = User.invite!(user_params) do |u|
-      u.skip_invitation = true
-    end
+    # Calling User.invite! seems to use find_or_create under the covers which results in
+    # it updating an existing user rather than rejecting a duplicate email address
+    # So we're creating the user first and inviting if valid
+    p = user_params.merge(password: Devise.friendly_token.first(8))
+    @user = User.create(p)
+
     if @user.valid?
-      AccountRequestMailer.account_created_email(@user).deliver_now
-      @user.update_attributes(invitation_sent_at: Time.now.utc)
+      # invite the user
+      invite_user(@user)
       redirect_to admin_users_path
     else
       render :new
@@ -59,11 +61,7 @@ class Admin::UsersController < ApplicationController
 
   def reinvite
     @user = User.find(params[:id])
-    @user.invite!(current_user) do |u|
-      u.skip_invitation = true
-    end
-    AccountRequestMailer.account_created_email(@user).deliver_now
-    @user.update_attributes(invitation_sent_at: Time.now.utc)
+    invite_user(@user)
     redirect_to edit_admin_user_path(@user)
   end
 
@@ -71,6 +69,14 @@ private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :admin, :disabled,
                                 user_areas_attributes: [:id, :area_id, :user_id, :primary])
+  end
+
+  def invite_user(user)
+    user.invite!(current_user) do |u|
+      u.skip_invitation = true
+    end
+    AccountRequestMailer.account_created_email(user).deliver_now
+    user.update_attributes(invitation_sent_at: Time.now.utc)
   end
 
   def navigator

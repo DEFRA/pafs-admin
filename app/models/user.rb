@@ -6,7 +6,6 @@ class User < PafsCore::User
          :recoverable, :trackable, :validatable, :timeoutable,
          :invitable, validate_on_invite: true
 
-  # validates :email, presence: true
   validate :the_last_admin_isnt_disabled
 
   accepts_nested_attributes_for :user_areas
@@ -17,8 +16,11 @@ class User < PafsCore::User
   end
 
   def inactive_message
-    "You must be an administrator to use this service" unless admin?
-    "You must register for an account before using this service" if disabled?
+    if disabled?
+      "You must register for an account before using this service"
+    elsif !admin?
+      "You must be an administrator to use this service"
+    end
   end
 
   def self.search(q)
