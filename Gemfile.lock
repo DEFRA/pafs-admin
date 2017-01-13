@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/EnvironmentAgency/pafs_core
-  revision: 088e077b49de72cacaa904d9dccff773ec32b761
+  revision: b8a8e81b67f0b44142f59ef6bc9b8397e4301151
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -17,6 +17,7 @@ GIT
       bstard
       clamav-client (~> 3.0)
       faraday
+      kaminari
       rack-cors
       rails (~> 4.2.5.1)
       roo (~> 2.4.0)
@@ -63,14 +64,14 @@ GEM
     airbrake (5.6.1)
       airbrake-ruby (~> 1.6)
     airbrake-ruby (1.6.0)
-    arel (6.0.3)
-    aws-sdk (2.6.40)
-      aws-sdk-resources (= 2.6.40)
-    aws-sdk-core (2.6.40)
+    arel (6.0.4)
+    aws-sdk (2.6.44)
+      aws-sdk-resources (= 2.6.44)
+    aws-sdk-core (2.6.44)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.6.40)
-      aws-sdk-core (= 2.6.40)
+    aws-sdk-resources (2.6.44)
+      aws-sdk-core (= 2.6.44)
     aws-sigv4 (1.0.0)
     axlsx (2.1.0.pre)
       htmlentities (~> 4.3.1)
@@ -107,7 +108,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    concurrent-ruby (1.0.3)
+    concurrent-ruby (1.0.4)
     database_cleaner (1.5.3)
     debug_inspector (0.0.2)
     devise (3.5.10)
@@ -135,7 +136,7 @@ GEM
       railties (>= 3.0.0)
     faker (1.6.6)
       i18n (~> 0.5)
-    faraday (0.10.0)
+    faraday (0.10.1)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.14)
     ffi-proj4 (0.2.0)
@@ -182,7 +183,7 @@ GEM
     jquery-turbolinks (2.1.0)
       railties (>= 3.1.0)
       turbolinks
-    json (1.8.3)
+    json (1.8.5)
     kaminari (0.17.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -210,7 +211,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nenv (0.3.0)
-    nokogiri (1.6.8.1)
+    nokogiri (1.7.0.1)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -244,9 +245,9 @@ GEM
       sprockets-rails
     rails-deprecated_sanitizer (1.0.3)
       activesupport (>= 4.2.0.alpha)
-    rails-dom-testing (1.0.7)
+    rails-dom-testing (1.0.8)
       activesupport (>= 4.2.0.beta, < 5.0)
-      nokogiri (~> 1.6.0)
+      nokogiri (~> 1.6)
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
