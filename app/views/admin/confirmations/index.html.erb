@@ -1,0 +1,34 @@
+<h1 class="heading-large">Incomplete Asite Submissions</h1>
+<table>
+  <thead>
+    <tr>
+      <th data-sortable="name">Project Reference Number</th>
+      <th data-sortable="area">Area</th>
+      <th data-sortable="email-sent">Email Sent</th>
+      <th data-sortable="status">Status</th>
+      <th><span class="visually-hidden">Action</span></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @submissions.each do |submission| %>
+      <tr>
+        <td><%= submission.project.slug %></td>
+        <td><%= submission.project.owner.name %></td>
+        <td><%= l(submission.email_sent_at) %></td>
+        <td><%= submission.status %></td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="grid-row page-nav">
+  <div class="column-one-third">
+    <%= page_entries_info @submissions %>
+  </div>
+  <div class="column-two-thirds">
+    <div class="pagination-area">
+      <%= paginate @submissions, left: 0, right: 0, window: 2 %>
+    </div>
+  </div>
+</div>

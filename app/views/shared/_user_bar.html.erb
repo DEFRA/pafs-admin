@@ -1,6 +1,13 @@
 <div class="user-bar font-xsmall">
   <ul class="user-menu">
     <li>Signed in as: <%= current_user.full_name %></li>
+    <li>
+      <% if controller_name == "users" %>
+        <%= link_to("Submissions", main_app.admin_confirmations_path) %>
+      <% elsif controller_name == "confirmations" %>
+        <%= link_to("Users", main_app.admin_users_path) %>
+      <% end %>
+    </li>
     <li><%= link_to(t('logout_link'), main_app.destroy_user_session_path) %></li>
   </ul>
 </div>

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
         get :reinvite
       end
     end
+    resources :confirmations, only: [:index]
   end
   devise_for :users, controllers: { passwords: "passwords" }
 
