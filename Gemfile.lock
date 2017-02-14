@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/EnvironmentAgency/pafs_core
-  revision: 1016b4341fdd7ff93271854a9f06e7fc80b7e2c2
+  revision: acc29611552b344641cd96973692658f2c307607
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -21,6 +21,7 @@ GIT
       rack-cors
       rails (~> 4.2.7.1)
       roo (~> 2.4.0)
+      rubyXL
 
 GEM
   remote: https://rubygems.org/
@@ -65,13 +66,13 @@ GEM
       airbrake-ruby (~> 1.6)
     airbrake-ruby (1.6.0)
     arel (6.0.4)
-    aws-sdk (2.7.2)
-      aws-sdk-resources (= 2.7.2)
-    aws-sdk-core (2.7.2)
+    aws-sdk (2.7.7)
+      aws-sdk-resources (= 2.7.7)
+    aws-sdk-core (2.7.7)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.7.2)
-      aws-sdk-core (= 2.7.2)
+    aws-sdk-resources (2.7.7)
+      aws-sdk-core (= 2.7.7)
     aws-sigv4 (1.0.0)
     axlsx (2.1.0.pre)
       htmlentities (~> 4.3.1)
@@ -170,7 +171,7 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     htmlentities (4.3.4)
-    i18n (0.7.0)
+    i18n (0.8.0)
     iniparse (1.4.2)
     jbuilder (2.6.0)
       activesupport (>= 3.0.0, < 5.1)
@@ -238,7 +239,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.6.5)
-    rack-cors (0.4.0)
+    rack-cors (0.4.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.7.1)
@@ -308,6 +309,9 @@ GEM
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
     ruby-prof (0.16.2)
+    rubyXL (3.3.22)
+      nokogiri (>= 1.4.4)
+      rubyzip (>= 1.1.6)
     ruby_dep (1.5.0)
     rubyzip (1.1.7)
     sass (3.4.22)
@@ -419,4 +423,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.13.7
+   1.14.4
