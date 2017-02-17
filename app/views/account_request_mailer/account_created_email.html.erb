@@ -1,5 +1,15 @@
+<%= content_for(:heading) do %>
+  Account created
+<% end %>
 <p>Dear <%= @name %>,</p>
 <p>We've created an account for <%= @email %></p>
 <p>Use the link below, or  copy and paste it into your browser. You can create a password that will allow you to sign into your account.</p>
-<div><%= link_to @invitation_link, @invitation_link %></div>
+<p><%= link_to @invitation_link, @invitation_link %></p>
 <p>Ignore this email if you don't want to continue to create your account. The account will remain inactive unless you set a password.</p>
+<p class="footer footer-top">
+  If you need assistance call the Environment Agency helpline:
+  <a href="tel:03708506506">03708 506506</a>
+</p>
+<p class="footer footer-bottom">
+  It’s open Monday to Friday, between 8am and 6pm
+</p>

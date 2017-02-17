@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 class AccountRequestMailer < ApplicationMailer
+  include PafsCore::Email
+
   def confirmation_email(email, name)
     @email = email
     @name = name
+    prevent_tracking
     mail(to: email, subject: "We've received your request to create an account")
   end
 
@@ -15,6 +18,7 @@ class AccountRequestMailer < ApplicationMailer
     @invitation_link = accept_user_invitation_url(
       invitation_token: user.raw_invitation_token
     )
+    prevent_tracking
     mail(to: user.email, subject: "Create a password for your new account "\
                                   "on the Flood and Coastal Erosion Risk "\
                                   "Management Project Application and Funding Service")
