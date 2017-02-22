@@ -21,6 +21,13 @@ module PafsAdmin
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
 
+    # load decorators
+    config.to_prepare do
+      Dir.glob(File.join(Rails.root, "app/decorators", "**/*_decorator*.rb")).each do |c|
+        require_dependency(c)
+      end
+    end
+
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     # config.time_zone = 'Central Time (US & Canada)'
@@ -31,5 +38,7 @@ module PafsAdmin
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    # exception handling
+    config.exceptions_app = self.routes
   end
 end

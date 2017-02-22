@@ -6,8 +6,7 @@ GIT
       ffi-proj4 (~> 0.2)
 
 GIT
-  remote: https://github.com/EnvironmentAgency/pafs_core
-  revision: 634b7ba18080a6e18851ace5e49d313010e69f78
+  revision: 473da8e22d2c752b789da38e0682e10748314891
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -67,13 +66,13 @@ GEM
       airbrake-ruby (~> 1.7)
     airbrake-ruby (1.7.1)
     arel (6.0.4)
-    aws-sdk (2.7.10)
-      aws-sdk-resources (= 2.7.10)
-    aws-sdk-core (2.7.10)
+    aws-sdk (2.7.12)
+      aws-sdk-resources (= 2.7.12)
+    aws-sdk-core (2.7.12)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.7.10)
-      aws-sdk-core (= 2.7.10)
+    aws-sdk-resources (2.7.12)
+      aws-sdk-core (= 2.7.12)
     aws-sigv4 (1.0.0)
     axlsx (2.1.0.pre)
       htmlentities (~> 4.3.1)
@@ -172,7 +171,7 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     htmlentities (4.3.4)
-    i18n (0.8.0)
+    i18n (0.8.1)
     iniparse (1.4.2)
     jbuilder (2.6.1)
       activesupport (>= 3.0.0, < 5.1)
