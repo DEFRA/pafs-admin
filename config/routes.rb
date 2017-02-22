@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get "/password/reset" => "reset_password#reset", as: :after_password_reset
 
   mount PafsCore::Engine, at: "/pc"
+  match '(errors)/:status', to: PafsCore::Engine, via: :all, constraints: { status: /\d{3}/ }
 
   root 'admin/users#index'
 end
