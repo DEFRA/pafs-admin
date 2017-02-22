@@ -36,7 +36,7 @@ gem "govuk_frontend_toolkit", "~> 4.10.0"
 gem "govuk_elements_rails"
 
 # TODO: remove this once mapping sorted
-gem "cumberland", "~> 0.0.1", git: "https://github.com/EnvironmentAgency/cumberland"
+gem "cumberland", "~> 0.0.1", git: "https://github.com/DEFRA/cumberland"
 
 # active job backend
 gem "sucker_punch", "~> 2.0"
@@ -47,7 +47,7 @@ gem "whenever", require: false
 
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
-  git: "https://github.com/EnvironmentAgency/pafs_core",
+  git: "https://github.com/DEFRA/pafs_core",
   branch: "develop"
 
 group :development, :test do
