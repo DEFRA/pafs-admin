@@ -6,7 +6,6 @@ GIT
       ffi-proj4 (~> 0.2)
 
 GIT
-  remote: https://github.com/EnvironmentAgency/pafs_core
   revision: 473da8e22d2c752b789da38e0682e10748314891
   branch: develop
   specs:
