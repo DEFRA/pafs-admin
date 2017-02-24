@@ -16,7 +16,7 @@ GEM
       thread
       thread_safe
     erubis (2.7.0)
-    ffi (1.9.14)
+    ffi (1.9.17)
     highline (1.7.8)
     i18n (0.7.0)
     i18n-tasks (0.9.5)
@@ -32,7 +32,7 @@ GEM
     iniparse (1.4.2)
     json (2.0.2)
     minitest (5.9.1)
-    overcommit (0.37.0)
+    overcommit (0.38.0)
       childprocess (~> 0.5.8)
       iniparse (~> 1.4)
     parser (2.3.1.4)
@@ -68,9 +68,12 @@ PLATFORMS
 DEPENDENCIES
   brakeman
   i18n-tasks
-  overcommit
+  overcommit (> 0.37)
   rubocop
   scss_lint
 
+RUBY VERSION
+   ruby 2.3.0p0
+
 BUNDLED WITH
-   1.11.2
+   1.14.4

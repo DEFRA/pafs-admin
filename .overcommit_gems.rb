@@ -22,7 +22,7 @@ source "https://rubygems.org"
 ruby "2.3.0"
 
 gem "brakeman"
-gem "overcommit"
+gem "overcommit", "> 0.37"
 gem "rubocop"
 gem "scss_lint"
 gem "i18n-tasks"
