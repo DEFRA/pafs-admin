@@ -42,10 +42,15 @@ class User < PafsCore::User
 
   private
   def the_last_admin_isnt_disabled
-    if admin_changed?(to: false) || disabled_changed?(to: true)
-      errors.add(:base,
-                 "^Ensure at least one adminstrator is available") unless
-        User.where.not(id: id).admins.active.count.positive?
+    if (admin_changed?(to: false) || disabled_changed?(to: true)) && !other_admins_exist?
+      errors.add(:base, "^Ensure at least one adminstrator is available")
+      # errors.add(:base,
+      #            "^Ensure at least one adminstrator is available") unless
+      #   User.where.not(id: id).admins.active.count.positive?
     end
+  end
+
+  def other_admins_exist?
+    User.where.not(id: id).admins.active.count.positive?
   end
 end
