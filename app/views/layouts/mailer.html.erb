@@ -26,6 +26,10 @@
       padding: 12px 0 15px 0;
     }
 
+    #header img {
+      margin-top: 0.8em;
+    }
+
     .wrapper {
       max-width: 570px;
       padding: 0 15px;
@@ -43,7 +47,7 @@
     }
 
     p, ul, ol, h3, h4, h5, h6 {
-      font-size: 19px;
+      font-size: 17px;
       line-height: 1.315789474;
     }
 
@@ -290,7 +294,9 @@
     </div>
   </div>
   <div class="wrapper">
-    <h1 class="summary-heading"><%= yield :heading %></h1>
+    <% if local_assigns.include?(:heading) %>
+      <h1 class="summary-heading"><%= yield :heading %></h1>
+    <% end %>
     <%= yield %>
   </div>
 </body>

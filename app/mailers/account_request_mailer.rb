@@ -19,8 +19,6 @@ class AccountRequestMailer < ApplicationMailer
       invitation_token: user.raw_invitation_token
     )
     prevent_tracking
-    mail(to: user.email, subject: "Create a password for your new account "\
-                                  "on the Flood and Coastal Erosion Risk "\
-                                  "Management Project Application and Funding Service")
+    mail(to: user.email, subject: "Account created - FCERM project funding")
   end
 end
