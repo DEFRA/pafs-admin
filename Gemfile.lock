@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: a1936164b458a807a69d9113fc28fa2d66566386
+  revision: 6094ff718f0480a36a57bd8ac4d7ef1258b62d77
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -65,13 +65,13 @@ GEM
       airbrake-ruby (~> 1.7)
     airbrake-ruby (1.7.1)
     arel (6.0.4)
-    aws-sdk (2.8.0)
-      aws-sdk-resources (= 2.8.0)
-    aws-sdk-core (2.8.0)
+    aws-sdk (2.8.5)
+      aws-sdk-resources (= 2.8.5)
+    aws-sdk-core (2.8.5)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.8.0)
-      aws-sdk-core (= 2.8.0)
+    aws-sdk-resources (2.8.5)
+      aws-sdk-core (= 2.8.5)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     benchmark-ips (2.7.2)
@@ -414,4 +414,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   1.14.4
+   1.14.6
