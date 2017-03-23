@@ -20,6 +20,10 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  global:
+    footer_support_text: "Any issues call CIS service desk on 80 80 or if external "
+    helpline_telephone_number: "08708 508 082"
+    support_email: "pafs-support@environment-agency.gov.uk"
   date:
     formats:
       default: "%d/%m/%Y"
