@@ -1,0 +1,34 @@
+<h1 class="heading-medium"><%= File.basename(@upload.filename) %></h1>
+<dl class="item-summary">
+  <dt>Reference number</dt>
+  <dd><%= @item.reference_number %></dd>
+  <dt>Imported</dt>
+  <dd><%= yn_for @item.imported? %></dd>
+  <dt>Status</dt>
+  <dd><%= upload_status @errors.count %></dd>
+</dl>
+<% if @errors.count.positive? %>
+<table>
+  <thead>
+    <tr>
+      <th>Attribute name</th>
+      <th>Error message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @errors.each do |error_item| %>
+      <tr>
+        <td><%= error_item.field_name %></td>
+        <td><%= error_item.messages.split("|").join("<br/>").html_safe %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <div class="headroom">
+      <%= link_to "Back", admin_program_upload_path(@upload) %>
+    </div>
+  </div>
+</div>

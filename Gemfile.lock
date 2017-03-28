@@ -1,13 +1,6 @@
 GIT
-  remote: https://github.com/DEFRA/cumberland
-  revision: 8dbbd674b4f3b27292261a5a746773df13b78a91
-  specs:
-    cumberland (0.0.1)
-      ffi-proj4 (~> 0.2)
-
-GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: a1936164b458a807a69d9113fc28fa2d66566386
+  revision: cd024347514573ab9ad597ed9f69fb9a80744573
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -18,8 +11,16 @@ GIT
       kaminari
       rack-cors
       rails (~> 4.2.7.1)
-      roo (~> 2.4.0)
+      roo (~> 2.7.0)
       rubyXL
+      secure_headers (~> 3.6)
+
+GIT
+  remote: https://github.com/tonyheadford/dibble
+  revision: 06fe3d0811b6f601607b2b9aa61f6c3f8b4965a1
+  branch: develop
+  specs:
+    dibble (0.1.0)
 
 GEM
   remote: https://rubygems.org/
@@ -65,13 +66,13 @@ GEM
       airbrake-ruby (~> 1.7)
     airbrake-ruby (1.7.1)
     arel (6.0.4)
-    aws-sdk (2.8.0)
-      aws-sdk-resources (= 2.8.0)
-    aws-sdk-core (2.8.0)
+    aws-sdk (2.8.12)
+      aws-sdk-resources (= 2.8.12)
+    aws-sdk-core (2.8.12)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.8.0)
-      aws-sdk-core (= 2.8.0)
+    aws-sdk-resources (2.8.12)
+      aws-sdk-core (= 2.8.12)
     aws-sigv4 (1.0.0)
     bcrypt (3.1.11)
     benchmark-ips (2.7.2)
@@ -132,8 +133,6 @@ GEM
     faraday (0.11.0)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.17)
-    ffi-proj4 (0.2.0)
-      ffi (>= 1.0.0)
     font-awesome-sass (4.5.0)
       sass (>= 3.2)
     formatador (0.2.5)
@@ -212,7 +211,7 @@ GEM
     multi_json (1.12.1)
     multipart-post (2.0.0)
     nenv (0.3.0)
-    nokogiri (1.7.0.1)
+    nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -275,7 +274,7 @@ GEM
     ref (2.0.0)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
-    roo (2.4.0)
+    roo (2.7.1)
       nokogiri (~> 1)
       rubyzip (~> 1.1, < 2.0.0)
     rspec (3.5.0)
@@ -315,6 +314,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    secure_headers (3.6.2)
+      useragent
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
@@ -346,10 +347,11 @@ GEM
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
     turbolinks-source (5.0.0)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     uglifier (3.0.4)
       execjs (>= 0.3.0, < 3)
+    useragent (0.16.8)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (2.3.0)
@@ -372,10 +374,10 @@ DEPENDENCIES
   capybara
   codeclimate-test-reporter
   coffee-rails (~> 4.1.0)
-  cumberland (~> 0.0.1)!
   database_cleaner
   devise (~> 3.5.2)
   devise_invitable (~> 1.5.2)
+  dibble (~> 0.1)!
   dotenv-rails
   factory_girl_rails (~> 4.0)
   faker

@@ -19,9 +19,6 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 
-# jquery select box plugin wrapper
-# gem "select2-rails"
-
 # pagination
 gem "kaminari"
 
@@ -35,9 +32,6 @@ gem "govuk_template", "~> 0.17.0"
 gem "govuk_frontend_toolkit", "~> 4.10.0"
 gem "govuk_elements_rails"
 
-# TODO: remove this once mapping sorted
-gem "cumberland", "~> 0.0.1", git: "https://github.com/DEFRA/cumberland"
-
 # active job backend
 gem "sucker_punch", "~> 2.0"
 
@@ -48,6 +42,10 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
+  branch: "develop"
+
+gem "dibble", "~> 0.1",
+  git: "https://github.com/tonyheadford/dibble",
   branch: "develop"
 
 group :development, :test do

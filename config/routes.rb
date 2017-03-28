@@ -6,6 +6,10 @@ Rails.application.routes.draw do
       end
     end
     resources :confirmations, only: [:index]
+    resources :refresh, only: [:index]
+    resources :program_uploads, except: [:edit, :update] do
+      resources :program_upload_items, only: [:show]
+    end
   end
   devise_for :users, controllers: { passwords: "passwords" }
 

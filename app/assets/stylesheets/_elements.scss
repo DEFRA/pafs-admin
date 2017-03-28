@@ -52,3 +52,18 @@
 @import 'elements/breadcrumbs';                   // Breadcrumbs
 @import 'elements/phase-banner';                  // Alpha and beta banners and tags
 @import 'elements/components';                    // GOV.UK prefixed styles - blue highlighted box
+
+.notice {
+  margin-bottom: 2em;
+
+  .icon-important {
+    background-image: url(asset-path('icon-important.png'));
+    height: 35px;
+    width: 35px;
+
+    @include device-pixel-ratio() {
+      background-image: url(asset-path('icon-important-2x.png'));
+      background-size: 100%;
+    }
+  }
+}
