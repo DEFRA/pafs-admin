@@ -23,6 +23,10 @@ module ApplicationHelper
     end
   end
 
+  def yn_for(bool)
+    !!bool ? "Y" : "N"
+  end
+
   def date_or(dt, txt)
     if dt.nil?
       txt || ""
@@ -54,5 +58,13 @@ module ApplicationHelper
       (controller_name == "downloads" && action_name == "index")) &&
       defined?(:project) &&
       !@project.nil?
+  end
+
+  def upload_status(item_count)
+    item_count.zero? ? "OK" : "Has errors"
+  end
+
+  def item_upload_status(error_count)
+    error_count.zero? ? "OK" : "#{error_count} #{'error'.pluralize(error_count)}"
   end
 end

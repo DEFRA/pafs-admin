@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th>National project number</th>
+      <th class="centered">Record imported</th>
+      <th class="centered">Validation warnings</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= link_to item.reference_number,
+          admin_program_upload_program_upload_item_path(@upload, item) %></td>
+        <td class="centered"><%= yn_for item.imported? %></td>
+        <td class="centered"><%= item.program_upload_failures.count %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="grid-row page-nav">
+  <div class="column-one-half">
+    <%= page_entries_info @items %>
+  </div>
+  <div class="column-one-half">
+    <div class="pagination-area">
+      <%= paginate @items, left: 0, right: 0, window: 2 %>
+    </div>
+  </div>
+</div>

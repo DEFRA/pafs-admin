@@ -38,6 +38,21 @@ en:
   disable_account_label: "Disable account"
   global_proposition_header: "Project Application and Funding Service Admin"
   logout_link: "Sign out"
+  admin:
+    program_uploads:
+      new:
+        heading: "Import program"
+        description: "Import the completed Flood and Coastal Erosion Risk Management program for this year."
+        notice: "You must select the full FCERM program spreadsheet each time you import"
+        upload_and_process_label: "Import"
+      show:
+        heading: "Import program"
+      status:
+        new: "Awaiting file upload"
+        uploaded: "File uploaded"
+        processing: "Importing records"
+        completed: "Upload complete"
+        failed: "Import failure"
   activerecord:
     attributes:
       user:

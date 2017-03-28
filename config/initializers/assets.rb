@@ -9,4 +9,5 @@ Rails.application.config.assets.version = '1.0'
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
-Rails.application.config.assets.precompile += %w( gov.uk_logotype_crown.svg application-ie6.css application-ie7.css application-ie8.css )
+# Rails.application.config.assets.paths << File.join(Bundler.rubygems.find_name("govuk_frontend_toolkit").first.full_gem_path, "app", "assets")
+Rails.application.config.assets.precompile += %w( gov.uk_logotype_crown.svg application-ie6.css application-ie7.css application-ie8.css icon-important.png icon-important-2x.png )

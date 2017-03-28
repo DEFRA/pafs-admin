@@ -1,0 +1,5 @@
+<% if @upload.finished_processing? %>
+window.location.reload(true);
+<% else %>
+$("#status").html("<%= j render partial: "status.html.erb" %>");
+<% end %>
