@@ -22,6 +22,9 @@ class Confirmation
   end
 
   def confirm_has_been_set
-    errors.add(:base, "^Confirm you understand the effect of opening the programme refresh") unless confirm?
+    unless confirm?
+      errors.add(:base, "^You must confirm that by continuing,"\
+      "you understand that ALL proposals will be able to be updated")
+    end
   end
 end
