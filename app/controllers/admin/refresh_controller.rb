@@ -24,6 +24,9 @@ class Admin::RefreshController < ApplicationController
 
   def open_programme
     # update the status of projects
-    true
+    # TODO: when time allows change this to "updatable"
+    # rubocop:disable Rails/SkipsModelValidations
+    PafsCore::State.refreshable.update_all(state: "draft")
+    # rubocop:enable Rails/SkipsModelValidations
   end
 end
