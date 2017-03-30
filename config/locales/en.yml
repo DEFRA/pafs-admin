@@ -39,14 +39,22 @@ en:
   global_proposition_header: "Project Application and Funding Service Admin"
   logout_link: "Sign out"
   admin:
+    refresh:
+      new:
+        heading: "Open programme refresh"
+        confirm_heading: "Confirm that you understand"
+        confirm_label: "I understand"
+      create:
+        heading: "Open programme refresh"
+        notice: "The programme refresh has been opened and all proposals can now be updated."
     program_uploads:
       new:
-        heading: "Import program"
-        description: "Import the completed Flood and Coastal Erosion Risk Management program for this year."
+        heading: "Import programme"
+        description: "Import the completed Flood and Coastal Erosion Risk Management programme for this year."
         notice: "You must select the full FCERM program spreadsheet each time you import"
         upload_and_process_label: "Import"
       show:
-        heading: "Import program"
+        heading: "Import programme"
       status:
         new: "Awaiting file upload"
         uploaded: "File uploaded"
