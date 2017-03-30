@@ -1,0 +1,20 @@
+<h1 class="heading-large"><%= t(".heading") %></h1>
+<%= pafs_form_for @confirmation, url: main_app.admin_refresh_index_path do |f| %>
+  <%= f.error_header %>
+  <h2 class="heading-small"><%= t(".confirm_heading") %></h2>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <p>By opening the programme refresh, ALL proposals will be able to be updated - ready for the next programme refresh.</p>
+    </div>
+  </div>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <%= f.form_group :base do %>
+        <%= f.check_box :confirm %>
+      <% end %>
+    </div>
+  </div>
+  <div class="form-group headroom">
+    <%= f.submit t(".heading"), class: 'button' %>
+  </div>
+<% end %>
