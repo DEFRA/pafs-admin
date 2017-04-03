@@ -1,9 +1,20 @@
 var upload_progress = function() {
   if ($('.upload-progress').length) {
-    setInterval(function(){
+    var timerId = setInterval(function(){
+      $.get(window.location.pathname, function(data, textStatus, jqxhr) {
+        console.log(textStatus);
+        if(textStatus === "200") {
+          $("#status").html(data);
+        } else {
+          clearInterval(timerId);
+          window.location.reload(true);
+        }
+      });
+      /*
       $.getScript(window.location.pathname, function(data, textStatus, jqxhr) {
         console.log('Status info updated.');
       });
+      */
     },2000);
   }
 };
