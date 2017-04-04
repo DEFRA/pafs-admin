@@ -15,8 +15,7 @@ class Admin::ProgramUploadsController < ApplicationController
     @upload = PafsCore::ProgramUpload.find(params[:id])
     @items = @upload.program_upload_items.order(created_at: :asc).page(page).per(items_per_page)
     if request.xhr?
-      status = @upload.finished_processing? ? :ok : :reset_content
-      render partial: "status.html.erb", status: :ok
+      render partial: "status.html.erb"
     else
       render "show"
     end
