@@ -1,23 +1,15 @@
 var upload_progress = function() {
   if ($('.upload-progress').length) {
-    var timerId = setInterval(function(){
-      $.get(window.location.pathname, function(data, textStatus, jqxhr) {
-        console.log(textStatus);
-        if(textStatus === "200") {
-          $("#status").html(data);
-        } else {
-          clearInterval(timerId);
-          window.location.reload(true);
-        }
-      });
-      /*
-      $.getScript(window.location.pathname, function(data, textStatus, jqxhr) {
-        console.log('Status info updated.');
-      });
-      */
-    },2000);
+    $.get(window.location.pathname, function(data, textStatus, jqxhr) {
+      if(/Importing/.test(data)) {
+        console.log("Matched 'Importing'");
+        $("#status").html(data);
+        setTimeout(upload_progress, 2000);
+      } else {
+        console.log("Unmatched");
+        window.location.reload(true);
+      }
+    });
   }
 };
-
-// $(document).ready(upload_progress);
-$(document).on("turbolinks:load", upload_progress);
+$(document).ready(upload_progress);
