@@ -7,7 +7,8 @@ module ApplicationHelper
   def grouped_areas
     {
       "RMAs" => PafsCore::Area.rma_areas.order(:name).map { |a| [a.name, a.id] },
-      "PSOs" => PafsCore::Area.pso_areas.order(:name).map { |a| [a.name, a.id] }
+      "PSOs" => PafsCore::Area.pso_areas.order(:name).map { |a| [a.name, a.id] },
+      "EA Areas" => PafsCore::Area.ea_areas.order(:name).map { |a| [a.name, a.id] }
     }
   end
 
