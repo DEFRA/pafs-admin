@@ -14,6 +14,11 @@ class Admin::ProgramUploadsController < ApplicationController
     items_per_page = params.fetch(:per, 50)
     @upload = PafsCore::ProgramUpload.find(params[:id])
     @items = @upload.program_upload_items.order(created_at: :asc).page(page).per(items_per_page)
+    if request.xhr?
+      render partial: "status.html.erb"
+    else
+      render "show"
+    end
   end
 
   def new

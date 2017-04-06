@@ -1,12 +1,13 @@
 var upload_progress = function() {
   if ($('.upload-progress').length) {
-    setInterval(function(){
-      $.getScript(window.location.pathname, function(data, textStatus, jqxhr) {
-        console.log('Status info updated.');
-      });
-    },2000);
+    $.get(window.location.pathname, function(data, textStatus, jqxhr) {
+      if(/Importing/.test(data)) {
+        $("#status").html(data);
+        setTimeout(upload_progress, 2000);
+      } else {
+        window.location.reload(true);
+      }
+    });
   }
 };
-
-// $(document).ready(upload_progress);
-$(document).on("turbolinks:load", upload_progress);
+$(document).ready(upload_progress);
