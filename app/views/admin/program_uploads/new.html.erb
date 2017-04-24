@@ -8,12 +8,6 @@
   <div class="grid-row">
     <div class="column-two-thirds">
       <p><%= t(".description") %></p>
-      <div class="notice">
-        <i class="icon icon-important">
-          <span class="visuallyhidden">Warning</span>
-        </i>
-        <strong class="bold-small"><%= t(".notice") %></strong>
-      </div>
     </div>
   </div>
   <div class="form-group">
@@ -24,6 +18,31 @@
         aria: { labelledby: "file-upload" } %>
       <%= f.hidden_field :id %>
     <% end %>
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="notice">
+          <i class="icon icon-important">
+            <span class="visuallyhidden">Important:</span>
+          </i>
+          <strong class="bold-small"><%= t(".notice") %></strong>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.check_box :reset_consented_flag, label: t(".reset_label") %>
+    </div>
     <%= f.submit t(".upload_and_process_label"), class: 'button' %>
+    <div class="grid-row headroom">
+      <div class="column-two-thirds">
+        <details role="group">
+          <summary role="button" aria-controls="import-help">
+            <span class="summary"><%= t(".import_help_title") %></span>
+          </summary>
+          <div class="panel panel-indent panel-border-narrow" id="import-help">
+            <%= t(".import_help_html") %>
+          </div>
+        </details>
+      </div>
+    </div>
   </div>
 <% end %>

@@ -26,8 +26,7 @@ class Admin::ProgramUploadsController < ApplicationController
   end
 
   def create
-    @upload = program_uploader.upload(program_uploads_params.
-                                      fetch(:program_upload_file, nil))
+    @upload = program_uploader.upload(program_uploads_params)
 
     if @upload.valid? && @upload.save
       # start the background job
@@ -41,7 +40,7 @@ class Admin::ProgramUploadsController < ApplicationController
 
 private
   def program_uploads_params
-    params.require(:program_upload).permit(:program_upload_file)
+    params.require(:program_upload).permit(:program_upload_file, :reset_consented_flag)
   end
 
   def program_uploader
