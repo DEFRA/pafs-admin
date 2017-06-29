@@ -30,7 +30,7 @@ class Admin::ProgramUploadsController < ApplicationController
 
     if @upload.valid? && @upload.save
       # start the background job
-      PafsCore::ImportProgramRefreshJob.perform_later @upload
+      PafsCore::ImportProgramRefreshJob.perform_later @upload.id
       # the show page will contain progress updates while processing
       redirect_to main_app.admin_program_upload_path(@upload)
     else
