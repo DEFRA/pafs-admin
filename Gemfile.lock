@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 302c921e725dd2f0fe43176e09dfa22353c569c5
+  revision: 54106be70eb2ae85000ccf140d979cdeb6dd3480
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -66,14 +66,14 @@ GEM
       airbrake-ruby (~> 1.8)
     airbrake-ruby (1.8.0)
     arel (6.0.4)
-    aws-sdk (2.10.4)
-      aws-sdk-resources (= 2.10.4)
-    aws-sdk-core (2.10.4)
+    aws-sdk (2.10.11)
+      aws-sdk-resources (= 2.10.11)
+    aws-sdk-core (2.10.11)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.4)
-      aws-sdk-core (= 2.10.4)
-    aws-sigv4 (1.0.0)
+    aws-sdk-resources (2.10.11)
+      aws-sdk-core (= 2.10.11)
+    aws-sigv4 (1.0.1)
     bcrypt (3.1.11)
     benchmark-ips (2.7.2)
     binding_of_caller (0.7.2)
@@ -161,7 +161,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
-    i18n (0.8.4)
+    i18n (0.8.6)
     iniparse (1.4.2)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -311,8 +311,8 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    secure_headers (3.6.5)
-      useragent
+    secure_headers (3.6.6)
+      useragent (>= 0.15.0)
     shellany (0.0.1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
