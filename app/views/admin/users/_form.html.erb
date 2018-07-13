@@ -19,12 +19,17 @@
     <div class="column-two-thirds">
       <%= f.fields_for :user_areas do |uaf| %>
         <%= uaf.hidden_field :primary %>
-        <%#= uaf.label :area_id, class: "form-label-bold" %>
-        <%= uaf.select :area_id,
-          grouped_options_for_select(grouped_areas, uaf.object.area_id),
-          { prompt: "Select an area" },
-          { class: "form-control form-wide area-select" } %>
-      <% end %>
+        <%= uaf.hidden_field :user_id %>
+        <% if uaf.index == 1 %>
+          <p class="form-hint">Additional areas for PSO users ONLY.</p>
+        <% end %>
+        <%=
+          uaf.select :area_id,
+            grouped_options_for_select(determine_grouped_area(uaf.index), uaf.object.area_id),
+            { prompt: "Select an area", label: "#{area_label(uaf.index)}", :include_blank => "Select an area" },
+            { class: "form-control form-wide area-select" }
+        %>
+    <% end %>
     </div>
   </div>
   <%= f.form_group(:base) do %>
