@@ -28,6 +28,10 @@ class Admin::UsersController < ApplicationController
   def new
     @user = User.new
     @user.user_areas.build(primary: true)
+    number_of_total_areas = (3 - @user.user_areas.count).to_i
+    number_of_total_areas.times do
+      @user.user_areas.build
+    end
   end
 
   def create
@@ -35,7 +39,7 @@ class Admin::UsersController < ApplicationController
     # it updating an existing user rather than rejecting a duplicate email address
     # So we're creating the user first and inviting if valid
     p = user_params.merge(password: Devise.friendly_token.first(8))
-    @user = User.create(p)
+    @user = User.create(param_clean(p))
 
     if @user.valid?
       # invite the user
@@ -48,13 +52,30 @@ class Admin::UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    number_of_total_areas = (4 - @user.user_areas.size).to_i
+    number_of_total_areas.times do
+      @user.user_areas.build
+    end
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+
+    params = param_clean(user_params)
+    user_areas_attributes = params['user_areas_attributes']
+    user_areas_attributes.each do |index, user_area|
+      if user_area['area_id'].blank?
+        params['user_areas_attributes'].delete(index)
+      end
+    end
+
+    if @user.update(params)
       redirect_to admin_users_path
     else
+      number_of_total_areas = (4 - @user.user_areas.size).to_i
+      number_of_total_areas.times do
+        @user.user_areas.build
+      end unless @user.valid?
       render "edit"
     end
   end
@@ -68,7 +89,16 @@ class Admin::UsersController < ApplicationController
 private
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :admin, :disabled,
-                                user_areas_attributes: [:id, :area_id, :user_id, :primary])
+                                 user_areas_attributes: [:id, :area_id, :user_id, :primary])
+  end
+
+  def param_clean(_params)
+    _params.delete_if do |k, v|
+      if v.instance_of?(ActionController::Parameters)
+        param_clean(v)
+      end
+      v.empty?
+    end
   end
 
   def invite_user(user)
