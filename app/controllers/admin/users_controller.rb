@@ -39,7 +39,15 @@ class Admin::UsersController < ApplicationController
     # it updating an existing user rather than rejecting a duplicate email address
     # So we're creating the user first and inviting if valid
     p = user_params.merge(password: Devise.friendly_token.first(8))
-    @user = User.create(param_clean(p))
+
+    params = param_clean(p)
+    user_areas_attributes = params['user_areas_attributes']
+    user_areas_attributes.each do |index, user_area|
+      if user_area['area_id'].blank?
+        params['user_areas_attributes'].delete(index)
+      end
+    end
+    @user = User.create(params)
 
     if @user.valid?
       # invite the user
