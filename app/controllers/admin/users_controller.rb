@@ -43,7 +43,7 @@ class Admin::UsersController < ApplicationController
     params = param_clean(p)
     user_areas_attributes = params['user_areas_attributes']
     user_areas_attributes.each do |index, user_area|
-      if user_area['area_id'].blank?
+      if user_area['area_id'].blank? && user_area['primary'] != "true"
         params['user_areas_attributes'].delete(index)
       end
     end
@@ -76,7 +76,7 @@ class Admin::UsersController < ApplicationController
     params = param_clean(user_params)
     user_areas_attributes = params['user_areas_attributes']
     user_areas_attributes.each do |index, user_area|
-      if user_area['area_id'].blank?
+      if user_area['area_id'].blank? && user_area['primary'] != "true"
         params['user_areas_attributes'].delete(index)
       end
     end
