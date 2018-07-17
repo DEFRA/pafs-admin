@@ -54,6 +54,10 @@ class Admin::UsersController < ApplicationController
       invite_user(@user)
       redirect_to admin_users_path
     else
+      number_of_total_areas = (4 - @user.user_areas.size).to_i
+      number_of_total_areas.times do
+        @user.user_areas.build
+      end unless @user.valid?
       render :new
     end
   end
