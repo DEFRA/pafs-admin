@@ -43,7 +43,7 @@ class Admin::UsersController < ApplicationController
     params = param_clean(p)
     user_areas_attributes = params['user_areas_attributes']
     user_areas_attributes.each do |index, user_area|
-      if user_area['area_id'].blank?
+      if user_area['area_id'].blank? && user_area['primary'] != "true"
         params['user_areas_attributes'].delete(index)
       end
     end
@@ -54,6 +54,10 @@ class Admin::UsersController < ApplicationController
       invite_user(@user)
       redirect_to admin_users_path
     else
+      number_of_total_areas = (4 - @user.user_areas.size).to_i
+      number_of_total_areas.times do
+        @user.user_areas.build
+      end unless @user.valid?
       render :new
     end
   end
@@ -72,7 +76,7 @@ class Admin::UsersController < ApplicationController
     params = param_clean(user_params)
     user_areas_attributes = params['user_areas_attributes']
     user_areas_attributes.each do |index, user_area|
-      if user_area['area_id'].blank?
+      if user_area['area_id'].blank? && user_area['primary'] != "true"
         params['user_areas_attributes'].delete(index)
       end
     end
