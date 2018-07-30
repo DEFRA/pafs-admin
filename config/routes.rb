@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :users, except: :delete do
+    resources :user_areas, only: [:destroy]
+    resources :users, except: :destroy do
       member do
         get :reinvite
       end
