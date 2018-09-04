@@ -26,7 +26,7 @@ class Admin::ProgrammeGenerationResetsController < ApplicationController
     # update the status of projects
     # TODO: when time allows change this to "updatable"
     # rubocop:disable Rails/SkipsModelValidations
-    PafsCore::AreaDownload.where(documentation_state: 'generating').update_all(state: 'failed')
+    PafsCore::AreaDownload.where(status: 'generating').update_all(status: 'failed')
     # rubocop:enable Rails/SkipsModelValidations
   end
 end
