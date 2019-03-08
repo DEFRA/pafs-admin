@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 4ad1e9392788d49720892c2ce6998062e87ae17e
-  branch: develop
+  revision: 3954b3caaf8275b146e4160f6a419721301ed082
+  branch: feature/pf_calculator_extraction
   specs:
     pafs_core (0.0.2)
       aws-sdk (~> 2)

@@ -45,7 +45,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: "develop"
+  branch: "feature/pf_calculator_extraction"
 
 gem "dibble", "~> 0.1",
   git: "https://github.com/tonyheadford/dibble",
