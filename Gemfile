@@ -19,6 +19,9 @@ gem "jquery-rails"
 gem "jbuilder", "~> 2.0"
 gem "sdoc", "~> 0.4.0", group: :doc
 
+# Parsing PF Calculator
+gem 'roo'
+
 # pagination
 gem "kaminari"
 
@@ -42,7 +45,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: "develop"
+  branch: "feature/pf_calculator_extraction"
 
 gem "dibble", "~> 0.1",
   git: "https://github.com/tonyheadford/dibble",
