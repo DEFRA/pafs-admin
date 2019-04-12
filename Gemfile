@@ -26,8 +26,8 @@ gem 'roo'
 gem "kaminari"
 
 gem "dotenv-rails"
-gem "devise",           "~> 3.5.2"
-gem "devise_invitable", "~> 1.5.2"
+gem "devise",           "~> 4.6.1"
+gem "devise_invitable", "~> 1.7.5"
 
 # Provided by GDS - Template gives us a master layout into which
 # we can inject our content using yield and content_for
