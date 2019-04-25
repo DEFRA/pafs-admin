@@ -3,8 +3,10 @@ source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
 gem "rails", "~> 4.2.11.1"
+
 # Use postgresql as the database for Active Record
-gem "pg"
+gem "pg", "~> 0.20.0"
+
 # rake 11 can break stuff see: http://stackoverflow.com/questions/35893584/nomethoderror-undefined-method-last-comment-after-upgrading-to-rake-11/35893941
 gem "rake", "< 11.0"
 gem "sass-rails", "~> 5.0"
