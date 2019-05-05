@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :program_uploads, except: [:edit, :update] do
       resources :program_upload_items, only: [:show]
     end
-    resources :camc3, only: [:show], controller: :camc3
   end
   devise_for :users, controllers: { passwords: "passwords" }
 
