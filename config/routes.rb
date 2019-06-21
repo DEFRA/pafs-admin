@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   namespace :admin do
+    namespace :api do
+      post "project/status" => "status_updates#create"
+    end
+
     resources :user_areas, only: [:destroy]
     resources :users, except: :destroy do
       member do

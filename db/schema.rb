@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109074836) do
+ActiveRecord::Schema.define(version: 20190613135917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "old_passwords", force: :cascade do |t|
+    t.string   "encrypted_password",       null: false
+    t.string   "password_archivable_type", null: false
+    t.integer  "password_archivable_id",   null: false
+    t.datetime "created_at"
+  end
+
+  add_index "old_passwords", ["password_archivable_type", "password_archivable_id"], name: "index_password_archivableddu", using: :btree
 
   create_table "pafs_core_account_requests", force: :cascade do |t|
     t.string   "first_name",       default: "",    null: false
@@ -32,6 +41,23 @@ ActiveRecord::Schema.define(version: 20161109074836) do
 
   add_index "pafs_core_account_requests", ["email"], name: "index_pafs_core_account_requests_on_email", unique: true, using: :btree
   add_index "pafs_core_account_requests", ["slug"], name: "index_pafs_core_account_requests_on_slug", unique: true, using: :btree
+
+  create_table "pafs_core_area_downloads", force: :cascade do |t|
+    t.integer  "area_id"
+    t.integer  "user_id"
+    t.datetime "requested_on"
+    t.integer  "number_of_proposals"
+    t.string   "fcerm1_filename"
+    t.string   "benefit_areas_filename"
+    t.string   "moderation_filename"
+    t.integer  "number_of_proposals_with_moderation"
+    t.string   "status",                              default: "empty", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "funding_calculator_filename"
+  end
+
+  add_index "pafs_core_area_downloads", ["area_id"], name: "index_pafs_core_area_downloads_on_area_id", using: :btree
 
   create_table "pafs_core_area_projects", force: :cascade do |t|
     t.integer  "area_id",                    null: false
@@ -55,6 +81,19 @@ ActiveRecord::Schema.define(version: 20161109074836) do
 
   add_index "pafs_core_areas", ["name"], name: "index_pafs_core_areas_on_name", using: :btree
 
+  create_table "pafs_core_asite_files", force: :cascade do |t|
+    t.integer "asite_submission_id"
+    t.string  "filename",            null: false
+    t.string  "checksum",            null: false
+  end
+
+  create_table "pafs_core_asite_submissions", force: :cascade do |t|
+    t.integer  "project_id"
+    t.datetime "email_sent_at",                                null: false
+    t.datetime "confirmation_received_at"
+    t.string   "status",                   default: "created", null: false
+  end
+
   create_table "pafs_core_bootstraps", force: :cascade do |t|
     t.boolean  "fcerm_gia"
     t.boolean  "local_levy"
@@ -65,6 +104,7 @@ ActiveRecord::Schema.define(version: 20161109074836) do
     t.integer  "creator_id"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+    t.string   "rma_name"
   end
 
   add_index "pafs_core_bootstraps", ["slug"], name: "index_pafs_core_bootstraps_on_slug", unique: true, using: :btree
@@ -98,6 +138,37 @@ ActiveRecord::Schema.define(version: 20161109074836) do
     t.integer "not_yet_identified",       limit: 8
     t.integer "total",                    limit: 8, default: 0, null: false
   end
+
+  create_table "pafs_core_program_upload_failures", force: :cascade do |t|
+    t.integer  "program_upload_item_id"
+    t.string   "field_name",             null: false
+    t.string   "messages",               null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pafs_core_program_upload_failures", ["program_upload_item_id"], name: "idx_program_upload_failures", using: :btree
+
+  create_table "pafs_core_program_upload_items", force: :cascade do |t|
+    t.integer  "program_upload_id"
+    t.string   "reference_number",  null: false
+    t.boolean  "imported",          null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pafs_core_program_upload_items", ["program_upload_id"], name: "idx_program_upload_items", using: :btree
+
+  create_table "pafs_core_program_uploads", force: :cascade do |t|
+    t.string   "filename",                             null: false
+    t.integer  "number_of_records",                    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "status",               default: "new"
+    t.boolean  "reset_consented_flag", default: false, null: false
+  end
+
+  add_index "pafs_core_program_uploads", ["status"], name: "pafs_core_upload_status", using: :btree
 
   create_table "pafs_core_projects", force: :cascade do |t|
     t.string   "reference_number",                                                 null: false
@@ -140,6 +211,11 @@ ActiveRecord::Schema.define(version: 20161109074836) do
     t.string   "funding_calculator_content_type"
     t.integer  "funding_calculator_file_size"
     t.datetime "funding_calculator_updated_at"
+    t.text     "project_location",                                 default: [],                 array: true
+    t.integer  "project_location_zoom_level",                      default: 15
+    t.text     "benefit_area"
+    t.text     "benefit_area_centre",                                                           array: true
+    t.integer  "benefit_area_zoom_level"
     t.datetime "submitted_at"
     t.integer  "flood_protection_before"
     t.integer  "flood_protection_after"
@@ -163,11 +239,6 @@ ActiveRecord::Schema.define(version: 20161109074836) do
     t.boolean  "remove_eel_barrier"
     t.float    "fish_or_eel_amount"
     t.boolean  "funding_sources_visited",                          default: false
-    t.text     "project_location",                                 default: [],                 array: true
-    t.integer  "project_location_zoom_level",                      default: 15
-    t.text     "benefit_area"
-    t.text     "benefit_area_centre",                                                           array: true
-    t.integer  "benefit_area_zoom_level"
     t.string   "benefit_area_file_name"
     t.string   "benefit_area_content_type"
     t.integer  "benefit_area_file_size"
@@ -186,6 +257,12 @@ ActiveRecord::Schema.define(version: 20161109074836) do
     t.float    "kilometres_of_protected_river_improved"
     t.string   "county"
     t.datetime "urgency_details_updated_at"
+    t.string   "grid_reference"
+    t.boolean  "reservoir_flooding"
+    t.boolean  "consented",                                        default: false, null: false
+    t.boolean  "reduced_risk_of_households_for_floods",            default: false, null: false
+    t.boolean  "reduced_risk_of_households_for_coastal_erosion",   default: false, null: false
+    t.string   "rma_name"
   end
 
   add_index "pafs_core_projects", ["reference_number", "version"], name: "index_pafs_core_projects_on_reference_number_and_version", unique: true, using: :btree
@@ -201,6 +278,13 @@ ActiveRecord::Schema.define(version: 20161109074836) do
 
   add_index "pafs_core_reference_counters", ["rfcc_code"], name: "index_pafs_core_reference_counters_on_rfcc_code", unique: true, using: :btree
 
+  create_table "pafs_core_states", force: :cascade do |t|
+    t.integer  "project_id"
+    t.string   "state",      default: "draft", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "pafs_core_user_areas", force: :cascade do |t|
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
@@ -213,24 +297,24 @@ ActiveRecord::Schema.define(version: 20161109074836) do
   add_index "pafs_core_user_areas", ["user_id"], name: "index_pafs_core_user_areas_on_user_id", using: :btree
 
   create_table "pafs_core_users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
+    t.string   "email",                             default: "",    null: false
+    t.string   "encrypted_password",                default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer  "sign_in_count",                     default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.integer  "failed_attempts",        default: 0,     null: false
+    t.integer  "failed_attempts",                   default: 0,     null: false
     t.string   "unlock_token"
     t.datetime "locked_at"
-    t.string   "first_name",             default: "",    null: false
-    t.string   "last_name",              default: "",    null: false
+    t.string   "first_name",                        default: "",    null: false
+    t.string   "last_name",                         default: "",    null: false
     t.string   "job_title"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -238,11 +322,13 @@ ActiveRecord::Schema.define(version: 20161109074836) do
     t.integer  "invitation_limit"
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
-    t.integer  "invitations_count",      default: 0
-    t.boolean  "admin",                  default: false, null: false
-    t.boolean  "enabled",                default: true,  null: false
+    t.integer  "invitations_count",                 default: 0
+    t.boolean  "admin",                             default: false, null: false
+    t.boolean  "disabled",                          default: false, null: false
+    t.string   "unique_session_id",      limit: 20
   end
 
+  add_index "pafs_core_users", ["disabled"], name: "index_pafs_core_users_on_disabled", using: :btree
   add_index "pafs_core_users", ["email"], name: "index_pafs_core_users_on_email", unique: true, using: :btree
   add_index "pafs_core_users", ["invitation_token"], name: "index_pafs_core_users_on_invitation_token", unique: true, using: :btree
   add_index "pafs_core_users", ["invitations_count"], name: "index_pafs_core_users_on_invitations_count", using: :btree
