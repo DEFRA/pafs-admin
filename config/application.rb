@@ -26,6 +26,10 @@ module PafsAdmin
       Dir.glob(File.join(Rails.root, "app/decorators", "**/*_decorator*.rb")).each do |c|
         require_dependency(c)
       end
+
+      Dir.glob(File.join(Rails.root, "lib/project_failures/**/*.rb")).each do |c|
+        require_dependency(c)
+      end
     end
 
     config.active_job.queue_adapter = :sucker_punch
