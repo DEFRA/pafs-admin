@@ -1,0 +1,70 @@
+<% content_for :page_title, make_page_title("Failed PoL Submissions") %>
+
+<div id="dashboard">
+  <h1 class="heading-large">Failed PoL Submissions</h1>
+  <p>The following submissions have not been flagged as received by PoL</p>
+
+  <section>
+    <% unless projects.empty? %>
+      <table class="dashboard">
+        <thead>
+          <tr>
+            <th scope="col" class="project-number">National project number</th>
+            <th scope="col" class="sortable-heading">Project name</th>
+            <th scope="col">Created by</th>
+            <th scope="col">
+              <% sort_properties_for_col = get_next_sort_order_and_curr_arrow(project_sort_column, "updated_at", project_sort_order, "updated_at", "desc") %>
+
+              <%= link_to "Last updated", admin_failed_submissions_path(sort_col: "updated_at", sort_order: sort_properties_for_col[:next_sort_order]), class: "sortable-link" %>
+              <span class="sortable-arrow"><%=h raw(sort_properties_for_col[:curr_arrow]) %></span>
+            </th>
+
+            <% unless ea_user? %>
+              <th scope="col">Status</th>
+            <% end %>
+
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% projects.each do |project| %>
+            <tr>
+              <td><%= link_to project.reference_number, pafs_core.project_path(project), class: "project-link" %></td>
+              <td><%= project.name %></td>
+              <td><%= project.owner.name unless project.owner.blank? %></td>
+              <td><%= l(project.updated_at) %></td>
+              <% unless ea_user? %>
+                <td><%= status_label_for(project.submission_state.current_state) %></td>
+              <% end %>
+              <td><%= button_to 'Resubmit to PoL', retry_submission_admin_failed_submission_path(project), method: :put %></td>
+              <td><%= button_to 'Mark as submitted', mark_as_submitted_admin_failed_submission_path(project), method: :put %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+    <div class="grid-row page-nav">
+      <div class="pagination column-one-third">
+        <%= page_entries_info projects %>
+      </div>
+      <div class="column-two-thirds">
+        <div class="pagination-area">
+          <%= paginate projects, left: 0, right: 0, window: 2 %>
+        </div>
+      </div>
+      <% if projects.empty? %>
+        <div class="column-three-quarters">
+          <p>There are no failed submissions</p>
+        </div>
+      <% end %>
+
+      <div class="column-three-quarters">
+        <p>If a JSON file continues to fail, after resend, please contact the Program Framework helpdesk: <a href='mailto:helpdesk@programframework.com.'>helpdesk@programframework.com</a>.</p> 
+        <p>Also copy into the email the Asset Management Business Systems Team: <a href='mailto:AssetManagementTeam@environment-agency.gov.uk'>AssetManagementTeam@environment-agency.gov.uk</a>.</p>
+        <p>Both teams will work with PAFs to resolve the issue.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
