@@ -4,6 +4,13 @@ Rails.application.routes.draw do
       post "project/status" => "status_updates#create"
     end
 
+    resources :failed_submissions, only: :index do
+      member do
+        put :mark_as_submitted
+        put :retry_submission
+      end
+    end
+
     resources :user_areas, only: [:destroy]
     resources :users, except: :destroy do
       member do

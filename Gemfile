@@ -58,6 +58,7 @@ group :development, :test do
   gem "byebug"
   gem "pry"
   gem "guard-rspec", require: false
+  gem "climate_control"
 end
 
 group :development do
@@ -75,6 +76,7 @@ group :test do
   gem "database_cleaner"
   gem "simplecov", require: false
   gem "codeclimate-test-reporter", "~> 0.6", require: false
+  gem "webmock"
 end
 
 group :production, :edge, :qa, :staging do
