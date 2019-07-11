@@ -19,26 +19,19 @@
               <span class="sortable-arrow"><%=h raw(sort_properties_for_col[:curr_arrow]) %></span>
             </th>
 
-            <% unless ea_user? %>
-              <th scope="col">Status</th>
-            <% end %>
-
-            <th></th>
+            <th>Actions</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           <% projects.each do |project| %>
             <tr>
-              <td><%= link_to project.reference_number, pafs_core.project_path(project), class: "project-link" %></td>
+              <td><%= project.reference_number %></td>
               <td><%= project.name %></td>
               <td><%= project.owner.name unless project.owner.blank? %></td>
               <td><%= l(project.updated_at) %></td>
-              <% unless ea_user? %>
-                <td><%= status_label_for(project.submission_state.current_state) %></td>
-              <% end %>
-              <td><%= button_to 'Resubmit to PoL', retry_submission_admin_failed_submission_path(project), method: :put %></td>
-              <td><%= button_to 'Mark as submitted', mark_as_submitted_admin_failed_submission_path(project), method: :put %></td>
+              <td><%= button_to 'Resend to PoL', retry_submission_admin_failed_submission_path(project), method: :put %></td>
+              <td><%= button_to 'Proposal in PoL', mark_as_submitted_admin_failed_submission_path(project), method: :put %></td>
             </tr>
           <% end %>
         </tbody>
@@ -60,9 +53,33 @@
       <% end %>
 
       <div class="column-three-quarters">
-        <p>If a JSON file continues to fail, after resend, please contact the Program Framework helpdesk: <a href='mailto:helpdesk@programframework.com.'>helpdesk@programframework.com</a>.</p> 
-        <p>Also copy into the email the Asset Management Business Systems Team: <a href='mailto:AssetManagementTeam@environment-agency.gov.uk'>AssetManagementTeam@environment-agency.gov.uk</a>.</p>
-        <p>Both teams will work with PAFs to resolve the issue.</p>
+        <details role="group">
+          <summary role="button" aria-controls="failed-submissions-help">
+            <span class="summary">How to manage failed submissions</span>
+          </summary>
+          <div class="panel panel-indent panel-border-narrow" id="failed-submissions-help">
+            <p>Check if the proposal has arrived in PoL</p>
+
+            <ul class='instructions'>
+              <li>If YES, click on the 'Proposal in PoL' button.<br/>The proposal will disappear from the list, end of process.</li>
+              <li>
+                If NO, click on the 'Resend to PoL' button<br/>
+                If displays successfully resubmitted, end of process.<br/>
+                If displays failed to resubmit, the resend was unsuccessful
+                <ul class='instructions'>
+                  <li>
+                    For unsuccessful resends, please contact the Program Framework helpdesk<br/>
+                    <%= link_to nil, 'mailto:helpdesk@programframework.com' %>
+                  </li>
+                  <li>
+                    Also copy into the email the Asset Management Business Systems Team<br/>
+                    <%= link_to nil, 'mailto:AssetManagementTeam@environment-agency.gov.uk' %>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </details>
       </div>
     </div>
   </section>

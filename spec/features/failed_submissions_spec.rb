@@ -46,7 +46,7 @@ RSpec.feature 'Failed to Send Report', type: :feature do
       click_on 'Failed Submissions'
 
       expect do
-        click_on 'Mark as submitted'
+        click_on 'Proposal in PoL'
         expect(page).to have_content("There are no failed submissions")
       end.to change { project.reload.submitted_to_pol }
     end
@@ -56,7 +56,7 @@ RSpec.feature 'Failed to Send Report', type: :feature do
       click_on 'Failed Submissions'
 
       expect do
-        click_on 'Resubmit to PoL'
+        click_on 'Resend to PoL'
         expect(page).to have_content("There are no failed submissions")
       end.to change { project.reload.submitted_to_pol }
     end
