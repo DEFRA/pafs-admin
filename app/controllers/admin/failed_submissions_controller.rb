@@ -20,11 +20,11 @@ class Admin::FailedSubmissionsController < ApplicationController
   private
 
   def redirect_success
-    redirect_to :back, flash: { info: 'Successfully resubmitted'}
+    redirect_to :back, flash: { notice: "#{project.reference_number} Successfully resubmitted"}
   end
 
   def redirect_failure
-    redirect_to :back, flash: { warn: 'Failed to resubmit' }
+    redirect_to :back, flash: { alert: "#{project.reference_number} Failed to resubmit" }
   end
 
   def submission

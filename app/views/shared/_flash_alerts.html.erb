@@ -6,7 +6,7 @@
   flashes = flash.to_hash.symbolize_keys.slice(:alert, :notice, :info, :warn, :not_authorized)
 %>
 <% if flashes.any? %>
-  <div class="front-office-core-alerts text">
+  <div class="front-office-core-alerts">
     <% flashes.each do |key, messages| %>
         <%
           flash.discard(key)

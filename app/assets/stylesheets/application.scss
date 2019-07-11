@@ -13,3 +13,14 @@
  *= require ./_user_bar
  *= require ./_upload
 */
+
+ul.instructions {
+  list-style-type: disc;
+  padding-left: 2em;
+  margin: 1em 0;
+
+  li {
+    margin-bottom: 0.5em;
+  }
+}
+

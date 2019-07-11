@@ -26,6 +26,7 @@
 <% content_for(:content) do %>
   <main id="content" role="main">
     <%= render "shared/user_bar" if user_signed_in? %>
+    <%= render "shared/flash_alerts" %>
     <%= yield %>
   </main>
 <% end %>
