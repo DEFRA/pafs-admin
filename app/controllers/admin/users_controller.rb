@@ -92,6 +92,16 @@ class Admin::UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+
+    if @user.destroy
+      redirect_to admin_users_path, flash: { notice: 'User deleted' }
+    else
+      redirect_to admin_users_path, flash: { alert: 'Could not delete user' }
+    end
+  end
+
   def reinvite
     @user = User.find(params[:id])
     invite_user(@user)
