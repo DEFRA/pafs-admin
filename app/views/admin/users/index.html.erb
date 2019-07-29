@@ -17,7 +17,6 @@
       <th data-sortable="email">Email</th>
       <th data-sortable="area">Area</th>
       <th>Admin</th>
-      <th>Disabled</th>
       <th><span class="visually-hidden">Action</span></th>
     </tr>
   </thead>
@@ -28,7 +27,6 @@
         <td><%= user.email %></td>
         <td><%= user.primary_area.name %></td>
         <td><%= flag_for user.admin? %></td>
-        <td><%= flag_for user.disabled? %></td>
         <td><%= link_to "Edit", edit_admin_user_path(user) %>
           <span class="visually-hidden"> details for <%= user.full_name %></span>
         </td>

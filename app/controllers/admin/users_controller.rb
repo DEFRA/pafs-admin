@@ -100,7 +100,7 @@ class Admin::UsersController < ApplicationController
 
 private
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :admin, :disabled,
+    params.require(:user).permit(:first_name, :last_name, :email, :admin,
                                  user_areas_attributes: [:id, :area_id, :user_id, :primary])
   end
 
