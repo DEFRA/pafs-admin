@@ -45,13 +45,6 @@
         <%= f.check_box :admin, label: t("admin_label") %>
       </div>
     </div>
-    <% if action_name != "new" && @user.persisted? %>
-      <div class="grid-row with-headroom">
-        <div class="column-two-thirds">
-          <%= f.check_box :disabled, label: t("disable_account_label") %>
-        </div>
-      </div>
-    <% end -%>
   <% end %>
   <% if action_name != "new" && @user.persisted? %>
     <div class="form-group">
