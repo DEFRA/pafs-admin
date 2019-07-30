@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
 
     resources :user_areas, only: [:destroy]
-    resources :users, except: :destroy do
+    resources :users do
       member do
         get :reinvite
       end

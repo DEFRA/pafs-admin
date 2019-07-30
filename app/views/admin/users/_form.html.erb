@@ -84,6 +84,12 @@
           <%= link_to "Resend invitation", reinvite_admin_user_path(@user) %>
         </div>
       <% end -%>
+
+      <% if @user.persisted? %>
+        <div class="delete-link">
+          <%= link_to "Delete", admin_user_path(@user), method: :delete, data: { confirm: "Are you sure you want to delete this user?" } %>
+        </div>
+      <% end%>
     </div>
   </div>
 <% end %>
