@@ -73,6 +73,8 @@ group :test do
   gem "shoulda-matchers", "~> 3.1"
   gem "faker"
   gem "capybara"
+  gem 'capybara-webmock'
+  gem "poltergeist"
   gem "database_cleaner"
   gem "simplecov", require: false
   gem "codeclimate-test-reporter", "~> 0.6", require: false
