@@ -5,13 +5,11 @@ module Admin::Api
       return render_error unless project.state.update_column(:state, 'draft')
 
       head status: 204
+    rescue ActiveRecord::RecordNotFound
+      render_missing
     end
 
     private
-
-    def render_error
-      head status: 422
-    end
 
     def update_params
       @update_params ||= params.permit('NPN', 'Status')

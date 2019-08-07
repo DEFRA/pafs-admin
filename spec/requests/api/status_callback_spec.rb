@@ -40,9 +40,8 @@ RSpec.feature 'Status update callback', type: :request do
       let(:payload) { { "NPN": "INVALID", "Status": status } }
 
       scenario 'the endpoint responds with a 404' do
-        expect do
-          perform
-        end.to raise_exception(ActiveRecord::RecordNotFound)
+        perform
+        expect(response.status).to eql(404)
       end
     end
 

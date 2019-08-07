@@ -16,6 +16,14 @@ module Admin::Api
       head status: 401
     end
 
+    def render_error
+      head status: 422
+    end
+
+    def render_missing
+      head status: 404
+    end
+
     def auth_token
       request.headers.fetch("Authorization", '').gsub(/^Bearer /, '')
     end
