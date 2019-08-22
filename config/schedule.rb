@@ -21,10 +21,10 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :job_template, "/bin/bash -l -c 'eval \"$(rbenv init -)\" && :job'"
+set :job_template, "/bin/bash -l -c 'cd :path && . ../../.exportedenv && :job'"
 
 # This is the report sent to admins detailing the projects that were submitted,
 # but that have not been received by PoL
-every :day, at: "03:00", roles: [:db] do
+every :day, at: "03:00" do
   rake "admin:send_failure_report"
 end
