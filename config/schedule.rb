@@ -21,7 +21,7 @@
 
 # Learn more: http://github.com/javan/whenever
 
-set :job_template, "/bin/bash -l -c 'cd :path && . ../../.exportedenv && :job'"
+job_type :rake, "cd :path && . ../../.exportedenv && :environment_variable=:environment bundle exec rake :task --silent :output"
 
 # This is the report sent to admins detailing the projects that were submitted,
 # but that have not been received by PoL
