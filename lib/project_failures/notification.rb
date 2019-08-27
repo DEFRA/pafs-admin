@@ -12,7 +12,13 @@ module ProjectFailures
       new(report).tap(&:perform)
     end
 
+    def enabled?
+      ENV.key? 'POL_FAILURE_NOTIFICATION_EMAIL'
+    end
+
     def perform
+      return unless enabled?
+
       email.deliver_now
     end
 
