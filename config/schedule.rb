@@ -25,6 +25,6 @@ job_type :rake, "cd :path && . ../../.exportedenv && :environment_variable=:envi
 
 # This is the report sent to admins detailing the projects that were submitted,
 # but that have not been received by PoL
-every :day, at: "03:00" do
+every :day, at: "09:30" do
   rake "admin:send_failure_report"
 end
