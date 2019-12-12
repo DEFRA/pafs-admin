@@ -20,6 +20,10 @@ class AccountRequestMailer < ApplicationMailer
       invitation_token: user.raw_invitation_token
     )
     prevent_tracking
-    mail(to: user.email, subject: "Account created - FCERM project funding")
+    mail(
+      bcc: ENV.fetch('DEVISE_INVITATION_BCC', nil),
+      to: user.email, 
+      subject: "Account created - FCERM project funding"
+    )
   end
 end
