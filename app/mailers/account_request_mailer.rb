@@ -21,7 +21,7 @@ class AccountRequestMailer < ApplicationMailer
     )
     prevent_tracking
     mail(
-      bcc: ENV.fetch('DEVISE_INVITATION_BCC', nil),
+      cc: ENV.fetch('DEVISE_INVITATION_CC', nil),
       to: user.email, 
       subject: "Account created - FCERM project funding"
     )
