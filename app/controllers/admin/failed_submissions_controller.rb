@@ -9,7 +9,7 @@ class Admin::FailedSubmissionsController < ApplicationController
 
   def mark_as_submitted
     project.update_column(:submitted_to_pol, Time.now.utc)
-    redirect_to :back
+    redirect_back(fallback_location: root_path)
   end
 
   def retry_submission
@@ -20,11 +20,11 @@ class Admin::FailedSubmissionsController < ApplicationController
   private
 
   def redirect_success
-    redirect_to :back, flash: { notice: "#{project.reference_number} Successfully resubmitted"}
+    redirect_back fallback_location: root_path, flash: { notice: "#{project.reference_number} Successfully resubmitted"}
   end
 
   def redirect_failure
-    redirect_to :back, flash: { alert: "#{project.reference_number} Failed to resubmit" }
+    redirect_back fallback_location: root_path, flash: { alert: "#{project.reference_number} Failed to resubmit" }
   end
 
   def submission
