@@ -1,18 +1,18 @@
 # frozen_string_literal: true
+
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "~> 4.2.11.1"
+gem "rails", ">= 5.1.0", "< 5.2"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 0.20.0"
 
-# rake 11 can break stuff see: http://stackoverflow.com/questions/35893584/nomethoderror-undefined-method-last-comment-after-upgrading-to-rake-11/35893941
-gem "rake", "< 11.0"
-gem "sass-rails", "~> 5.0"
-gem "uglifier", ">= 1.3.0"
+gem "rake"
+gem "sass-rails"
+gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
-gem "coffee-rails", "~> 4.1.0"
+gem "coffee-rails"
 gem "therubyracer", platforms: :ruby
 gem "font-awesome-sass", "~> 4.5.0"
 gem "jquery-rails"
@@ -29,12 +29,12 @@ gem "kaminari"
 
 gem "dotenv-rails"
 gem "devise",           "~> 4.6.1"
-gem "devise_invitable", "~> 1.7.5"
+gem "devise_invitable", "~> 2.0"
 
 # Provided by GDS - Template gives us a master layout into which
 # we can inject our content using yield and content_for
-gem "govuk_template", "~> 0.17.0"
-gem "govuk_frontend_toolkit", "~> 4.10.0"
+gem "govuk_template"
+gem "govuk_frontend_toolkit"
 gem "govuk_elements_rails"
 
 # active job backend
@@ -47,7 +47,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: "develop"
+  branch: "PM-587"
 
 gem "dibble", "~> 0.1",
   git: "https://github.com/tonyheadford/dibble",
@@ -62,7 +62,7 @@ group :development, :test do
 end
 
 group :development do
-  gem "web-console", "~> 2.0"
+  gem "web-console"
   gem "letter_opener"
   gem "spring"
   gem "overcommit"
@@ -70,14 +70,14 @@ end
 
 group :test do
   gem "factory_bot_rails"
-  gem "shoulda-matchers", "~> 3.1"
+  gem "shoulda-matchers"
   gem "faker"
   gem "capybara"
   gem 'capybara-webmock'
   gem "poltergeist"
   gem "database_cleaner"
   gem "simplecov", require: false
-  gem "codeclimate-test-reporter", "~> 0.6", require: false
+  gem "codeclimate-test-reporter", require: false
   gem "webmock"
 end
 
