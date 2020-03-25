@@ -13,15 +13,15 @@ module Admin::Api
     end
 
     def render_unauthorized
-      head status: 401
+      head 401
     end
 
     def render_error
-      head status: 422
+      head 422
     end
 
     def render_missing
-      head status: 404
+      head 404
     end
 
     def auth_token

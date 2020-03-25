@@ -4,7 +4,7 @@ module Admin::Api
       return render_error if update_params.fetch('Status', '') != 'Draft'
       return render_error unless project.state.update_column(:state, 'draft')
 
-      head status: 204
+      head 204
     rescue ActiveRecord::RecordNotFound
       render_missing
     end
