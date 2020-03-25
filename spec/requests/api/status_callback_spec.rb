@@ -12,7 +12,7 @@ RSpec.feature 'Status update callback', type: :request do
     }
   end
 
-  let(:perform) { post '/admin/api/project/status', payload.to_json, headers }
+  let(:perform) { post '/admin/api/project/status', params: payload.to_json, headers: headers }
   let(:auth_token) { 'Bearer VALID' }
 
   before do
