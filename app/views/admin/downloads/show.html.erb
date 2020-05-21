@@ -1,3 +1,15 @@
 <h1 class="heading-large">Download All</h1>
 
-<%= render partial: download_state %>
+<div id='status'>
+  <%= render partial: download_state, locals: { meta: meta } %>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <p>Clicking the button below will generate a new FCRM1 for the entire set of projects in PAFS. This will take a long time to complete.</p>
+  </div>
+</div>
+
+<div class="form-group headroom">
+  <%= button_to "Generate FCRM1 for all projects", admin_download_path, method: :post, class: "button" %>
+</div>
