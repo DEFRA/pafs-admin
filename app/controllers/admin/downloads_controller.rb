@@ -3,7 +3,13 @@ class Admin::DownloadsController < ApplicationController
   helper_method :download_state, :meta
 
   def show
-    return render_state if download_state == 'pending' && request.xhr?
+    respond_to do |format|
+      format.html { request.xhr? ? render_state : render(:show) }
+      format.xlsx do
+        (download_state == 'complete') ? send_spreadsheet : head(404)
+        return
+      end
+    end
   end
 
   def create
@@ -13,6 +19,12 @@ class Admin::DownloadsController < ApplicationController
   end
 
   protected
+
+  def send_spreadsheet
+    PafsCore::Download::All.new.fetch_remote_file do |data|
+      send_data data, type: 'application/xlsx', filename: "all.xlsx"
+    end
+  end
 
   def update_status(data)
     meta_class.create({ last_update: Time.now.utc }.merge(data))
