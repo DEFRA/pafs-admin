@@ -8,10 +8,15 @@ class Admin::DownloadsController < ApplicationController
 
   def create
     GenerateAllFcrm1DownloadJob.perform_later(current_user.id)
+    update_status(status: "pending")
     redirect_to admin_download_path
   end
 
   protected
+
+  def update_status(data)
+    meta_class.create({ last_update: Time.now.utc }.merge(data))
+  end
 
   def render_state
     render partial: "pending.html.erb"
@@ -23,7 +28,11 @@ class Admin::DownloadsController < ApplicationController
     meta.fetch('status', 'blank_slate')
   end
 
+  def meta_class
+    @meta_class ||= PafsCore::Download::All.new.meta
+  end
+
   def meta
-    @meta ||= PafsCore::Download::All.new.meta.load
+    @meta ||= meta_class.load
   end
 end
