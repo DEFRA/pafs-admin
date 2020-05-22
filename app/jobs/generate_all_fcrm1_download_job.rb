@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class GenerateAllFcrm1DownloadJob < PafsCore::ApplicationJob
+class GenerateAllFcrm1DownloadJob < ApplicationJob
   def perform(user_id)
     ApplicationRecord.connection_pool.with_connection do
       begin
