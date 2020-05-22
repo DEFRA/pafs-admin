@@ -25,7 +25,7 @@ RSpec.feature "Download all", type: :feature do
       visit "/admin/download"
       expect(page).to have_content("The complete FCRM1 has not yet been generated")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to_not have_content("Download FCRM1")
+      expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
     end
   end
 
@@ -38,7 +38,7 @@ RSpec.feature "Download all", type: :feature do
       visit "/admin/download"
       expect(page).to have_content("An error occurred while generating the FCRM1")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to_not have_content("Download FCRM1")
+      expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
     end
   end
 
@@ -51,7 +51,7 @@ RSpec.feature "Download all", type: :feature do
       visit "/admin/download"
       expect(page).to have_content("The complete FCRM1 is being generated")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to_not have_content("Download FCRM1")
+      expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
     end
   end
 
@@ -64,7 +64,7 @@ RSpec.feature "Download all", type: :feature do
       visit "/admin/download"
       expect(page).to have_content("FCRM1 generation completed at")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to have_content("Download FCRM1")
+      expect(page).to have_selector('a', text: "Proposals (Excel document)")
     end
   end
 
@@ -72,7 +72,12 @@ RSpec.feature "Download all", type: :feature do
     visit "/admin/download"
     click_on "Generate FCRM1 for all projects"
 
-    expect(page).to have_selector("p.status.pending", text: "The complete FCRM1 is being generated")
-    expect(page).to have_selector("p.status.complete", text: "FCRM1 generation completed at")
+    expect(page).to have_content("The complete FCRM1 is being generated")
+    expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
+
+    sleep(2)
+    visit "/admin/download"
+    expect(page).to have_content("FCRM1 generation completed at")
+    expect(page).to have_selector('a', text: "Proposals (Excel document)")
   end
 end
