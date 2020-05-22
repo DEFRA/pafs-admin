@@ -1,0 +1,13 @@
+<div class="status pending grid-row generation-progress">
+  <div class="column-two-thirds">
+    <p>The complete FCRM1 is being generated.</p>
+    <p>
+      <strong class="heading-small">
+        <% if meta['current_record'] && meta['total_records'] %>
+          <%= meta['current_record'] %> / <%= meta['total_records'] %> 
+          (<%= ((meta['current_record'].to_f / meta['total_records'].to_f) * 100).to_i %>% complete)
+        <% end %>
+      </strong>
+    </p>
+  </div>
+</div>

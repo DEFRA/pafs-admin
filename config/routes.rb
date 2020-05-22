@@ -4,6 +4,8 @@ Rails.application.routes.draw do
       post "project/status" => "status_updates#create"
     end
 
+    resource :download, only: [:show, :create]
+
     resources :failed_submissions, only: :index do
       member do
         put :mark_as_submitted

@@ -1,0 +1,23 @@
+<div class="grid-row">
+  <div class="column-two-thirds">
+    <p>FCRM1 generation completed at <%= DateTime.parse(meta['last_update']).localtime.to_s(:long) %></p>
+  </div>
+</div>
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+  <section class="projects-download-link">
+    <div class="attachment">
+      <div class="attachment-thumb">
+        <%= link_to image_tag("pafs_core/pub-cover-spreadsheet.png"), admin_download_path(format: :xlsx), class: "thumbnail" %>
+      </div>
+      <div class="attachment-details">
+        <%= link_to "Proposals (Excel document)", admin_download_path(format: :xlsx), class: "font-medium" %>
+        <p class="font-xsmall">MS Excel Spreadsheet</p>
+        <p class="font-xsmall">
+          This is formatted in the same way as the old spreadsheet, for convenience.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
