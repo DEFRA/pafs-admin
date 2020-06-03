@@ -21,9 +21,7 @@ class Admin::DownloadsController < ApplicationController
   protected
 
   def send_spreadsheet
-    PafsCore::Download::All.new.fetch_remote_file do |data|
-      send_data data, type: 'application/xlsx', filename: "all.xlsx"
-    end
+    redirect_to PafsCore::Download::All.new.remote_file_url
   end
 
   def update_status(data)
