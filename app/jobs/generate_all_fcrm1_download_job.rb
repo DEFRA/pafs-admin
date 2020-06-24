@@ -10,7 +10,6 @@ class GenerateAllFcrm1DownloadJob < ApplicationJob
         # send notification email to requestor
         AllFcrmGenerationMailer.success(user).deliver_now
       rescue StandardError => e
-        binding.pry
         # send failure notification email
         AllFcrmGenerationMailer.failure(user).deliver_now
         Airbrake.notify(e) if defined? Airbrake
