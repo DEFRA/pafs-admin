@@ -31,7 +31,7 @@
         <% end %>
         <%=
           uaf.select :area_id,
-            grouped_options_for_select(grouped_areas, uaf.object.area_id),
+            grouped_options_for_select(determine_grouped_area(uaf.index), uaf.object.area_id),
             { prompt: "Select an area", label: "#{area_label(uaf.index)}", :include_blank => true },
             { class: "form-control form-wide area-select" }
         %>
