@@ -21,9 +21,6 @@
       <%= f.fields_for :user_areas do |uaf| %>
         <%= uaf.hidden_field :primary %>
         <%= uaf.hidden_field :user_id %>
-        <% if uaf.index == 1 %>
-          <p class="form-hint">Additional areas for PSO users ONLY.</p>
-        <% end %>
         <% if uaf.object.id && uaf.index >= 1 %>
           <div class="add-link column-three-quarters">
             <%= link_to("remove", main_app.admin_user_area_path(uaf.object), data: {:confirm => 'Are you sure?'}, :method => :delete) %>
