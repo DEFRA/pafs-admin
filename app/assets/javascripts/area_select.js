@@ -31,7 +31,7 @@ function UserAreaSelect() {
     }
 
     this.current_area_type = area_type;
-    var new_options = this.options.toArray().find(function(o) { return o.label === area_type });
+    var new_options = this.options.toArray().filter(function(o) { return o.label === area_type })[0];
 
     this.secondary_area_selects.map(function(s){
       s = $(s);
