@@ -23,7 +23,7 @@ function UserAreaSelect() {
     return selected_optgroup.parent()[0].label;
   }
 
-  self.update_secondary_areas = function(_evt = null) {
+  self.update_secondary_areas = function() {
     var area_type = this.get_current_area_type();
 
     if (area_type === this.current_area_type) {
