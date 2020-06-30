@@ -8,17 +8,22 @@ module ApplicationHelper
     (index == 0) ? "Main Area" : "#{index.ordinalize} Area"
   end
 
-  def determine_grouped_area(index)
-    if index == 0
-      grouped_areas
-    else
-      pso_grouped_areas
-    end
+  def determine_grouped_area(index, user)
+    return grouped_areas if index == 0
+    return {} if user.primary_area.nil?
+
+    user.primary_area.pso_area? ? pso_grouped_areas : rma_grouped_areas
   end
 
   def pso_grouped_areas
     {
       "PSOs" => PafsCore::Area.pso_areas.order(:name).map { |a| [a.name, a.id] },
+    }
+  end
+
+  def rma_grouped_areas
+    {
+      "RMAs" => PafsCore::Area.rma_areas.order(:name).map { |a| [a.name, a.id] }
     }
   end
 
