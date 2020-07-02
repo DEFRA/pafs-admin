@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require govuk_publishing_components/dependencies
+//= require govuk_publishing_components/lib
+//= require govuk_publishing_components/components/cookie-banner
 //= require_tree .

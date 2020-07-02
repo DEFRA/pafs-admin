@@ -3,13 +3,13 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", ">= 5.2.0", "< 6"
+gem "rails", ">= 6.0", "< 6.1"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 0.20.0"
 
 gem "rake"
-gem "sass-rails"
+gem "sass-rails", "~> 5.0"
 gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails"
@@ -18,8 +18,8 @@ gem "font-awesome-sass", "~> 4.5.0"
 gem "jquery-rails"
 # gem "jquery-turbolinks"
 # gem "turbolinks"
-gem "jbuilder", "~> 2.0"
-gem "sdoc", "~> 0.4.0", group: :doc
+gem "jbuilder"
+gem "sdoc"
 
 # Parsing PF Calculator
 gem 'roo'
@@ -28,14 +28,16 @@ gem 'roo'
 gem "kaminari"
 
 gem "dotenv-rails"
-gem "devise",           "~> 4.6.1"
+gem "devise",           "~> 4.7.1"
 gem "devise_invitable", "~> 2.0"
+gem "devise-security"
 
 # Provided by GDS - Template gives us a master layout into which
 # we can inject our content using yield and content_for
-gem "govuk_template"
-gem "govuk_frontend_toolkit"
+gem "govuk_template", "0.26.0"
+gem "govuk_frontend_toolkit", "~> 9.0.0"
 gem "govuk_elements_rails"
+gem "govuk_publishing_components"
 
 # active job backend
 gem "sucker_punch", "~> 2.0"
@@ -47,7 +49,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: "develop"
+  branch: "PM-604"
 
 gem "dibble", "~> 0.1",
   git: "https://github.com/tonyheadford/dibble",
@@ -83,7 +85,7 @@ end
 
 group :production, :edge, :qa, :staging do
   gem "rails_12factor"
-  gem "airbrake", "~> 5.0"
+  gem "airbrake", require: false
 end
 
 group :benchmark do

@@ -4,7 +4,6 @@
   <!--[if IE 7]><%= stylesheet_link_tag "application-ie7" %><![endif]-->
   <!--[if IE 8]><%= stylesheet_link_tag "application-ie8" %><![endif]-->
   <meta name="format-detection" content="telephone=no" />
-  <%= javascript_include_tag "application" %>
 <% end %>
 <% unless content_for? :page_title %>
   <% if @project.try(:step) %>
@@ -13,6 +12,9 @@
     <% content_for :page_title, make_page_title(t(:global_proposition_header)) %>
   <% end %>
 <% end %>
+
+<% content_for :body_start do %><%= render "shared/cookie_message" %><% end %>
+<% content_for :cookie_message do %><% end %>
 
 <% content_for :header_class, 'with-proposition' %>
 <% content_for :proposition_header do %>
@@ -32,19 +34,15 @@
 <% end %>
 
 <% content_for :body_end do %>
-  <%# TODO: Move this funtionality to the digital_services_core gem %>
-  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=<%= ENV['DSC_FRONTEND_GOOGLE_TAGMANAGER_ID'] %>"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','<%= ENV['DSC_FRONTEND_GOOGLE_TAGMANAGER_ID'] %>');</script>
-<% end if ENV['DSC_FRONTEND_GOOGLE_TAGMANAGER_ID'].present? %>
+  <%= javascript_include_tag "application" %>
+<% end %>
 
 <% content_for :footer_top do %>
   <div class="ea-footer">
     <p><%= t('global.footer_support_text') %> <%= link_to t("global.helpline_telephone_number"), "tel:#{t("global.helpline_telephone_number").delete(" ") }" %></p>
+    <ul class="inline-list">
+      <li class="inline"><%= link_to 'Cookies', cookies_path,  target: '_blank' %></li>
+    </ul>
     <div class="revision" aria-hidden="true">Build: <%= revision_hash %></div>
   </div>
 <% end %>
