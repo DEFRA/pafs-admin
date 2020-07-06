@@ -3,11 +3,14 @@ function UserAreaSelect() {
 
   self.initialize = function() {
 
-    this.primary_area_select = $('.area-select').first();
+    this.primary_area_select = $('.area-select')[0];
 
-    if (!this.primary_area_select) {
+    if (this.primary_area_select === undefined) {
+      console.log("here");
       return;
     }
+
+    this.primary_area_select = $(this.primary_area_select);
 
     this.options = this.primary_area_select.find('optgroup');
     this.secondary_area_selects = $('.area-select').toArray();
