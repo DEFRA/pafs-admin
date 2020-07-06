@@ -6,7 +6,6 @@ function UserAreaSelect() {
     this.primary_area_select = $('.area-select')[0];
 
     if (this.primary_area_select === undefined) {
-      console.log("here");
       return;
     }
 
