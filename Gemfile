@@ -85,7 +85,6 @@ end
 
 group :production, :edge, :qa, :staging do
   gem "rails_12factor"
-  gem "airbrake", require: false
 end
 
 group :benchmark do
