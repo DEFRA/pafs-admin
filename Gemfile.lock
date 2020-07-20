@@ -1,12 +1,13 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 4e138312a9960a9afb19eb5a465ab5cabff36bc5
-  branch: develop
+  revision: d2be34267e5e7c652bc1f7668374c7b531d4d651
+  branch: fix/airbrake
   specs:
     pafs_core (0.0.2)
       aws-sdk-s3 (~> 1.67)
       bstard
       clamav-client
+      defra_ruby_alert (~> 2.1)
       faraday
       govuk_elements_rails
       govuk_frontend_toolkit
@@ -86,6 +87,10 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    airbrake (10.0.5)
+      airbrake-ruby (~> 4.13)
+    airbrake-ruby (4.15.0)
+      rbtree3 (~> 0.5)
     aws-eventstream (1.1.0)
     aws-partitions (1.344.0)
     aws-sdk-core (3.104.2)
@@ -141,6 +146,8 @@ GEM
       safe_yaml (~> 1.0.0)
     crass (1.0.6)
     database_cleaner (1.8.5)
+    defra_ruby_alert (2.1.1)
+      airbrake
     devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -359,6 +366,7 @@ GEM
       ffi (>= 1.0.6)
       msgpack (>= 0.4.3)
       optimist (>= 3.0.0)
+    rbtree3 (0.6.0)
     rdoc (6.2.1)
     ref (2.0.0)
     regexp_parser (1.7.1)
