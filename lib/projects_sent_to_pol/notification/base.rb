@@ -14,7 +14,7 @@ module ProjectsSentToPol
       end
 
       def enabled?
-        ENV.key? 'POL_FAILURE_NOTIFICATION_EMAIL'
+        !ENV.fetch('POL_FAILURE_NOTIFICATION_EMAIL', nil).blank?
       end
 
       def perform
