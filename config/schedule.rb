@@ -28,3 +28,7 @@ job_type :rake, "cd :path && . ../../.exportedenv && :environment_variable=:envi
 every :day, at: "09:30" do
   rake "admin:send_failure_report"
 end
+
+every :day, at: "08:30" do
+  rake "admin:send_success_report"
+end

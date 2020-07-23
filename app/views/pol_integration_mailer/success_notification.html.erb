@@ -1,0 +1,7 @@
+<p><%= @report.size %> project(s) were sent to PoL yesterday.</p>
+
+<ul>
+  <%- @report.projects.each do |p| %>
+    <li><%= p.reference_number %></li>
+  <% end %>
+</ul>

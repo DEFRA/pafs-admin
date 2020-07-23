@@ -28,7 +28,7 @@ module PafsAdmin
         require_dependency(c)
       end
 
-      Dir.glob(File.join(Rails.root, "lib/project_failures/**/*.rb")).each do |c|
+      Dir.glob(File.join(Rails.root, "lib/projects_sent_to_pol/**/*.rb")).each do |c|
         require_dependency(c)
       end
     end
