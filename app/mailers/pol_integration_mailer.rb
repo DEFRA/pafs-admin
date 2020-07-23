@@ -1,12 +1,18 @@
 # frozen_string_literal: true
 
-class SendFailureMailer < ApplicationMailer
+class PolIntegrationMailer < ApplicationMailer
   include PafsCore::Email
 
-  def notification(report)
+  def failure_notification(report)
     @report = report
     prevent_tracking
     mail(to: admin_email, subject: "Projects pending submission to PoL")
+  end
+
+  def success_notification(report)
+    @report = report
+    prevent_tracking
+    mail(to: admin_email, subject: "Projects sent to PoL")
   end
 
   private
