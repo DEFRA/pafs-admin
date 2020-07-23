@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 758ed2fe47117260a51ec4759d83f62406d1a00b
-  branch: fix/airbrake
+  revision: 9304e58c5e7d86518b15e7711f7a4d85d05232ef
+  branch: develop
   specs:
     pafs_core (0.0.2)
       aws-sdk-s3 (~> 1.67)
