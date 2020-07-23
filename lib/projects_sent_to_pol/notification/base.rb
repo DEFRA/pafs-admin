@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-module ProjectFailures
+module ProjectsSentToPol
   module Notification
-    class Base < Base
+    class Base
       attr_reader :report
 
       def initialize(report)

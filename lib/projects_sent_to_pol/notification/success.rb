@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module ProjectFailures
+module ProjectsSentToPol
   module Notification
     class Success < Base
       def email

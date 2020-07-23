@@ -3,7 +3,7 @@
 namespace :admin do
   task send_success_report: :environment do
     report = ProjectsSentToPol::Report::Success.new
-    abort 'No failures to notify about' if report.empty?
+    abort 'No successes to notify about' if report.empty?
 
     ProjectFailures::Notification::Success.perform(report)
   end
