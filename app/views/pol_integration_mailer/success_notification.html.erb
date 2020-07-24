@@ -2,6 +2,6 @@
 
 <ul>
   <%- @report.projects.each do |p| %>
-    <li><%= p.reference_number %></li>
+    <li>[<%= p.reference_number %>] <%= p.name %></li>
   <% end %>
 </ul>
