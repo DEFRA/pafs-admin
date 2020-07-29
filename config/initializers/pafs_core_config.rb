@@ -6,3 +6,4 @@ PafsCore.configure do |config|
   config.airbrake_blocklist = [/password/i, /authorization/i]
 end
 
+PafsCore.start_airbrake
