@@ -127,6 +127,10 @@ As this point we have no acceptance tests but when we do they can be executed us
 
     cucumber
 
+### Production debugging
+
+More details on the pafs-user [README](https://github.com/DEFRA/pafs-user/#production-debugging)
+
 ## Contributing to this project
 
 If you have an idea you'd like to contribute please log an issue.
