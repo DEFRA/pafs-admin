@@ -127,6 +127,13 @@ As this point we have no acceptance tests but when we do they can be executed us
 
     cucumber
 
+### Production debugging
+
+To launch a rails console on a deployed server, the environment variables might need to be loaded from a different directory
+
+For example:
+`. ../../.exportedenv && RAILS_ENV=production bundle exec rails console`
+
 ## Contributing to this project
 
 If you have an idea you'd like to contribute please log an issue.
