@@ -129,7 +129,7 @@ As this point we have no acceptance tests but when we do they can be executed us
 
 ### Production debugging
 
-More details on the pafs-user [README](https://github.com/DEFRA/pafs-user/)
+More details on the pafs-user [README](https://github.com/DEFRA/pafs-user/#production-debugging)
 
 ## Contributing to this project
 
