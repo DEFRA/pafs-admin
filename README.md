@@ -129,10 +129,7 @@ As this point we have no acceptance tests but when we do they can be executed us
 
 ### Production debugging
 
-To launch a rails console on a deployed server, the environment variables might need to be loaded from a different directory
-
-For example:
-`. ../../.exportedenv && RAILS_ENV=production bundle exec rails console`
+More details on the pafs-user [README](https://github.com/DEFRA/pafs-user/)
 
 ## Contributing to this project
 
