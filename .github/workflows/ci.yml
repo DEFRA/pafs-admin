@@ -42,3 +42,5 @@ jobs:
       - name: Run tests
         run: |
           bundle exec rspec
+        env:
+          POL_FAILURE_NOTIFICATION_EMAIL: foo
