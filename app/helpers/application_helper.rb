@@ -59,6 +59,12 @@ module ApplicationHelper
     end
   end
 
+  def format_last_sign_in_date(date)
+    unless date.nil?
+      date.strftime("%d %B %Y")
+    end
+  end
+
   def disabled_class(user)
     "disabled" if user.disabled?
   end
