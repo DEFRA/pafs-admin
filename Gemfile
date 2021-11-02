@@ -43,7 +43,7 @@ gem "govuk_publishing_components"
 gem "sucker_punch", "~> 2.0"
 
 # static pages
-gem "passenger", "~> 5.0.25", require: false
+gem "passenger", "~> 5.1.0", require: false
 gem "whenever", require: false
 
 # shared PAFS code
