@@ -320,7 +320,7 @@ GEM
     overcommit (0.55.0)
       childprocess (>= 0.6.3, < 5)
       iniparse (~> 1.4)
-    passenger (5.0.30)
+    passenger (5.1.12)
       rack
       rake (>= 0.8.1)
     pg (0.20.0)
@@ -535,7 +535,7 @@ DEPENDENCIES
   letter_opener
   overcommit
   pafs_core (~> 0.0)!
-  passenger (~> 5.0.25)
+  passenger (~> 5.1.0)
   pg (~> 0.20.0)
   poltergeist
   pry
