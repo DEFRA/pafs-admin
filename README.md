@@ -6,9 +6,12 @@ This application contains the back office functionality for the service as is in
 
 The application sends emails using the Send-grid e-mail service.
 
+## PAFS Documentation
+For a full breakdown of the PAFS documentation, technical and non technical please click the [link](https://aimspd.sharepoint.com/sites/pwa_dev/AIMS%20Project%20Delivery%20Collaboration/_layouts/15/guestaccess.aspx?docid=08fcc88cb3f7c45b48a274bf0ea4132f5&authkey=AWuSgciHOQlICM9DP0JtdRA)
+
 ## Development Environment
 
-## Install global system dependencies
+### Install global system dependencies
 
 The following system dependencies are required, regardless of how you install the development environment.
 
