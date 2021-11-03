@@ -27,7 +27,9 @@
 
 <% content_for(:content) do %>
   <main id="content" role="main">
+  <% unless request.path == "/cookies" %>
     <%= render "shared/user_bar" if user_signed_in? %>
+  <% end %>
     <%= render "shared/flash_alerts" %>
     <%= yield %>
   </main>
