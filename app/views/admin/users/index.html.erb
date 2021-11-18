@@ -47,7 +47,10 @@
   </div>
 </div>
 <div class="grid-row">
-  <div class="column-two-thirds actions">
+  <div class="column-one-third actions">
     <%= link_to t("add_user_label"), new_admin_user_path, class: "button" %>
+  </div>
+  <div class="column-two-thirds actions">
+    <%= link_to t("download_users_label"), admin_download_all_users_path(({:format => :xls})), class: "float-link-right"%>
   </div>
 </div>

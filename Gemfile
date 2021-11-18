@@ -20,6 +20,8 @@ gem "jquery-rails"
 # gem "turbolinks"
 gem "jbuilder"
 gem "sdoc"
+gem 'to_xls', '~> 1.5', '>= 1.5.3'
+gem 'spreadsheet', '~> 1.3'
 
 # Parsing PF Calculator
 gem 'roo'

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     end
 
     resource :download, only: [:show, :create]
+    resource :download_all_users, only: [:show]
 
     resources :failed_submissions, only: :index do
       member do
