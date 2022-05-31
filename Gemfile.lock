@@ -323,7 +323,7 @@ GEM
     null_logger (0.0.1)
     optimist (3.0.1)
     orm_adapter (0.5.0)
-    overcommit (0.58.0)
+    overcommit (0.59.1)
       childprocess (>= 0.6.3, < 5)
       iniparse (~> 1.4)
       rexml (~> 3.2)
