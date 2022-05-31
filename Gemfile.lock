@@ -431,7 +431,7 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.10.3)
     ruby-ole (1.2.12.2)
-    ruby-prof (1.4.1)
+    ruby-prof (1.4.3)
     ruby2_keywords (0.0.5)
     rubyXL (3.4.18)
       nokogiri (>= 1.10.8)
