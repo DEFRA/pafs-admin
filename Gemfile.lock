@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 2a6dbeaf05b5313a79486694c1cd8b2e38f2d2f4
+  revision: d35a1a2c64c765ebd06d27f30d306b8acc2f230e
   branch: develop
   specs:
     pafs_core (0.0.2)
@@ -92,7 +92,7 @@ GEM
     airbrake-ruby (6.1.0)
       rbtree3 (~> 0.5)
     aws-eventstream (1.2.0)
-    aws-partitions (1.597.0)
+    aws-partitions (1.598.0)
     aws-sdk-core (3.131.1)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.525.0)
@@ -352,7 +352,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.2)
+    rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
     rails_12factor (0.0.3)
       rails_serve_static_assets
