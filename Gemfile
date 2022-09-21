@@ -13,7 +13,7 @@ gem "sass-rails", "~> 5.0"
 gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails"
-gem "therubyracer", platforms: :ruby
+gem "mini_racer"
 gem "font-awesome-sass", "~> 4.5.0"
 gem "jquery-rails"
 # gem "jquery-turbolinks"
@@ -49,7 +49,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: "develop"
+  branch: "fix/pafs_ci"
 
 gem "dibble", "~> 0.1",
   git: "https://github.com/tonyheadford/dibble",
