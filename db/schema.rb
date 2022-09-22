@@ -2,15 +2,15 @@
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
 #
-# Note that this schema.rb definition is the authoritative source for your
-# database schema. If you need to create the application database on another
-# system, you should be using db:schema:load, not running all the migrations
-# from scratch. The latter is a flawed and unsustainable approach (the more migrations
-# you'll amass, the slower it'll run and the greater likelihood for issues).
+# This file is the source Rails uses to define your schema when running `rails
+# db:schema:load`. When creating a new database, `rails db:schema:load` tends to
+# be faster and is potentially less error prone than running all of your
+# migrations from scratch. Old migrations may fail to apply correctly if those
+# migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200309151323) do
+ActiveRecord::Schema.define(version: 2022_07_19_120343) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,16 @@ ActiveRecord::Schema.define(version: 20200309151323) do
     t.integer "households_at_reduced_risk"
     t.integer "households_protected_from_loss_in_next_20_years"
     t.integer "households_protected_from_loss_in_20_percent_most_deprived"
+    t.integer "non_residential_properties"
+  end
+
+  create_table "pafs_core_flood_protection2040_outcomes", force: :cascade do |t|
+    t.integer "project_id"
+    t.integer "financial_year", null: false
+    t.integer "households_at_reduced_risk"
+    t.integer "moved_from_very_significant_and_significant_to_moderate_or_low"
+    t.integer "households_protected_from_loss_in_20_percent_most_deprived"
+    t.integer "non_residential_properties"
   end
 
   create_table "pafs_core_flood_protection_outcomes", id: :serial, force: :cascade do |t|
@@ -116,6 +126,8 @@ ActiveRecord::Schema.define(version: 20200309151323) do
     t.integer "households_at_reduced_risk"
     t.integer "moved_from_very_significant_and_significant_to_moderate_or_low"
     t.integer "households_protected_from_loss_in_20_percent_most_deprived"
+    t.integer "households_protected_through_plp_measures"
+    t.integer "non_residential_properties"
   end
 
   create_table "pafs_core_funding_contributors", id: :serial, force: :cascade do |t|
@@ -274,6 +286,48 @@ ActiveRecord::Schema.define(version: 20200309151323) do
     t.integer "carbon_sequestered"
     t.bigint "carbon_cost_build"
     t.bigint "carbon_cost_operation"
+    t.boolean "natural_flood_risk_measures_included"
+    t.boolean "river_restoration"
+    t.boolean "floodplain_restoration"
+    t.boolean "leaky_barriers"
+    t.boolean "offline_flood_storage_areas"
+    t.boolean "cross_slope_woodland"
+    t.boolean "catchment_woodland"
+    t.boolean "riparian_woodland"
+    t.boolean "floodplain_woodland"
+    t.boolean "soil_and_land_management"
+    t.boolean "land_and_headwater_drainage_management"
+    t.boolean "runoff_pathway_management"
+    t.boolean "saltmarsh_mudflats_and_managed_realignment"
+    t.boolean "sand_dunes"
+    t.boolean "beach_nourishment"
+    t.string "other_flood_measures"
+    t.float "natural_flood_risk_measures_cost"
+    t.boolean "other_flood_measures_selected"
+    t.boolean "environmental_benefits"
+    t.boolean "intertidal_habitat"
+    t.float "hectares_of_intertidal_habitat_created_or_enhanced"
+    t.boolean "woodland"
+    t.float "hectares_of_woodland_habitat_created_or_enhanced"
+    t.boolean "wet_woodland"
+    t.float "hectares_of_wet_woodland_habitat_created_or_enhanced"
+    t.boolean "wetland_or_wet_grassland"
+    t.float "hectares_of_wetland_or_wet_grassland_created_or_enhanced"
+    t.boolean "grassland"
+    t.float "hectares_of_grassland_habitat_created_or_enhanced"
+    t.boolean "heathland"
+    t.float "hectares_of_heathland_created_or_enhanced"
+    t.boolean "ponds_lakes"
+    t.float "hectares_of_pond_or_lake_habitat_created_or_enhanced"
+    t.boolean "arable_land"
+    t.float "hectares_of_arable_land_lake_habitat_created_or_enhanced"
+    t.boolean "comprehensive_restoration"
+    t.float "kilometres_of_watercourse_enhanced_or_created_comprehensive"
+    t.boolean "partial_restoration"
+    t.float "kilometres_of_watercourse_enhanced_or_created_partial"
+    t.boolean "create_habitat_watercourse"
+    t.float "kilometres_of_watercourse_enhanced_or_created_single"
+    t.boolean "no_properties_affected_by_flooding_2040", default: false, null: false
     t.index ["reference_number", "version"], name: "index_pafs_core_projects_on_reference_number_and_version", unique: true
     t.index ["slug"], name: "index_pafs_core_projects_on_slug", unique: true
     t.index ["submitted_to_pol"], name: "index_pafs_core_projects_on_submitted_to_pol"
