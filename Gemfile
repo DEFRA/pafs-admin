@@ -20,6 +20,8 @@ gem "jquery-rails"
 # gem "turbolinks"
 gem "jbuilder"
 gem "sdoc"
+gem 'to_xls', '~> 1.5', '>= 1.5.3'
+gem 'spreadsheet', '~> 1.3'
 
 # Parsing PF Calculator
 gem 'roo'
@@ -43,13 +45,13 @@ gem "govuk_publishing_components"
 gem "sucker_punch", "~> 2.0"
 
 # static pages
-gem "passenger", "~> 5.0.25", require: false
+gem "passenger", "~> 5.1.0", require: false
 gem "whenever", require: false
 
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
   git: "https://github.com/DEFRA/pafs_core",
-  branch: "fix/pafs_ci"
+  branch: "main"
 
 gem "dibble", "~> 0.1",
   git: "https://github.com/tonyheadford/dibble",

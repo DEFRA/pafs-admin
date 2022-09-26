@@ -13,9 +13,11 @@
 ActiveRecord::Schema.define(version: 2022_07_19_120343) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "citext"
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
-  create_table "old_passwords", id: :serial, force: :cascade do |t|
+  create_table "old_passwords", force: :cascade do |t|
     t.string "encrypted_password", null: false
     t.string "password_archivable_type", null: false
     t.integer "password_archivable_id", null: false
@@ -23,7 +25,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["password_archivable_type", "password_archivable_id"], name: "index_password_archivableddu"
   end
 
-  create_table "pafs_core_account_requests", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_account_requests", force: :cascade do |t|
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
     t.string "email", default: "", null: false
@@ -39,7 +41,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["slug"], name: "index_pafs_core_account_requests_on_slug", unique: true
   end
 
-  create_table "pafs_core_area_downloads", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_area_downloads", force: :cascade do |t|
     t.integer "area_id"
     t.integer "user_id"
     t.datetime "requested_on"
@@ -55,7 +57,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["area_id"], name: "index_pafs_core_area_downloads_on_area_id"
   end
 
-  create_table "pafs_core_area_projects", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_area_projects", force: :cascade do |t|
     t.integer "area_id", null: false
     t.integer "project_id", null: false
     t.boolean "owner", default: false
@@ -65,7 +67,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["project_id"], name: "index_pafs_core_area_projects_on_project_id"
   end
 
-  create_table "pafs_core_areas", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_areas", force: :cascade do |t|
     t.string "name"
     t.integer "parent_id"
     t.string "area_type"
@@ -75,20 +77,20 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["name"], name: "index_pafs_core_areas_on_name"
   end
 
-  create_table "pafs_core_asite_files", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_asite_files", force: :cascade do |t|
     t.integer "asite_submission_id"
     t.string "filename", null: false
     t.string "checksum", null: false
   end
 
-  create_table "pafs_core_asite_submissions", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_asite_submissions", force: :cascade do |t|
     t.integer "project_id"
     t.datetime "email_sent_at", null: false
     t.datetime "confirmation_received_at"
     t.string "status", default: "created", null: false
   end
 
-  create_table "pafs_core_bootstraps", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_bootstraps", force: :cascade do |t|
     t.boolean "fcerm_gia"
     t.boolean "local_levy"
     t.string "name"
@@ -102,7 +104,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["slug"], name: "index_pafs_core_bootstraps_on_slug", unique: true
   end
 
-  create_table "pafs_core_coastal_erosion_protection_outcomes", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_coastal_erosion_protection_outcomes", force: :cascade do |t|
     t.integer "project_id"
     t.integer "financial_year", null: false
     t.integer "households_at_reduced_risk"
@@ -120,7 +122,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.integer "non_residential_properties"
   end
 
-  create_table "pafs_core_flood_protection_outcomes", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_flood_protection_outcomes", force: :cascade do |t|
     t.integer "project_id"
     t.integer "financial_year", null: false
     t.integer "households_at_reduced_risk"
@@ -144,7 +146,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["funding_value_id"], name: "index_pafs_core_funding_contributors_on_funding_value_id"
   end
 
-  create_table "pafs_core_funding_values", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_funding_values", force: :cascade do |t|
     t.integer "project_id"
     t.integer "financial_year", null: false
     t.bigint "fcerm_gia"
@@ -158,7 +160,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.bigint "total", default: 0, null: false
   end
 
-  create_table "pafs_core_program_upload_failures", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_program_upload_failures", force: :cascade do |t|
     t.integer "program_upload_item_id"
     t.string "field_name", null: false
     t.string "messages", null: false
@@ -167,7 +169,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["program_upload_item_id"], name: "idx_program_upload_failures"
   end
 
-  create_table "pafs_core_program_upload_items", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_program_upload_items", force: :cascade do |t|
     t.integer "program_upload_id"
     t.string "reference_number", null: false
     t.boolean "imported", null: false
@@ -176,7 +178,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["program_upload_id"], name: "idx_program_upload_items"
   end
 
-  create_table "pafs_core_program_uploads", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_program_uploads", force: :cascade do |t|
     t.string "filename", null: false
     t.integer "number_of_records", null: false
     t.datetime "created_at"
@@ -186,7 +188,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["status"], name: "pafs_core_upload_status"
   end
 
-  create_table "pafs_core_projects", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_projects", force: :cascade do |t|
     t.string "reference_number", null: false
     t.integer "version", null: false
     t.string "name"
@@ -283,7 +285,6 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.string "confidence_homes_better_protected"
     t.string "confidence_homes_by_gateway_four"
     t.string "confidence_secured_partnership_funding"
-    t.integer "carbon_sequestered"
     t.bigint "carbon_cost_build"
     t.bigint "carbon_cost_operation"
     t.boolean "natural_flood_risk_measures_included"
@@ -333,7 +334,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["submitted_to_pol"], name: "index_pafs_core_projects_on_submitted_to_pol"
   end
 
-  create_table "pafs_core_reference_counters", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_reference_counters", force: :cascade do |t|
     t.string "rfcc_code", default: "", null: false
     t.integer "high_counter", default: 0, null: false
     t.integer "low_counter", default: 0, null: false
@@ -342,14 +343,14 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["rfcc_code"], name: "index_pafs_core_reference_counters_on_rfcc_code", unique: true
   end
 
-  create_table "pafs_core_states", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_states", force: :cascade do |t|
     t.integer "project_id"
     t.string "state", default: "draft", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "pafs_core_user_areas", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_user_areas", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
@@ -359,7 +360,7 @@ ActiveRecord::Schema.define(version: 2022_07_19_120343) do
     t.index ["user_id"], name: "index_pafs_core_user_areas_on_user_id"
   end
 
-  create_table "pafs_core_users", id: :serial, force: :cascade do |t|
+  create_table "pafs_core_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

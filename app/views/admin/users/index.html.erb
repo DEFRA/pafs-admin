@@ -17,6 +17,7 @@
       <th data-sortable="email">Email</th>
       <th data-sortable="area">Area</th>
       <th>Admin</th>
+      <th>Last sign in</th>
       <th><span class="visually-hidden">Action</span></th>
     </tr>
   </thead>
@@ -27,6 +28,7 @@
         <td><%= user.email %></td>
         <td><%= user.primary_area.name %></td>
         <td><%= flag_for user.admin? %></td>
+        <td><%= format_last_sign_in_date(user.last_sign_in_at) %></td>
         <td><%= link_to "Edit", edit_admin_user_path(user) %>
           <span class="visually-hidden"> details for <%= user.full_name %></span>
         </td>
@@ -45,7 +47,10 @@
   </div>
 </div>
 <div class="grid-row">
-  <div class="column-two-thirds actions">
+  <div class="column-one-third actions">
     <%= link_to t("add_user_label"), new_admin_user_path, class: "button" %>
+  </div>
+  <div class="column-two-thirds actions">
+    <%= link_to t("download_users_label"), admin_download_all_users_path(({:format => :xls})), class: "float-link-right"%>
   </div>
 </div>
