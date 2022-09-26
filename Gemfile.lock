@@ -533,6 +533,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   letter_opener
+  mini_racer
   overcommit
   pafs_core (~> 0.0)!
   passenger (~> 5.1.0)
