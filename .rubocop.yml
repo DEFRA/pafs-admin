@@ -4,5 +4,21 @@ inherit_gem:
 require:
   - rubocop-rails
   - rubocop-rspec
-AllCops:
-  NewCops: enable
+
+# TODO Resolve these legacy Rubocop offenses
+Lint/SuppressedException:
+  Enabled: false
+Rails/HelperInstanceVariable:
+  Enabled: false
+RSpec/ExampleLength:
+  Enabled: false
+RSpec/LetSetup:
+  Enabled: false
+RSpec/MessageSpies:
+  Enabled: false
+RSpec/MultipleExpectations:
+  Enabled: false
+RSpec/MultipleMemoizedHelpers:
+  Enabled: false
+RSpec/VerifiedDoubles:
+  Enabled: false

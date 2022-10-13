@@ -1,8 +1,12 @@
-class Admin::UserAreasController < ApplicationController
-  before_action :authenticate_user!
+# frozen_string_literal: true
 
-  def destroy
-    if @user_area = PafsCore::UserArea.find(params[:id])
+module Admin
+  class UserAreasController < ApplicationController
+    before_action :authenticate_user!
+
+    def destroy
+      return unless @user_area == PafsCore::UserArea.find(params[:id])
+
       user = @user_area.user
       @user_area.destroy
 

@@ -1,15 +1,16 @@
 # frozen_string_literal: true
+
 module ApplicationHelper
   def make_page_title(title)
     "#{title} - #{t(:global_proposition_header)} - GOV.UK"
   end
 
   def area_label(index)
-    (index == 0) ? "Main Area" : "#{index.ordinalize} Area"
+    index.zero? ? "Main Area" : "#{index.ordinalize} Area"
   end
 
   def determine_grouped_area(index, user)
-    return grouped_areas if index == 0
+    return grouped_areas if index.zero?
     return {} if user.primary_area.nil?
 
     user.primary_area.pso_area? ? pso_grouped_areas : rma_grouped_areas
@@ -17,7 +18,7 @@ module ApplicationHelper
 
   def pso_grouped_areas
     {
-      "PSOs" => PafsCore::Area.pso_areas.order(:name).map { |a| [a.name, a.id] },
+      "PSOs" => PafsCore::Area.pso_areas.order(:name).map { |a| [a.name, a.id] }
     }
   end
 
@@ -51,18 +52,16 @@ module ApplicationHelper
     !!bool ? "Y" : "N"
   end
 
-  def date_or(dt, txt)
-    if dt.nil?
+  def date_or(date, txt)
+    if date.nil?
       txt || ""
     else
-      dt.strftime("%-d %B %Y @ %H:%M:%S")
+      date.strftime("%-d %B %Y @ %H:%M:%S")
     end
   end
 
   def format_last_sign_in_date(date)
-    unless date.nil?
-      date.strftime("%d %B %Y")
-    end
+    date&.strftime("%d %B %Y")
   end
 
   def disabled_class(user)

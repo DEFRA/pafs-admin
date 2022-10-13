@@ -1,18 +1,23 @@
-class Admin::Camc3Controller < ApplicationController
-  before_action :authenticate_user!, :endpoint_enabled?
-  respond_to :json
+# frozen_string_literal: true
 
-  def show
-    @project = PafsCore::Project.find_by_slug(params[:id])
-    @camc3 = PafsCore::Camc3Presenter.new(project: @project)
+module Admin
+  class Camc3Controller < ApplicationController
+    before_action :authenticate_user!, :endpoint_enabled?
+    respond_to :json
 
-    respond_with @camc3.attributes
-  end
+    def show
+      @project = PafsCore::Project.find_by(slug: params[:id])
+      @camc3 = PafsCore::Camc3Presenter.new(project: @project)
 
-  protected
+      respond_with @camc3.attributes
+    end
 
-  def endpoint_enabled?
-    return if ENV.fetch('ENABLE_ADMIN_JSON_PREVIEW', false)
-    head status: 404
+    protected
+
+    def endpoint_enabled?
+      return if ENV.fetch("ENABLE_ADMIN_JSON_PREVIEW", false)
+
+      head status: 404
+    end
   end
 end

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature "Update a user", type: :feature do
+RSpec.describe "Update a user", type: :feature do
   let(:admin) { create(:admin, :pso) }
   let(:user) { create(:user, :pso) }
   let!(:area) { create(:rma_area, name: "North East") }
@@ -9,10 +9,10 @@ RSpec.feature "Update a user", type: :feature do
     login_as(admin)
   end
 
-  context "updating a users area" do
-    scenario "updating the user with a new area" do
+  context "when updating a users area" do
+    it "updating the user with a new area" do
       visit("/admin/users/#{user.id}/edit")
-      select("North East", from: 'Main Area')
+      select("North East", from: "Main Area")
 
       expect do
         click_on "Save"

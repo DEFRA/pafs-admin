@@ -6,7 +6,7 @@ class ApplicationController < PafsCore::ApplicationController
 
   helper PafsCore::Engine.helpers
 
-   # This is a nested template that ultimately calls the gov uk template layout
+  # This is a nested template that ultimately calls the gov uk template layout
   # This allows us to auto insert code into any of the hooks provided by the GDS layout.
   layout ->(_) { "pafs" }
   # Prevent CSRF attacks by raising an exception.

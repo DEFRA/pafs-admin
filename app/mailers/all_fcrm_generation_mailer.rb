@@ -17,7 +17,7 @@ class AllFcrmGenerationMailer < ApplicationMailer
 
   def default_url_options
     {
-      host: ENV.fetch('DEFAULT_URL_HOST_BACKOFFICE', 'example.com')
+      host: ENV.fetch("DEFAULT_URL_HOST_BACKOFFICE", "example.com")
     }
   end
 end

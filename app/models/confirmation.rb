@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Confirmation
   include ActiveModel::Model
 
@@ -6,25 +7,22 @@ class Confirmation
 
   attr_reader :confirm
 
-  # rubocop:disable Style/TrivialAccessors
   def confirm?
     @confirm
   end
-  # rubocop:enable Style/TrivialAccessors
 
   def confirm=(value)
     @confirm = if value.nil?
                  false
                else
-                 @confirm = (value == "Y" || value == "y" || value == "1" ||
-                             value == "t")
+                 @confirm = %w[Y y 1 t].include?(value)
                end
   end
 
   def confirm_has_been_set
-    unless confirm?
-      errors.add(:base, "^You must confirm that by continuing,"\
-      "you understand that ALL proposals will be able to be updated")
-    end
+    return if confirm?
+
+    errors.add(:base, "^You must confirm that by continuing," \
+    "you understand that ALL proposals will be able to be updated")
   end
 end

@@ -1,10 +1,13 @@
+# frozen_string_literal: true
+
+# rubocop:disable Metrics/BlockLength
 Rails.application.routes.draw do
   namespace :admin do
     namespace :api do
       post "project/status" => "status_updates#create"
     end
 
-    resource :download, only: [:show, :create]
+    resource :download, only: %i[show create]
     resource :download_all_users, only: [:show]
 
     resources :failed_submissions, only: :index do
@@ -21,9 +24,9 @@ Rails.application.routes.draw do
       end
     end
     resources :confirmations, only: [:index]
-    resources :refresh, only: [:index, :new, :create]
-    resources :programme_generation_resets, only: [:index, :new, :create]
-    resources :program_uploads, except: [:edit, :update] do
+    resources :refresh, only: %i[index new create]
+    resources :programme_generation_resets, only: %i[index new create]
+    resources :program_uploads, except: %i[edit update] do
       resources :program_upload_items, only: [:show]
     end
     resources :camc3, only: [:show], controller: :camc3
@@ -37,7 +40,8 @@ Rails.application.routes.draw do
 
   get "/cookies", to: "pafs_core/pages#cookies"
 
-  match '(errors)/:status', to: PafsCore::Engine, via: :all, constraints: { status: /\d{3}/ }
+  match "(errors)/:status", to: PafsCore::Engine, via: :all, constraints: { status: /\d{3}/ }
 
-  root 'admin/users#index'
+  root "admin/users#index"
 end
+# rubocop:enable Metrics/BlockLength

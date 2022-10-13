@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class User < PafsCore::User
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -23,13 +24,13 @@ class User < PafsCore::User
     end
   end
 
-  def self.search(q)
-    qq = "%#{q}%"
+  def self.search(term)
+    qq = "%#{term}%"
     table = arel_table
-    User.includes(:areas).
-      where(table[:first_name].matches(qq).
-            or(table[:last_name].matches(qq)).
-            or(table[:email].matches(qq)))
+    User.includes(:areas)
+        .where(table[:first_name].matches(qq)
+            .or(table[:last_name].matches(qq))
+            .or(table[:email].matches(qq)))
   end
 
   def self.admins
@@ -41,13 +42,11 @@ class User < PafsCore::User
   end
 
   private
+
   def the_last_admin_isnt_disabled
-    if (admin_changed?(to: false) || disabled_changed?(to: true)) && !other_admins_exist?
-      errors.add(:base, "^Ensure at least one adminstrator is available")
-      # errors.add(:base,
-      #            "^Ensure at least one adminstrator is available") unless
-      #   User.where.not(id: id).admins.active.count.positive?
-    end
+    return unless (admin_changed?(to: false) || disabled_changed?(to: true)) && !other_admins_exist?
+
+    errors.add(:base, "^Ensure at least one adminstrator is available")
   end
 
   def other_admins_exist?
