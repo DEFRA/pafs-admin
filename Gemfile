@@ -6,7 +6,7 @@ source "https://rubygems.org"
 gem "rails", "6.0.3.7"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 0.20.0"
+gem "pg"
 
 gem "rake"
 gem "sass-rails", "~> 5.0"
@@ -16,8 +16,6 @@ gem "coffee-rails"
 gem "mini_racer", "~> 0.4.0"
 gem "font-awesome-sass", "~> 4.5.0"
 gem "jquery-rails"
-# gem "jquery-turbolinks"
-# gem "turbolinks"
 gem "jbuilder"
 gem "sdoc"
 gem 'to_xls', '~> 1.5', '>= 1.5.3'
@@ -34,8 +32,6 @@ gem "devise",           "~> 4.7.1"
 gem "devise_invitable", "~> 2.0"
 gem "devise-security"
 
-# Provided by GDS - Template gives us a master layout into which
-# we can inject our content using yield and content_for
 gem "govuk_template", "0.26.0"
 gem "govuk_frontend_toolkit", "~> 9.0.0"
 gem "govuk_elements_rails"
@@ -61,15 +57,15 @@ group :development, :test do
   gem "rspec-rails"
   gem "byebug"
   gem "pry"
-  gem "guard-rspec", require: false
   gem "climate_control"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
 end
 
 group :development do
   gem "web-console"
   gem "letter_opener"
   gem "spring"
-  gem "overcommit"
 end
 
 group :test do
@@ -81,7 +77,6 @@ group :test do
   gem "poltergeist"
   gem "database_cleaner"
   gem "simplecov", require: false
-  gem "codeclimate-test-reporter", require: false
   gem "webmock"
 end
 
