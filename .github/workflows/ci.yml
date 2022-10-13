@@ -51,7 +51,7 @@ jobs:
       - name: Run tests
         run: |
           bundle exec rspec
-          sed -i 's/\/home\/runner\/work\/flood-risk-back-office\/flood-risk-back-office\//\/github\/workspace\//g' coverage/.resultset.json
+          sed -i 's/\/home\/runner\/work\/pafs-admin\/pafs-admin\//\/github\/workspace\//g' coverage/.resultset.json
         env:
           POL_FAILURE_NOTIFICATION_EMAIL: foo
 
