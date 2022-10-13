@@ -155,8 +155,8 @@ GEM
     database_cleaner-core (2.0.1)
     defra_ruby_alert (2.1.1)
       airbrake
-    defra_ruby_style (0.1.2)
-      rubocop
+    defra_ruby_style (0.2.2)
+      rubocop (~> 0.82)
     devise (4.7.3)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -505,7 +505,7 @@ DEPENDENCIES
   climate_control
   coffee-rails
   database_cleaner
-  defra_ruby_style
+  defra_ruby_style (~> 0.2)
   devise (~> 4.7.1)
   devise-security
   devise_invitable (~> 2.0)
