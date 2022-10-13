@@ -56,8 +56,10 @@ gem "dibble", "~> 0.1",
 group :development, :test do
   gem "rspec-rails"
   gem "byebug"
+  gem "defra_ruby_style"
   gem "pry"
   gem "climate_control"
+  gem "rubocop", "~> 0.93"
   gem "rubocop-rails"
   gem "rubocop-rspec"
 end
