@@ -5,8 +5,6 @@ module Admin
     before_action :authenticate_user!
     helper_method :projects, :project_sort_order, :project_sort_column
 
-    def index; end
-
     def mark_as_submitted
       project.update(submitted_to_pol: Time.now.utc)
       redirect_back(fallback_location: root_path)
