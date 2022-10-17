@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :admin, class: User do
+  factory :admin, class: "User" do
     first_name { "Admin" }
     last_name { "User" }
     email { "admin@example.com" }
@@ -30,4 +30,3 @@ FactoryBot.define do
     end
   end
 end
-

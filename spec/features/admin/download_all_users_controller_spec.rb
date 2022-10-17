@@ -1,17 +1,17 @@
 # frozen_string_literal: true
 
-RSpec.feature Admin::DownloadAllUsersController, type: :controller do
+RSpec.describe Admin::DownloadAllUsersController, type: :controller do
   let!(:user) { create(:admin, :pso) }
 
-  context "it allows a user to download an xls file of all the users" do 
+  context "when a user downloads an xls file of all the users" do
 
-    scenario "it returns the correct file type" do
-      get :show, :format => :xls
-      expect(response.headers['Content-Type']).to eq("application/vnd.ms-excel")
+    it "returns the correct file type" do
+      get :show, format: :xls
+      expect(response.headers["Content-Type"]).to eq("application/vnd.ms-excel")
     end
-    
-    scenario "it returns the correct column headers " do
-      get :show, :format => :xls
+
+    it "returns the correct column headers " do
+      get :show, format: :xls
 
       spreadsheet = Spreadsheet.open(StringIO.new(response.body))
       worksheet = spreadsheet.worksheet(0)
@@ -24,8 +24,8 @@ RSpec.feature Admin::DownloadAllUsersController, type: :controller do
       expect(worksheet.row(0)[5]).to eq("last_sign_in_at")
     end
 
-    scenario "it returns the correct user details" do
-      get :show, :format => :xls
+    it "returns the correct user details" do
+      get :show, format: :xls
 
       spreadsheet = Spreadsheet.open(StringIO.new(response.body))
       worksheet = spreadsheet.worksheet(0)
@@ -39,6 +39,3 @@ RSpec.feature Admin::DownloadAllUsersController, type: :controller do
 
   end
 end
-
-  
-  

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 PafsCore.configure do |config|
   # Configure airbrake, which is done via the engine using defra_ruby_alert
   config.airbrake_enabled = ENV.key?("AIRBRAKE_PROJECT_KEY")

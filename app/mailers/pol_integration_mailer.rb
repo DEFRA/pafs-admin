@@ -18,12 +18,12 @@ class PolIntegrationMailer < ApplicationMailer
   private
 
   def admin_email
-    ENV.fetch('POL_FAILURE_NOTIFICATION_EMAIL')
+    ENV.fetch("POL_FAILURE_NOTIFICATION_EMAIL")
   end
 
   def default_url_options
     {
-      host: ENV.fetch('DEFAULT_URL_HOST_BACKOFFICE', 'example.com')
+      host: ENV.fetch("DEFAULT_URL_HOST_BACKOFFICE", "example.com")
     }
   end
 end

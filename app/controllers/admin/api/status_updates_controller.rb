@@ -1,22 +1,26 @@
-module Admin::Api
-  class StatusUpdatesController < ApiController
-    def create
-      return render_error if update_params.fetch('Status', '') != 'Draft'
-      return render_error unless project.state.update_column(:state, 'draft')
+# frozen_string_literal: true
 
-      head 204
-    rescue ActiveRecord::RecordNotFound
-      render_missing
-    end
+module Admin
+  module Api
+    class StatusUpdatesController < ApiController
+      def create
+        return render_error if update_params.fetch("Status", "") != "Draft"
+        return render_error unless project.state.update(state: "draft")
 
-    private
+        head 204
+      rescue ActiveRecord::RecordNotFound
+        render_missing
+      end
 
-    def update_params
-      @update_params ||= params.permit('NPN', 'Status')
-    end
+      private
 
-    def project
-      @project ||= PafsCore::Project.find_by!(reference_number: update_params.fetch('NPN'))
+      def update_params
+        @update_params ||= params.permit("NPN", "Status")
+      end
+
+      def project
+        @project ||= PafsCore::Project.find_by!(reference_number: update_params.fetch("NPN"))
+      end
     end
   end
 end

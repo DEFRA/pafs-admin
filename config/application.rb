@@ -1,4 +1,6 @@
-require File.expand_path('../boot', __FILE__)
+# frozen_string_literal: true
+
+require File.expand_path("boot", __dir__)
 
 require "rails"
 # Pick the frameworks you want:
@@ -24,11 +26,11 @@ module PafsAdmin
 
     # load decorators
     config.to_prepare do
-      Dir.glob(File.join(Rails.root, "app/decorators", "**/*_decorator*.rb")).each do |c|
+      Dir.glob(Rails.root.join("app/decorators/**/*_decorator*.rb")).each do |c|
         require_dependency(c)
       end
 
-      Dir.glob(File.join(Rails.root, "lib/projects_sent_to_pol/**/*.rb")).each do |c|
+      Dir.glob(Rails.root.join("lib/projects_sent_to_pol/**/*.rb")).each do |c|
         require_dependency(c)
       end
     end
@@ -43,6 +45,6 @@ module PafsAdmin
     # config.i18n.default_locale = :de
 
     # exception handling
-    config.exceptions_app = self.routes
+    config.exceptions_app = routes
   end
 end

@@ -6,40 +6,36 @@ source "https://rubygems.org"
 gem "rails", "6.0.3.7"
 
 # Use postgresql as the database for Active Record
-gem "pg", "~> 0.20.0"
+gem "pg"
 
 gem "rake"
 gem "sass-rails", "~> 5.0"
 gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails"
-gem "mini_racer", "~> 0.4.0"
 gem "font-awesome-sass", "~> 4.5.0"
-gem "jquery-rails"
-# gem "jquery-turbolinks"
-# gem "turbolinks"
 gem "jbuilder"
+gem "jquery-rails"
+gem "mini_racer", "~> 0.4.0"
 gem "sdoc"
-gem 'to_xls', '~> 1.5', '>= 1.5.3'
-gem 'spreadsheet', '~> 1.3'
+gem "spreadsheet", "~> 1.3"
+gem "to_xls", "~> 1.5", ">= 1.5.3"
 
 # Parsing PF Calculator
-gem 'roo'
+gem "roo"
 
 # pagination
 gem "kaminari"
 
-gem "dotenv-rails"
 gem "devise",           "~> 4.7.1"
 gem "devise_invitable", "~> 2.0"
 gem "devise-security"
+gem "dotenv-rails"
 
-# Provided by GDS - Template gives us a master layout into which
-# we can inject our content using yield and content_for
-gem "govuk_template", "0.26.0"
-gem "govuk_frontend_toolkit", "~> 9.0.0"
 gem "govuk_elements_rails"
+gem "govuk_frontend_toolkit", "~> 9.0.0"
 gem "govuk_publishing_components"
+gem "govuk_template", "0.26.0"
 
 # active job backend
 gem "sucker_punch", "~> 2.0"
@@ -50,38 +46,39 @@ gem "whenever", require: false
 
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
-  git: "https://github.com/DEFRA/pafs_core",
-  branch: "main"
+    git: "https://github.com/DEFRA/pafs_core",
+    branch: "main"
 
 gem "dibble", "~> 0.1",
-  git: "https://github.com/tonyheadford/dibble",
-  branch: "develop"
+    git: "https://github.com/tonyheadford/dibble",
+    branch: "develop"
 
 group :development, :test do
-  gem "rspec-rails"
   gem "byebug"
-  gem "pry"
-  gem "guard-rspec", require: false
   gem "climate_control"
+  gem "defra_ruby_style", "~> 0.2"
+  gem "pry"
+  gem "rspec-rails"
+  gem "rubocop", "~> 0.93"
+  gem "rubocop-rails"
+  gem "rubocop-rspec"
 end
 
 group :development do
-  gem "web-console"
   gem "letter_opener"
   gem "spring"
-  gem "overcommit"
+  gem "web-console"
 end
 
 group :test do
-  gem "factory_bot_rails"
-  gem "shoulda-matchers"
-  gem "faker"
   gem "capybara"
-  gem 'capybara-webmock'
-  gem "poltergeist"
+  gem "capybara-webmock"
   gem "database_cleaner"
+  gem "factory_bot_rails"
+  gem "faker"
+  gem "poltergeist"
+  gem "shoulda-matchers"
   gem "simplecov", require: false
-  gem "codeclimate-test-reporter", require: false
   gem "webmock"
 end
 
@@ -91,7 +88,7 @@ end
 
 group :benchmark do
   gem "benchmark-ips"
+  gem "rbtrace"
   gem "ruby-prof"
   gem "stackprof"
-  gem "rbtrace"
 end

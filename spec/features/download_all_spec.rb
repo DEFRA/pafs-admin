@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.feature "Download all", type: :feature do
+RSpec.describe "Download all", type: :feature do
   let(:download_filename) { PafsCore::Download::All::FILENAME }
   let(:meta_filename) { "#{download_filename}.meta" }
   let(:meta) { PafsCore::Download::Meta.load(meta_filename) }
@@ -8,7 +8,7 @@ RSpec.feature "Download all", type: :feature do
   let!(:project) { create(:project, creator: user) }
 
   def remove_meta_file
-    FileUtils.rm(File.join(Rails.root, "public", "tmp", meta_filename))
+    FileUtils.rm(Rails.root.join("public/tmp", meta_filename))
   rescue Errno::ENOENT
   end
 
@@ -21,11 +21,11 @@ RSpec.feature "Download all", type: :feature do
       remove_meta_file
     end
 
-    scenario "it shows the blank slate" do
+    it "shows the blank slate" do
       visit "/admin/download"
       expect(page).to have_content("The complete FCRM1 has not yet been generated")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
+      expect(page).not_to have_selector("a", text: "Proposals (Excel document)")
     end
   end
 
@@ -34,11 +34,11 @@ RSpec.feature "Download all", type: :feature do
       meta.create({ last_update: Time.now.utc, status: "failed" })
     end
 
-    scenario "it shows the failed slate" do
+    it "shows the failed slate" do
       visit "/admin/download"
       expect(page).to have_content("An error occurred while generating the FCRM1")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
+      expect(page).not_to have_selector("a", text: "Proposals (Excel document)")
     end
   end
 
@@ -47,11 +47,11 @@ RSpec.feature "Download all", type: :feature do
       meta.create({ last_update: Time.now.utc, status: "pending" })
     end
 
-    scenario "it shows the pending slate" do
+    it "shows the pending slate" do
       visit "/admin/download"
       expect(page).to have_content("The complete FCRM1 is being generated")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
+      expect(page).not_to have_selector("a", text: "Proposals (Excel document)")
     end
   end
 
@@ -60,24 +60,24 @@ RSpec.feature "Download all", type: :feature do
       meta.create({ last_update: Time.now.utc, status: "complete" })
     end
 
-    scenario "it shows the complete slate" do
+    it "shows the complete slate" do
       visit "/admin/download"
       expect(page).to have_content("FCRM1 generation completed at")
       expect(page).to have_button("Generate FCRM1")
-      expect(page).to have_selector('a', text: "Proposals (Excel document)")
+      expect(page).to have_selector("a", text: "Proposals (Excel document)")
     end
   end
 
-  scenario "Generating a new download" do
+  it "Generating a new download" do
     visit "/admin/download"
     click_on "Generate FCRM1 for all projects"
 
     expect(page).to have_content("The complete FCRM1 is being generated")
-    expect(page).to_not have_selector('a', text: "Proposals (Excel document)")
+    expect(page).not_to have_selector("a", text: "Proposals (Excel document)")
 
     sleep(2)
     visit "/admin/download"
     expect(page).to have_content("FCRM1 generation completed at")
-    expect(page).to have_selector('a', text: "Proposals (Excel document)")
+    expect(page).to have_selector("a", text: "Proposals (Excel document)")
   end
 end
