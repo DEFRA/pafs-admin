@@ -61,6 +61,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "rubocop-rails"
+  gem "rubocop-rake"
   gem "rubocop-rspec"
 end
 

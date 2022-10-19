@@ -8,7 +8,7 @@ RSpec.describe "Download all", type: :feature do
   let!(:project) { create(:project, creator: user) }
 
   def remove_meta_file
-    FileUtils.rm(Rails.root.join("public/tmp", meta_filename))
+    FileUtils.rm(Rails.public_path.join("tmp", meta_filename))
   rescue Errno::ENOENT
   end
 

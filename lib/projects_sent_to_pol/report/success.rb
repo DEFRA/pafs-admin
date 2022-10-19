@@ -7,7 +7,7 @@ module ProjectsSentToPol
 
       def projects
         @projects ||= PafsCore::Project.submitted.where(
-          submitted_to_pol: Date.yesterday.beginning_of_day..Date.yesterday.end_of_day
+          submitted_to_pol: Date.yesterday.all_day
         )
       end
     end

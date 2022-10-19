@@ -26,11 +26,11 @@ module PafsAdmin
 
     # load decorators
     config.to_prepare do
-      Dir.glob(Rails.root.join("app/decorators/**/*_decorator*.rb")).each do |c|
+      Rails.root.glob("app/decorators/**/*_decorator*.rb").each do |c|
         require_dependency(c)
       end
 
-      Dir.glob(Rails.root.join("lib/projects_sent_to_pol/**/*.rb")).each do |c|
+      Rails.root.glob("lib/projects_sent_to_pol/**/*.rb").each do |c|
         require_dependency(c)
       end
     end

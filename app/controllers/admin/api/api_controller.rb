@@ -16,15 +16,15 @@ module Admin
       end
 
       def render_unauthorized
-        head 401
+        head :unauthorized
       end
 
       def render_error
-        head 422
+        head :unprocessable_entity
       end
 
       def render_missing
-        head 404
+        head :not_found
       end
 
       def auth_token

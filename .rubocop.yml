@@ -3,12 +3,17 @@ inherit_gem:
     - default.yml
 require:
   - rubocop-rails
+  - rubocop-rake
   - rubocop-rspec
 
 # TODO Resolve these legacy Rubocop offenses
 Lint/SuppressedException:
   Enabled: false
 Rails/HelperInstanceVariable:
+  Enabled: false
+Rails/I18nLocaleTexts:
+  Enabled: false
+RSpec/Capybara/SpecificMatcher:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false

@@ -1,13 +1,14 @@
 # frozen_string_literal: true
 
+# rubocop:disable RSpec/Rails/HaveHttpStatus
 RSpec.describe "Status update callback", type: :request do
   let(:project) { create(:project, :submitted) }
   let(:status) { "Draft" }
-  let(:payload) { { "NPN": project.reference_number, "Status": status } }
+  let(:payload) { { NPN: project.reference_number, Status: status } }
 
   let(:headers) do
     {
-      "Authorization": auth_token,
+      Authorization: auth_token,
       "Content-Type": "application/json"
     }
   end
@@ -37,7 +38,7 @@ RSpec.describe "Status update callback", type: :request do
 
   context "with a valid auth token" do
     context "with a missing project" do
-      let(:payload) { { "NPN": "INVALID", "Status": status } }
+      let(:payload) { { NPN: "INVALID", Status: status } }
 
       it "the endpoint responds with a 404" do
         perform
@@ -46,7 +47,7 @@ RSpec.describe "Status update callback", type: :request do
     end
 
     context "with an invalid payload" do
-      let(:payload) { { "NPN": project.reference_number, "Status": "INVALID" } }
+      let(:payload) { { NPN: project.reference_number, Status: "INVALID" } }
 
       it "the endpoint responds with a 422" do
         perform
@@ -61,7 +62,7 @@ RSpec.describe "Status update callback", type: :request do
     end
 
     context "with a valid payload" do
-      it " the endpoint responds with a 204" do
+      it "the endpoint responds with a 204" do
         perform
         expect(response.status).to be(204)
       end
@@ -74,3 +75,4 @@ RSpec.describe "Status update callback", type: :request do
     end
   end
 end
+# rubocop:enable RSpec/Rails/HaveHttpStatus

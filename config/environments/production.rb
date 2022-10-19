@@ -109,11 +109,11 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
-  config.action_mailer.default_url_options = { host: ENV["DEFAULT_URL_HOST"] }
+  config.action_mailer.default_url_options = { host: ENV.fetch("DEFAULT_URL_HOST", nil) }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: ENV["EMAIL_HOST"],
-    port: ENV["EMAIL_PORT"]
+    address: ENV.fetch("EMAIL_HOST", nil),
+    port: ENV.fetch("EMAIL_PORT", nil)
   }
 end
 # rubocop:enable Metrics/BlockLength
