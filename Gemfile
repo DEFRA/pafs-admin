@@ -3,20 +3,20 @@
 source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "6.0.3.7"
+gem "rails", "~> 6.1"
 
 # Use postgresql as the database for Active Record
 gem "pg"
 
 gem "rake"
-gem "sass-rails", "~> 5.0"
+gem "sass-rails", "~> 6.0"
 gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails"
-gem "font-awesome-sass", "~> 4.5.0"
+gem "font-awesome-sass", "~> 4.4"
 gem "jbuilder"
 gem "jquery-rails"
-gem "mini_racer", "~> 0.4.0"
+gem "mini_racer", "~> 0.6"
 gem "sdoc"
 gem "spreadsheet", "~> 1.3"
 gem "to_xls", "~> 1.5", ">= 1.5.3"
@@ -27,7 +27,7 @@ gem "roo"
 # pagination
 gem "kaminari"
 
-gem "devise",           "~> 4.7.1"
+gem "devise",           "~> 4.8"
 gem "devise_invitable", "~> 2.0"
 gem "devise-security"
 gem "dotenv-rails"
@@ -38,7 +38,7 @@ gem "govuk_publishing_components"
 gem "govuk_template", "0.26.0"
 
 # active job backend
-gem "sucker_punch", "~> 2.0"
+gem "sucker_punch", "~> 3.1"
 
 # static pages
 gem "passenger", "~> 5.1.0", require: false
@@ -56,10 +56,10 @@ gem "dibble", "~> 0.1",
 group :development, :test do
   gem "byebug"
   gem "climate_control"
-  gem "defra_ruby_style", "~> 0.2"
+  gem "defra_ruby_style", "~> 0.3"
   gem "pry"
   gem "rspec-rails"
-  gem "rubocop", "~> 0.93"
+  gem "rubocop"
   gem "rubocop-rails"
   gem "rubocop-rspec"
 end

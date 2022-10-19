@@ -8,3 +8,4 @@ db/migrate/*.pafs_core.rb
 public/assets
 coverage
 .DS_Store
+.byebug_history
