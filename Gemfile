@@ -34,7 +34,7 @@ gem "dotenv-rails"
 
 gem "govuk_elements_rails"
 gem "govuk_frontend_toolkit", "~> 9.0.0"
-gem "govuk_publishing_components", "~> 31.1.1"
+gem "govuk_publishing_components", "~> 30.7"
 gem "govuk_template", "0.26.0"
 
 # active job backend
