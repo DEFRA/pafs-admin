@@ -23,6 +23,6 @@ class Confirmation
     return if confirm?
 
     errors.add(:base, "^You must confirm that by continuing," \
-    "you understand that ALL proposals will be able to be updated")
+                      "you understand that ALL proposals will be able to be updated")
   end
 end

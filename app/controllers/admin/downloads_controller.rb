@@ -9,7 +9,7 @@ module Admin
       respond_to do |format|
         format.html { request.xhr? ? render_state : render(:show) }
         format.xlsx do
-          download_state == "complete" ? send_spreadsheet : head(404)
+          download_state == "complete" ? send_spreadsheet : head(:not_found)
           return
         end
       end

@@ -22,7 +22,7 @@ class ProgrammeGenerationResetConfirmation
   def confirm_has_been_set
     return if confirm?
 
-    errors.add(:base, "^You must confirm that by continuing,"\
-    "you understand that ALL failed proposals will be reset")
+    errors.add(:base, "^You must confirm that by continuing," \
+                      "you understand that ALL failed proposals will be reset")
   end
 end

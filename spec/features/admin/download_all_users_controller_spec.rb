@@ -10,7 +10,7 @@ RSpec.describe Admin::DownloadAllUsersController, type: :controller do
       expect(response.headers["Content-Type"]).to eq("application/vnd.ms-excel")
     end
 
-    it "returns the correct column headers " do
+    it "returns the correct column headers" do
       get :show, format: :xls
 
       spreadsheet = Spreadsheet.open(StringIO.new(response.body))
@@ -30,11 +30,11 @@ RSpec.describe Admin::DownloadAllUsersController, type: :controller do
       spreadsheet = Spreadsheet.open(StringIO.new(response.body))
       worksheet = spreadsheet.worksheet(0)
 
-      expect(worksheet.row(1)[0]).to eq(true)
+      expect(worksheet.row(1)[0]).to be(true)
       expect(worksheet.row(1)[1]).to eq("admin@example.com")
       expect(worksheet.row(1)[2]).to eq("Admin")
       expect(worksheet.row(1)[4]).to eq("User")
-      expect(worksheet.row(1)[5]).to eq(nil)
+      expect(worksheet.row(1)[5]).to be_nil
     end
 
   end

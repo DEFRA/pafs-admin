@@ -7,7 +7,7 @@ module Admin
         return render_error if update_params.fetch("Status", "") != "Draft"
         return render_error unless project.state.update(state: "draft")
 
-        head 204
+        head :no_content
       rescue ActiveRecord::RecordNotFound
         render_missing
       end

@@ -5,14 +5,7 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = "1.0"
 
-Rails.application.config.assets.precompile += %w[
-  gov.uk_logotype_crown.svg
-  application-ie6.css
-  application-ie7.css
-  application-ie8.css
-  icon-important.png
-  icon-important-2x.png
-]
+Rails.application.config.assets.precompile = ["manifest.js"]
 
 # Add additional assets to the asset load path.
 # Rails.application.config.assets.paths << Emoji.images_path
