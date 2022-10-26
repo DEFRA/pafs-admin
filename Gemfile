@@ -9,14 +9,13 @@ gem "rails", "~> 6.1"
 gem "pg"
 
 gem "rake"
-gem "sass-rails"
+gem "sass-rails", "~> 5.1"
 gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
 gem "coffee-rails"
-gem "font-awesome-sass", "~> 4.4"
+gem "font-awesome-sass", "4.5.0"
 gem "jbuilder"
 gem "jquery-rails"
-# gem "mini_racer"
 gem "sdoc"
 gem "spreadsheet", "~> 1.3"
 gem "to_xls", "~> 1.5", ">= 1.5.3"
@@ -32,9 +31,10 @@ gem "devise_invitable"
 gem "devise-security"
 gem "dotenv-rails"
 
+gem "govuk_app_config", "4.6.0"
 gem "govuk_elements_rails"
 gem "govuk_frontend_toolkit"
-gem "govuk_publishing_components"
+gem "govuk_publishing_components", "~> 21.59"
 gem "govuk_template"
 
 # active job backend
