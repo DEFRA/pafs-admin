@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # rubocop:disable RSpec/Rails/HaveHttpStatus
-RSpec.describe "Status update callback", type: :request do
+RSpec.describe "Status update callback" do
   let(:project) { create(:project, :submitted) }
   let(:status) { "Draft" }
   let(:payload) { { NPN: project.reference_number, Status: status } }
