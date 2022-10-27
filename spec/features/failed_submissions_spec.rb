@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe "Failed to Send Report", type: :feature do
+RSpec.describe "Failed to Send Report" do
   let(:user) { create(:admin, :pso) }
 
   around do |example|

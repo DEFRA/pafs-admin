@@ -37,6 +37,14 @@ module Admin
       end
     end
 
+    def edit
+      @user = User.find(params[:id])
+      number_of_total_areas = (4 - @user.user_areas.size).to_i
+      number_of_total_areas.times do
+        @user.user_areas.build
+      end
+    end
+
     def create
       # Calling User.invite! seems to use find_or_create under the covers which results in
       # it updating an existing user rather than rejecting a duplicate email address
@@ -62,14 +70,6 @@ module Admin
           end
         end
         render :new
-      end
-    end
-
-    def edit
-      @user = User.find(params[:id])
-      number_of_total_areas = (4 - @user.user_areas.size).to_i
-      number_of_total_areas.times do
-        @user.user_areas.build
       end
     end
 

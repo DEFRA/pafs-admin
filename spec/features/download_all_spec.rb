@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe "Download all", type: :feature do
+RSpec.describe "Download all" do
   let(:download_filename) { PafsCore::Download::All::FILENAME }
   let(:meta_filename) { "#{download_filename}.meta" }
   let(:meta) { PafsCore::Download::Meta.load(meta_filename) }

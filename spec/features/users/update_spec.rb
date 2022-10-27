@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe "Update a user", type: :feature do
+RSpec.describe "Update a user" do
   let(:admin) { create(:admin, :pso) }
   let(:user) { create(:user, :pso) }
   let!(:area) { create(:rma_area, name: "North East") }
