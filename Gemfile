@@ -19,6 +19,10 @@ gem "sdoc"
 gem "spreadsheet", "~> 1.3"
 gem "to_xls", "~> 1.5", ">= 1.5.3"
 
+gem "net-imap"
+gem "net-pop"
+gem "net-smtp"
+
 # Parsing PF Calculator
 gem "roo"
 
