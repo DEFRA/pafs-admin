@@ -1,6 +1,6 @@
 <%= pafs_form_for [:admin, @user] do |f| %>
   <%= csrf_meta_tags %>
-  <%= f.error_header %>
+  <%= form_error_header(f) %>
   <div class="grid-row">
     <div class="column-two-thirds">
       <%= f.text_field :first_name, class: "form-control form-wide" %>
