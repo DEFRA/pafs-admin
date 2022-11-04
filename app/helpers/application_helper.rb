@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 module ApplicationHelper
-  def make_page_title(title)
-    "#{title} - #{t(:global_proposition_header)} - GOV.UK"
-  end
-
   def area_label(index)
     index.zero? ? "Main Area" : "#{index.ordinalize} Area"
   end

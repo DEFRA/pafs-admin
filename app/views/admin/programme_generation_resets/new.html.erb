@@ -1,6 +1,6 @@
 <h1 class="heading-large"><%= t(".heading") %></h1>
 <%= pafs_form_for @confirmation, url: main_app.admin_programme_generation_resets_path(method: :post) do |f| %>
-  <%= f.error_header %>
+  <%= form_error_header(f) %>
   <h2 class="heading-small"><%= t(".confirm_heading") %></h2>
   <div class="grid-row">
     <div class="column-two-thirds">
