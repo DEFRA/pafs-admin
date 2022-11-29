@@ -12,10 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require govuk_toolkit
-//= require govuk_publishing_components/dependencies
-//= require govuk_publishing_components/lib
-//= require govuk_publishing_components/components/cookie-banner
+//= require defra_ruby_template
 //= require pafs_core/application
 
 //= require_tree .

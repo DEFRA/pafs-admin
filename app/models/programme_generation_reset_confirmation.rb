@@ -15,7 +15,7 @@ class ProgrammeGenerationResetConfirmation
     @confirm = if value.nil?
                  false
                else
-                 @confirm = %w[Y y 1 t].include(value)
+                 @confirm = %w[Y y 1 t].include?(value)
                end
   end
 

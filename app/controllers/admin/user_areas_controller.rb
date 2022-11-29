@@ -5,7 +5,8 @@ module Admin
     before_action :authenticate_user!
 
     def destroy
-      return unless @user_area == PafsCore::UserArea.find(params[:id])
+      @user_area = PafsCore::UserArea.find(params[:id])
+      return if @user_area.blank?
 
       user = @user_area.user
       @user_area.destroy

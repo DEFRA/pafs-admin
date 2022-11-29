@@ -1,18 +1,19 @@
 <% content_for :title, "Manage users" %>
 
-<h1 class="heading-large">Manage users</h1>
-<div class="grid-row">
-  <div class="column-two-thirds">
-    <%= form_tag(admin_users_path, method: "get", class: "search-bar") do %>
+<h1 class="govuk-heading-l">Manage users</h1>
+<div class="govuk-grid-row govuk-body">
+  <div class="govuk-grid-column-two-thirds">
+    <%= form_for admin_users_path, method: "get", class: "search-bar" do |f| %>
       <%= label_tag(:q, "Search: ") %>
-      <%= text_field_tag(:q, params[:q] || "", class: "form-control") %>
+      <%= text_field_tag(:q, params[:q] || "", class: "govuk-input govuk-!-width-one-third") %>
       <%= hidden_field_tag(:o, params[:o]) %>
       <%= hidden_field_tag(:d, params[:d]) %>
-      <%= submit_tag("Search", class: "button button-secondary") %>
+      <%= f.govuk_submit "Search" %>
     <% end %>
   </div>
 </div>
-<table>
+
+<table class="users-table govuk-table govuk-!-font-size-16">
   <thead>
     <tr>
       <th data-sortable="name">Name</th>
@@ -20,7 +21,7 @@
       <th data-sortable="area">Area</th>
       <th>Admin</th>
       <th>Last sign in</th>
-      <th><span class="visually-hidden">Action</span></th>
+      <th><span class="govuk-visually-hidden">Action</span></th>
     </tr>
   </thead>
   <tbody>
@@ -32,27 +33,28 @@
         <td><%= flag_for user.admin? %></td>
         <td><%= format_last_sign_in_date(user.last_sign_in_at) %></td>
         <td><%= link_to "Edit", edit_admin_user_path(user) %>
-          <span class="visually-hidden"> details for <%= user.full_name %></span>
+          <span class="govuk-visually-hidden"> details for <%= user.full_name %></span>
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<div class="grid-row page-nav">
-  <div class="column-one-third">
+
+<div class="govuk-grid-row govuk-body page-nav">
+  <div class="govuk-grid-column-one-third">
     <%= page_entries_info @users %>
   </div>
-  <div class="column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
     <div class="pagination-area">
       <%= paginate @users, left: 0, right: 0, window: 2 %>
     </div>
   </div>
 </div>
-<div class="grid-row">
-  <div class="column-one-third actions">
+<div class="govuk-grid-row govuk-body">
+  <div class="govuk-grid-column-one-third actions">
     <%= link_to t("add_user_label"), new_admin_user_path, class: "button" %>
   </div>
-  <div class="column-two-thirds actions">
+  <div class="govuk-grid-column-two-thirds actions">
     <%= link_to t("download_users_label"), admin_download_all_users_path(({:format => :xls})), class: "float-link-right"%>
   </div>
 </div>

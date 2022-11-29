@@ -130,7 +130,7 @@ module Admin
         u.skip_invitation = true
       end
       AccountRequestMailer.account_created_email(user).deliver_now
-      user.update(invitation_sent_at, Time.now.utc)
+      user.update(invitation_sent_at: Time.now.utc)
     end
 
     def navigator

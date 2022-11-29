@@ -15,6 +15,8 @@ class ApplicationController < PafsCore::ApplicationController
 
   before_action :cache_busting
 
+  default_form_builder GOVUKDesignSystemFormBuilder::FormBuilder
+
   private
 
   def custom_headers

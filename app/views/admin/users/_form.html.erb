@@ -1,74 +1,92 @@
 <%= pafs_form_for [:admin, @user] do |f| %>
   <%= csrf_meta_tags %>
-  <%= form_error_header(f) %>
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <%= f.text_field :first_name, class: "form-control form-wide" %>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_text_field :first_name, width: "three-quarters", label: { text: t(".first_name") } %>
     </div>
   </div>
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <%= f.text_field :last_name, class: "form-control form-wide" %>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_text_field :last_name, width: "three-quarters", label: { text: t(".last_name") } %>
     </div>
   </div>
-  <div class="grid-row">
-    <div class="column-two-thirds">
-      <%= f.text_field :email, class: "form-control form-wide" %>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_text_field :email, width: "three-quarters", label: { text: t(".email") } %>
     </div>
   </div>
-  <div class="grid-row">
-    <div class="column-two-thirds">
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
       <%= f.fields_for :user_areas do |uaf| %>
-        <%= uaf.hidden_field :primary %>
-        <%= uaf.hidden_field :user_id %>
-        <% if uaf.object.id && uaf.index >= 1 %>
-          <div class="add-link column-three-quarters">
-            <%= link_to("remove", main_app.admin_user_area_path(uaf.object), data: {:confirm => 'Are you sure?'}, :method => :delete) %>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <%= uaf.hidden_field :primary %>
+            <%= uaf.hidden_field :user_id %>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <label class="govuk-label" for="user_user_areas_attributes_<%= uaf.index %>_area_id"><%= area_label(uaf.index) %></label>
+              </div>
+              <% if uaf.object.id && uaf.index >= 1 %>
+                <div class="govuk-grid-column-one-half">
+                <div class="add-link govuk-grid-column-three-quarters">
+                  <%= link_to("remove", main_app.admin_user_area_path(uaf.object), data: {:confirm => 'Are you sure?'}, :method => :delete) %>
+               </div>
+               </div>
+              <% end %>
+            </div>
+            <%=
+              uaf.select :area_id,
+                grouped_options_for_select(determine_grouped_area(uaf.index, @user), uaf.object.area_id),
+                { prompt: "Select an area", label: "#{area_label(uaf.index)}", :include_blank => true },
+                { class: "govuk-select govuk-grid-column-three-quarters area-select" }
+            %>
+            <p><br>
           </div>
-        <% end %>
-        <%=
-          uaf.select :area_id,
-            grouped_options_for_select(determine_grouped_area(uaf.index, @user), uaf.object.area_id),
-            { prompt: "Select an area", label: "#{area_label(uaf.index)}", :include_blank => true },
-            { class: "form-control form-wide area-select" }
-        %>
-    <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
-  <%= f.form_group(:base) do %>
-    <%= f.error_message(:base) %>
-    <div class="grid-row">
-      <div class="column-two-thirds">
-        <%= f.check_box :admin, label: t("admin_label") %>
+
+  <%= form_group f.object, :base, :base do %>
+    <%= error_message f.object, :base, :base %>
+    <div class="govuk-grid-row govuk-body">
+      <div class="govuk-grid-column-full">
+        <%= f.govuk_check_box :admin, :admin, label: { text: t(".admin_label") } %>
       </div>
     </div>
   <% end %>
+
   <% if action_name != "new" && @user.persisted? %>
     <div class="form-group">
-      <div class="grid-row with-headroom">
-        <div class="column-two-thirds">
-          <%= f.label :invitation_sent_at, class: "form-label-bold" %>
+      <div class="govuk-grid-row govuk-body with-headroom">
+        <div class="govuk-grid-column-two-thirds">
+          <strong><%= f.label :invitation_sent_at %></strong><br>
           <%= date_or @user.invitation_sent_at, "Not set" %>
         </div>
       </div>
-      <div class="grid-row with-headroom">
-        <div class="column-two-thirds">
-          <%= f.label :invitation_accepted_at, class: "form-label-bold" %>
-          <%= date_or @user.invitation_accepted_at, "Not accepted" %>
+      <div class="govuk-grid-row govuk-body with-headroom">
+        <div class="govuk-grid-column-two-thirds">
+          <strong><%= f.label :invitation_accepted_at %></strong><br>
+          <%= date_or @user.invitation_accepted_at, "Not accepted" %><br>
         </div>
       </div>
-      <div class="grid-row with-headroom">
-        <div class="column-two-thirds">
-          <%= f.label :last_sign_in_at, class: "form-label-bold" %>
+      <div class="govuk-grid-row govuk-body with-headroom">
+        <div class="govuk-grid-column-two-thirds">
+          <strong><%= f.label :last_sign_in_at %></strong><br>
           <%= date_or @user.last_sign_in_at, "Never" %>
         </div>
       </div>
     </div>
   <% end -%>
-  <div class="grid-row">
-    <div class="column-two-thirds actions">
-      <%= f.submit t("save_label"), class: 'button' %>
-      <%= link_to t("cancel_label"), admin_users_path, class: 'button button-secondary', role: "button" %>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_submit t("save_label") %>
+      <%= link_to t("cancel_label"), admin_users_path, class: 'govuk-button govuk-button--secondary horiz-1em-left' %>
       <% if action_name != "new" && @user.persisted? && @user.last_sign_in_at.nil? && @user.invitation_accepted_at.nil? %>
         <div class="resend-link">
           <%= link_to "Resend invitation", reinvite_admin_user_path(@user) %>

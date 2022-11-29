@@ -1,7 +1,7 @@
 <% content_for :title, "Failed PoL Submissions" %>
 
 <div id="dashboard">
-  <h1 class="heading-large">Failed PoL Submissions</h1>
+  <h1 class="govuk-heading-l">Failed PoL Submissions</h1>
   <p>The following submissions have not been flagged as received by PoL</p>
 
   <section>
@@ -37,22 +37,22 @@
         </tbody>
       </table>
     <% end %>
-    <div class="grid-row page-nav">
-      <div class="pagination column-one-third">
+    <div class="govuk-grid-row page-nav">
+      <div class="pagination govuk-grid-column-one-third">
         <%= page_entries_info projects %>
       </div>
-      <div class="column-two-thirds">
+      <div class="govuk-grid-column-two-thirds">
         <div class="pagination-area">
           <%= paginate projects, left: 0, right: 0, window: 2 %>
         </div>
       </div>
       <% if projects.empty? %>
-        <div class="column-three-quarters">
+        <div class="govuk-grid-column-three-quarters">
           <p>There are no failed submissions</p>
         </div>
       <% end %>
 
-      <div class="column-three-quarters">
+      <div class="govuk-grid-column-three-quarters">
         <details role="group">
           <summary role="button" aria-controls="failed-submissions-help">
             <span class="summary">How to manage failed submissions</span>

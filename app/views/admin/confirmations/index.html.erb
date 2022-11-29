@@ -1,4 +1,4 @@
-<h1 class="heading-large">Incomplete Asite Submissions</h1>
+<h1 class="govuk-heading-l">Incomplete Asite Submissions</h1>
 <table>
   <thead>
     <tr>
@@ -6,7 +6,7 @@
       <th data-sortable="area">Area</th>
       <th data-sortable="email-sent">Email Sent</th>
       <th data-sortable="status">Status</th>
-      <th><span class="visually-hidden">Action</span></th>
+      <th><span class="govuk-visually-hidden">Action</span></th>
     </tr>
   </thead>
   <tbody>
@@ -22,11 +22,11 @@
     <% end %>
   </tbody>
 </table>
-<div class="grid-row page-nav">
-  <div class="column-one-third">
+<div class="govuk-grid-row page-nav">
+  <div class="govuk-grid-column-one-third">
     <%= page_entries_info @submissions %>
   </div>
-  <div class="column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
     <div class="pagination-area">
       <%= paginate @submissions, left: 0, right: 0, window: 2 %>
     </div>
