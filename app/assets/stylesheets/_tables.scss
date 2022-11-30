@@ -1,8 +1,4 @@
 @import "defra_ruby_template";
-// @import 'helpers';
-// @import 'typography';
-// @import 'colours';
-// @import 'measurements';
 
 // Tables
 // ==========================================================================
@@ -14,16 +10,13 @@ table {
 
   th,
   td {
-    // @include core-16;
     border-bottom: 1px solid $govuk-border-colour;
-    // color: $text-colour;
     padding: pem(12, 16) pem(20, 16) pem(9, 16) 0;
     text-align: left;
   }
 
   th {
     font-weight: 700;
-    // Right align headings for numeric content
     .numeric {
       text-align: right;
     }
@@ -32,7 +25,6 @@ table {
   // Use tabular numbers for numeric table cells
   .numeric {
     td {
-      // @include core-16($tabular-numbers: true);
       text-align: right;
     }
   }
@@ -42,16 +34,7 @@ table {
   padding: 10px 0px;
 }
 
-// .cookies-table {
-//   tr, td, th {
-//     padding-bottom: 0.2em;
-//     padding-left: 5px;
-//     padding-top: 0.5em;
-//   }
-// }
-
 .summary-table {
-  // margin-bottom: $gutter;
 
   tr, td, th {
     padding-bottom: 0.2em;
