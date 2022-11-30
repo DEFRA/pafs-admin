@@ -82,7 +82,7 @@ module Admin
         params["user_areas_attributes"].delete(index) if user_area["area_id"].blank? && user_area["primary"] != "true"
       end
 
-      if @user.update(params)
+      if @user.update!(params)
         redirect_to admin_users_path
       else
         number_of_total_areas = (4 - @user.user_areas.size).to_i
@@ -130,7 +130,7 @@ module Admin
         u.skip_invitation = true
       end
       AccountRequestMailer.account_created_email(user).deliver_now
-      user.update(invitation_sent_at, Time.now.utc)
+      user.update!(invitation_sent_at: Time.now.utc)
     end
 
     def navigator

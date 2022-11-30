@@ -1,5 +1,5 @@
-<h1 class="heading-large">View imported program reports</h1>
-<div>
+<h1 class="govuk-heading-l">View imported program reports</h1>
+<div class="govuk-body">
   <section>
     <table class="program-uploads">
       <thead>
@@ -21,11 +21,11 @@
         <% end %>
       </tbody>
     </table>
-    <div class="grid-row page-nav">
-      <div class="column-one-third">
+    <div class="govuk-grid-row page-nav">
+      <div class="govuk-grid-column-one-third">
         <%= page_entries_info @uploads %>
       </div>
-      <div class="column-two-thirds">
+      <div class="govuk-grid-column-two-thirds">
         <div class="pagination-area">
           <%= paginate @uploads, left: 0, right: 0, window: 2 %>
         </div>

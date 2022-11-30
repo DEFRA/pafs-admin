@@ -36,7 +36,6 @@ Rails.application.routes.draw do
   get "/password/reset" => "reset_password#reset", as: :after_password_reset
 
   mount PafsCore::Engine, at: "/pc"
-  mount GovukPublishingComponents::Engine, at: "/component-guide" if Rails.env.development?
 
   get "/cookies", to: "pafs_core/pages#cookies"
 

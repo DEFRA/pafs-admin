@@ -7,17 +7,17 @@ en:
         user:
           attributes:
             password:
-              blank: "^Enter a password"
-              too_short: "^Password should be at least %{count} characters"
+              blank: "Enter a password"
+              too_short: "Password should be at least %{count} characters"
             password_confirmation:
-              confirmation: "^Passwords do not match"
+              confirmation: "Passwords do not match"
             email:
-              blank: "^Enter an email address"
-              taken: "^This email address is already registered. Enter a different email address."
+              blank: "Enter an email address"
+              taken: "This email address is already registered. Enter a different email address."
             first_name:
-              blank: "^Enter a first name"
+              blank: "Enter a first name"
             last_name:
-              blank: "^Enter a last name"
+              blank: "Enter a last name"
   devise:
     confirmations:
       confirmed: "Your email address has been successfully confirmed."

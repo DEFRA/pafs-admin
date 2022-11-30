@@ -31,7 +31,6 @@ en:
   time:
     formats:
       default: "%d/%m/%Y"
-  admin_label: "Administrator"
   save_label: "Save"
   cancel_label: "Cancel"
   add_user_label: "Add new user"
@@ -40,6 +39,16 @@ en:
   global_proposition_header: "Project Application and Funding Service Admin"
   logout_link: "Sign out"
   admin:
+    users:
+      form:
+        first_name: First name
+        last_name: Last name
+        email: Email
+        main_area: Main Area
+        1st_area: 1st Area
+        2nd_area: 2nd Area
+        3rd_area: 3rd Area
+        admin_label: Administrator
     programme_generation_resets:
       new:
         heading: "Reset area programme generation process"
@@ -67,7 +76,7 @@ en:
         import_help_html: >
           <p>To import a partial programme or data fixes:
           <ul class="list-bullet"><li>Select the file to upload</li>
-          <li><strong class="bold-small">DO NOT</strong> check the
+          <li><strong>DO NOT</strong> check the
           'Reset consented status for all projects' box</li>
           <li>Click the 'Import' button</li>
           </ul>

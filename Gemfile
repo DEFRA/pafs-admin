@@ -34,10 +34,9 @@ gem "devise_invitable"
 gem "devise-security"
 gem "dotenv-rails"
 
-gem "govuk_elements_rails"
-gem "govuk_frontend_toolkit"
-gem "govuk_publishing_components", "~> 23.0"
-gem "govuk_template"
+# GOV.UK styling
+gem "defra_ruby_template"
+gem "govuk_design_system_formbuilder"
 
 # active job backend
 gem "sucker_punch", "~> 3.1"

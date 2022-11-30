@@ -1,5 +1,3 @@
-@import 'typography';
-@import 'colours';
 
 .centered {
   text-align: center;
@@ -9,7 +7,6 @@
   margin-bottom: 1em;
 
   dd {
-    @include core-19;
     display: inline;
     margin: 0;
 
@@ -20,7 +17,6 @@
   }
 
   dt {
-    @include bold-19;
     display: inline-block;
     min-width: 20%;
   }
