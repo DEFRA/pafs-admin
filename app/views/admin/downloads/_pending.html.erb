@@ -2,7 +2,7 @@
   <div class="govuk-grid-column-two-thirds">
     <p>The complete FCRM1 is being generated.</p>
     <p>
-      <strong class="heading-small">
+      <strong class="govuk-heading-s">
         <% if meta['current_record'] && meta['total_records'] %>
           <%= meta['current_record'] %> / <%= meta['total_records'] %> 
           (<%= ((meta['current_record'].to_f / meta['total_records'].to_f) * 100).to_i %>% complete)
