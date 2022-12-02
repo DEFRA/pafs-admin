@@ -8,18 +8,12 @@
 
 <% content_for :page_title, title %>
 
-<% content_for :cookies_banner do %>
-  <%= render partial: "cookies/banner" %>
-<% end %>
-
 <% content_for :header_content do %>
   <% content_tag(:span, class: "govuk-header__link--service-name") { t(:global_proposition_header) } %>
 <% end %>
 
 <% content_for :phase_banner do %>
-  <% unless request.path == "/cookies" %>
-    <%= render "shared/user_bar" if user_signed_in? %>
-  <% end %>
+  <%= render "shared/user_bar" if user_signed_in? %>
   <%= render "shared/flash_alerts" %>
 <% end %>
 
@@ -28,30 +22,11 @@
 <% end %>
 
 <% content_for :footer do %>
-  <span class="govuk-govuk-visually-hidden"><%= t("global.footer_support_text") %></span>
+  <span class="govuk-visually-hidden"><%= t("global.footer_support_text") %></span>
   <p class="govuk-!-font-weight-bold">
     <%= t("global.footer_support_text") %>
     <%= link_to t("global.helpline_telephone_number"), "tel:#{t("global.helpline_telephone_number").delete(" ") }" %>
   </p>
-  <ul class="govuk-footer__inline-list">
-    <li class="govuk-footer__inline-list-item">
-      <%= link_to "Cookies", cookies_path, class: "govuk-footer__link" %>
-    </li>
-  </ul>
-  <div class="revision" aria-hidden="true">Build: <%= revision_hash %></div>
 <% end %>
 
-<% content_for :footer_support_links do %>
-  <div class="ea-footer">
-    <p><%= t('global.footer_support_text') %> <%= link_to t("global.helpline_telephone_number"), "tel:#{t("global.helpline_telephone_number").delete(" ") }" %></p>
-
-    <ul class="inline-list">
-      <li class="inline"><%= link_to 'Cookies', cookies_path,  target: '_blank' %></li>
-    </li>
-
-    </ul>
-  </div>
-<% end %>
-
-<%-# LAST: RENDER main GDS template -%>
 <%= render template: "layouts/defra_ruby_template" %>
