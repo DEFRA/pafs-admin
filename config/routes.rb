@@ -37,8 +37,6 @@ Rails.application.routes.draw do
 
   mount PafsCore::Engine, at: "/pc"
 
-  get "/cookies", to: "pafs_core/pages#cookies"
-
   match "(errors)/:status", to: PafsCore::Engine, via: :all, constraints: { status: /\d{3}/ }
 
   root "admin/users#index"
