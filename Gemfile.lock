@@ -150,6 +150,7 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    date (3.3.1)
     defra_ruby_alert (2.1.1)
       airbrake
     defra_ruby_style (0.3.0)
@@ -240,11 +241,12 @@ GEM
     mini_portile2 (2.8.0)
     minitest (5.16.3)
     msgpack (1.4.2)
-    net-imap (0.3.1)
+    net-imap (0.3.2)
+      date
       net-protocol
     net-pop (0.1.2)
       net-protocol
-    net-protocol (0.2.0)
+    net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
       net-protocol
