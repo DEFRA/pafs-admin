@@ -367,7 +367,7 @@ GEM
     rubocop-rspec (2.15.0)
       rubocop (~> 1.33)
     ruby-ole (1.2.12.2)
-    ruby-prof (1.4.3)
+    ruby-prof (1.4.4)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.5)
     rubyXL (3.4.25)
