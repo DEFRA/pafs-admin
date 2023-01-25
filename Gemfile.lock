@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: dd95417a2e96e661479e9431901a0cec93581e35
+  revision: 6b6b6e937d60e68b12352e7c97fcb48bdcc4cc43
   branch: main
   specs:
     pafs_core (0.0.2)
@@ -97,16 +97,16 @@ GEM
       rbtree3 (~> 0.5)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.679.0)
-    aws-sdk-core (3.168.4)
+    aws-partitions (1.699.0)
+    aws-sdk-core (3.169.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.5)
       jmespath (~> 1, >= 1.6.1)
-    aws-sdk-kms (1.61.0)
+    aws-sdk-kms (1.62.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.117.2)
+    aws-sdk-s3 (1.118.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -182,7 +182,7 @@ GEM
       railties (>= 5.0.0)
     faker (3.1.0)
       i18n (>= 1.8.11, < 2)
-    faraday (2.7.2)
+    faraday (2.7.4)
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-net_http (3.0.2)
@@ -229,7 +229,7 @@ GEM
     loofah (2.19.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.8.0)
+    mail (2.8.0.1)
       mini_mime (>= 0.1.1)
       net-imap
       net-pop
@@ -251,7 +251,7 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.8)
-    nokogiri (1.13.10)
+    nokogiri (1.14.0)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     optimist (3.0.1)
@@ -299,7 +299,7 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
-    rails-html-sanitizer (1.4.4)
+    rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
     rails_12factor (0.0.3)
       rails_serve_static_assets
