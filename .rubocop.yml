@@ -7,13 +7,13 @@ require:
   - rubocop-rspec
 
 # TODO Resolve these legacy Rubocop offenses
+Capybara/SpecificMatcher:
+  Enabled: false
 Lint/SuppressedException:
   Enabled: false
 Rails/HelperInstanceVariable:
   Enabled: false
 Rails/I18nLocaleTexts:
-  Enabled: false
-RSpec/Capybara/SpecificMatcher:
   Enabled: false
 RSpec/ExampleLength:
   Enabled: false
