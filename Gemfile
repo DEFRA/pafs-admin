@@ -45,6 +45,8 @@ gem "sucker_punch", "~> 3.1"
 gem "passenger", "~> 5.1.0", require: false
 gem "whenever", require: false
 
+gem "github_changelog_generator"
+
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
     git: "https://github.com/DEFRA/pafs_core",
@@ -67,7 +69,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "github_changelog_generator"
   gem "letter_opener"
   gem "spring"
   gem "web-console"
