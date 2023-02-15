@@ -67,6 +67,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "github_changelog_generator"
   gem "letter_opener"
   gem "spring"
   gem "web-console"
