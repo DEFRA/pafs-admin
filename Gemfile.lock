@@ -538,6 +538,7 @@ DEPENDENCIES
   pg
   poltergeist
   pry
+  psych (~> 5.0)
   rails (~> 6.1)
   rake
   rbtrace
