@@ -57,6 +57,8 @@ gem "dibble", "~> 0.1",
 # TODO: Unpin when nokogiri > 1.14.1 builds successfully on GitHub
 gem "nokogiri", "1.14.1"
 
+gem "github_changelog_generator"
+
 group :development, :test do
   gem "byebug"
   gem "climate_control"
@@ -70,7 +72,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "github_changelog_generator"
   gem "letter_opener"
   gem "spring"
   gem "web-console"
