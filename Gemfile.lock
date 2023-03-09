@@ -531,12 +531,12 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
+  nokogiri (~> 1.14.1)
   pafs_core (~> 0.0)!
   passenger (~> 5.1.0)
   pg
   poltergeist
   pry
-  psych (~> 5.0)
   rails (~> 6.1)
   rails_12factor
   rake
