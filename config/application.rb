@@ -49,6 +49,6 @@ module PafsAdmin
 
     logger           = ActiveSupport::Logger.new(Rails.root.join("log", "#{Rails.env}.log"))
     logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)  
+    config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 end
