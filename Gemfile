@@ -54,6 +54,9 @@ gem "dibble", "~> 0.1",
     git: "https://github.com/tonyheadford/dibble",
     branch: "develop"
 
+# TODO: Unpin when nokogiri > 1.14.1 builds successfully on GitHub
+gem "nokogiri", "1.14.1"
+
 group :development, :test do
   gem "byebug"
   gem "climate_control"
