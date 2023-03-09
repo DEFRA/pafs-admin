@@ -12,6 +12,8 @@ gem "rake"
 gem "sass-rails", "~> 5.1"
 gem "uglifier"
 
+gem "psych", "~> 5.0"
+
 gem "font-awesome-sass", "~> 5.15"
 gem "jbuilder"
 gem "jquery-rails"
