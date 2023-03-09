@@ -276,9 +276,6 @@ GEM
     minitest (5.18.0)
     msgpack (1.4.2)
     multi_json (1.15.0)
-    net-ftp (0.2.0)
-      net-protocol
-      time
     net-imap (0.3.4)
       date
       net-protocol
@@ -467,8 +464,6 @@ GEM
       concurrent-ruby (~> 1.0)
     thor (1.2.1)
     tilt (2.0.11)
-    time (0.2.1)
-      date
     timeout (0.3.2)
     timers (4.3.5)
     to_xls (1.5.3)
@@ -526,7 +521,6 @@ DEPENDENCIES
   jquery-rails
   kaminari
   letter_opener
-  net-ftp
   net-imap
   net-pop
   net-smtp
