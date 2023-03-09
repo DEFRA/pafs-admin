@@ -12,7 +12,7 @@ gem "rake"
 gem "sass-rails", "~> 5.1"
 gem "uglifier"
 
-gem "nokogiri", "~> 1.7"
+gem "mini_portile2", "~> 2.8"
 
 gem "font-awesome-sass", "~> 5.15"
 gem "jbuilder"
