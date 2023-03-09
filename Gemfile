@@ -12,8 +12,6 @@ gem "rake"
 gem "sass-rails", "~> 5.1"
 gem "uglifier"
 
-gem "mini_portile2", "~> 2.8"
-
 gem "font-awesome-sass", "~> 5.15"
 gem "jbuilder"
 gem "jquery-rails"
@@ -74,6 +72,7 @@ group :development, :test do
 end
 
 group :development do
+  gem "github_changelog_generator"
   gem "letter_opener"
   gem "spring"
   gem "web-console"
