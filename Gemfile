@@ -12,7 +12,7 @@ gem "rake"
 gem "sass-rails", "~> 5.1"
 gem "uglifier"
 
-gem "psych", "~> 5.0"
+gem "nokogiri", "~> 1.14.1"
 
 gem "font-awesome-sass", "~> 5.15"
 gem "jbuilder"
