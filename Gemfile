@@ -89,10 +89,6 @@ group :test do
   gem "webmock"
 end
 
-group :production, :edge, :qa, :staging do
-  gem "rails_12factor"
-end
-
 group :benchmark do
   gem "benchmark-ips"
   gem "rbtrace"
