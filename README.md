@@ -11,6 +11,8 @@ For a full breakdown of the PAFS documentation, technical and non technical plea
 
 ## Development Environment
 
+For this to work locally, it's best to first install [pafs-user](https://github.com/DEFRA/pafs-user) (As this relies on the same database setup)
+
 ### Install global system dependencies
 
 The following system dependencies are required, regardless of how you install the development environment.
@@ -28,7 +30,7 @@ Clone the repository, copying the project into a working directory:
 We use "git flow" to manage development and features branches.
 To initialise git flow for the project, you need to run:
 
-    git checkout -t origin/master
+    git checkout -t origin/main
     git flow init # choose the defaults
     git checkout develop
 
@@ -39,7 +41,7 @@ for more information about our branching strategy.
 
 #### Local system dependencies
 
-* [Ruby 2.3.x](https://www.ruby-lang.org) (e.g. via [RVM](https://rvm.io) or [Rbenv](https://github.com/sstephenson/rbenv/blob/master/README.md))
+* [Ruby 3.2.x](https://www.ruby-lang.org) (e.g. via [RVM](https://rvm.io) or [Rbenv](https://github.com/sstephenson/rbenv/blob/master/README.md))
 * [Postgresql](http://www.postgresql.org/download)
 * [Phantomjs](https://github.com/teampoltergeist/poltergeist#installing-phantomjs) (test specs)
 
@@ -51,18 +53,23 @@ Run the following to download the app dependencies ([rubygems](https://www.ruby-
     gem install bundler
     bundle install
 
+#### .env configuration file
+
+The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem which allows enviroment variables to be loaded from a ```.env``` configuration file in the project root.
+
+Duplicate ```./dotenv.example``` and rename the copy as ```./.env```. 
+```
+  cp ./dotenv.example .env
+```
+
+Open it and update SECRET_KEY_BASE and settings for database, email etc.
+
 #### Databases _(local)_
 
 There are several databases per environment, therefore, ensure you run the following:
 
     bundle exec rake db:create:all
     bundle exec rake db:migrate db:seed
-
-#### .env configuration file
-
-The project uses the [dotenv](https://github.com/bkeepers/dotenv) gem which allows enviroment variables to be loaded from a ```.env``` configuration file in the project root.
-
-Duplicate ```./dotenv.example``` and rename the copy as ```./.env```. Open it and update SECRET_KEY_BASE and settings for database, email etc.
 
 #### Start the service _(local)_
 
