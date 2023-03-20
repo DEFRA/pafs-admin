@@ -9,7 +9,7 @@ RSpec.describe "Download all" do
 
   def remove_meta_file
     FileUtils.rm(Rails.public_path.join("tmp", meta_filename))
-  rescue Errno::ENOENT
+  rescue Errno::ENOENT # rubocop:disable Lint/SuppressedException
   end
 
   before do
