@@ -24,8 +24,7 @@ Rails.application.routes.draw do
       end
     end
     resources :confirmations, only: [:index]
-    resources :refresh, only: %i[index new create]
-    resources :programme_generation_resets, only: %i[index new create]
+    resources :refresh, only: %i[index]
     resources :program_uploads, except: %i[edit update] do
       resources :program_upload_items, only: [:show]
     end
