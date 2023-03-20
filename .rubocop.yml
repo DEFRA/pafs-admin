@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 inherit_gem:
   defra_ruby_style:
     - default.yml
@@ -6,25 +8,3 @@ require:
   - rubocop-rails
   - rubocop-rake
   - rubocop-rspec
-
-# TODO Resolve these legacy Rubocop offenses
-Capybara/SpecificMatcher:
-  Enabled: false
-Lint/SuppressedException:
-  Enabled: false
-Rails/HelperInstanceVariable:
-  Enabled: false
-Rails/I18nLocaleTexts:
-  Enabled: false
-RSpec/ExampleLength:
-  Enabled: false
-RSpec/LetSetup:
-  Enabled: false
-RSpec/MessageSpies:
-  Enabled: false
-RSpec/MultipleExpectations:
-  Enabled: false
-RSpec/MultipleMemoizedHelpers:
-  Enabled: false
-RSpec/VerifiedDoubles:
-  Enabled: false
