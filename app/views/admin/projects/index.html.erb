@@ -1,0 +1,69 @@
+<% content_for :title, t(".all_projects") %>
+
+<div id="dashboard">
+
+  <div class="govuk-grid-row govuk-body">
+
+    <h1 class="govuk-heading-l"><%= t(".all_projects") %></h1>
+
+    <div class="govuk-grid-column-three-quarters">
+      <%= form_tag(main_app.admin_projects_path, method: "get", class: "search-bar") do %>
+        <%= label_tag :q, t(".search_hint"), class: "govuk-visually-hidden" %>
+        <%= text_field_tag(:q,
+                           params[:q] || "",
+                           placeholder: t(".search_hint"),
+                           minlength: 1,
+                           maxlength: 30,
+                           class: "govuk-input govuk-!-width-one-half") %>
+        <%= submit_tag(t(".submit"), class: "govuk-button") %>
+      <% end %>
+    </div>
+  <div>
+
+  <section>
+    <% unless @projects.empty? %>
+      <table class="dashboard govuk-body-s">
+        <caption class="govuk-visually-hidden"><%= t("table_caption") %></caption>
+        <thead>
+          <tr>
+            <th scope="col" class="project-number"><%= t(".project_number") %></th>
+            <th scope="col" class="sortable-heading"><%= t(".project_name") %></th>
+            <th scope="col"><%= t(".created_by") %></th>
+            <th scope="col">
+              <% sort_properties_for_col = get_next_sort_order_and_curr_arrow(project_sort_column, "updated_at", project_sort_order, "updated_at", "desc") %>
+
+              <%= link_to t(".last_updated"), main_app.admin_projects_path(sort_col: "updated_at", sort_order: sort_properties_for_col[:next_sort_order]), class: "sortable-link" %>
+              <span class="sortable-arrow"><%=h raw(sort_properties_for_col[:curr_arrow]) %></span>
+            </th>
+            <th scope="col"><%= t(".status") %></th>
+            <th scope="col"><%= t(".change_rma") %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @projects.each do |project| %>
+            <tr>
+              <td><%= project.reference_number %></td>
+              <td><%= project.name %></td>
+              <td><%= project.owner.name unless project.owner.blank? %></td>
+              <td><%= l(project.updated_at) %></td>
+              <td><%= status_label_for(project.submission_state.current_state) %></td>
+              <td><%= link_to t(".edit_link"), main_app.edit_admin_project_path(project), class: "project-link" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+
+    <div class="govuk-grid-row govuk-body-s page-nav">
+      <div class="pagination govuk-grid-column-one-third">
+        <%= page_entries_info @projects %>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <div class="pagination-area">
+          <%= paginate @projects, left: 0, right: 0, window: 2 %>
+          <%= link_to t(".show_all"), main_app.admin_projects_path(all: true), class: "govuk-button" %>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

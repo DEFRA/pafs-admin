@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :admin, class: "User" do
-    first_name { "Admin" }
+  factory :back_office_user, class: "User" do
+    first_name { "Some" }
     last_name { "User" }
-    email { "admin@example.com" }
+    email { Faker::Internet.email }
     password { "Secr3tP@ssw0rd" }
-    admin { true }
+    admin { false }
 
     trait :ea do
       after(:create) do |user|
