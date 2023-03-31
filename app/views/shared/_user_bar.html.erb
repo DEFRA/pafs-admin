@@ -2,11 +2,12 @@
   <div class="govuk-grid-column-full">
     <ul class="user-menu govuk-!-font-size-16">
       <li>Signed in as: <%= current_user.full_name %></li>
-      <li><%= link_to("Users", main_app.admin_users_path) %></li>
-      <li> <%= link_to("FCERM programme refresh", main_app.admin_refresh_index_path) %></li>
-      <li><%= link_to("Submissions", main_app.admin_confirmations_path) %></li>
+      <li><%= link_to t("all_projects"), main_app.admin_projects_path %></li>
+      <li><%= link_to t("users"), main_app.admin_users_path %></li>
+      <li><%= link_to t("fcerm_programme_refresh"), main_app.admin_refresh_index_path %></li>
+      <li><%= link_to t("submissions"), main_app.admin_confirmations_path %></li>
       <% if ENV.fetch('POL_FAILURE_NOTIFICATION_EMAIL', false) %>
-        <li><%= link_to("Failed Submissions", main_app.admin_failed_submissions_path) %></li>
+        <li><%= link_to t("failed_submissions"), main_app.admin_failed_submissions_path %></li>
       <% end %>
       <li><%= link_to(t('logout_link'), main_app.destroy_user_session_path) %></li>
     </ul>
