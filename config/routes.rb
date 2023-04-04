@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     resources :projects do
       member do
         get :edit
+        patch :save
       end
     end
 

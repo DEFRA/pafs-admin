@@ -63,7 +63,11 @@ en:
         heading: Change project RMA
         current_rma: Current RMA
         select_new_rma: Select new RMA
-        save: Save
+        save_label: Save
+        cancel: Cancel
+      not_changed: You need to select a new RMA option to continue
+      update_failed: "%{reference_number} RMA update failed"
+
     users:
       form:
         first_name: First name

@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe "Update a user" do
-  let(:admin) { create(:admin, :pso) }
+  let(:admin) { create(:back_office_user, :pso) }
   let(:user) { create(:user, :pso) }
   let!(:main_area) { create(:rma_area, name: "North East") }
 

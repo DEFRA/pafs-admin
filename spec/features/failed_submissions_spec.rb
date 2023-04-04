@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe "Failed to Send Report" do
-  let(:user) { create(:admin, :pso) }
+  let(:user) { create(:back_office_user, :pso) }
 
   around do |example|
     ClimateControl.modify(
