@@ -4,7 +4,7 @@ RSpec.describe "Download all" do
   let(:download_filename) { PafsCore::Download::All::FILENAME }
   let(:meta_filename) { "#{download_filename}.meta" }
   let(:meta) { PafsCore::Download::Meta.load(meta_filename) }
-  let(:user) { create(:admin, :pso) }
+  let(:user) { create(:back_office_user, :pso) }
   let!(:project) { create(:project, creator: user) }
 
   def remove_meta_file

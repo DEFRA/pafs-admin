@@ -22,7 +22,24 @@ module Admin
     end
 
     def edit
-      @project = PafsCore::Project.find_by(reference_number: params[:id].gsub("-", "\/"))
+      @project = PafsCore::Project.find_by(reference_number: params[:id].gsub("-", "/"))
+    end
+
+    def save
+      @project = PafsCore::Project.find_by(reference_number: params[:id].gsub("-", "/"))
+      @new_rma = PafsCore::Area.find(params[:rma_id])
+
+      return redirect_save_no_change if @new_rma == @project.owner
+
+      return redirect_save_success if PafsCore::ChangeProjectAreaService.new(@project).run(@new_rma)
+
+      redirect_save_failure
+    rescue StandardError => e
+      message = "Error changing RMA for project #{params[:id]} to #{params[:rma_id]}"
+      Rails.logger.error message
+      Airbrake.notify(e, message: message)
+
+      redirect_save_failure
     end
 
     private
@@ -37,6 +54,20 @@ module Admin
 
     def project_sort_order
       params[:sort_order].to_s
+    end
+
+    def redirect_save_success
+      redirect_to admin_projects_path
+    end
+
+    def redirect_save_no_change
+      redirect_back fallback_location: edit_admin_project_path(@project.reference_number),
+                    flash: { alert: t(".not_changed") }
+    end
+
+    def redirect_save_failure
+      redirect_back fallback_location: edit_admin_project_path(@project.reference_number),
+                    flash: { alert: t(".update_failed", reference_number: @project.reference_number) }
     end
   end
 end

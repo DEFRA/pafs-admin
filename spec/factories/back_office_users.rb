@@ -6,7 +6,7 @@ FactoryBot.define do
     last_name { "User" }
     email { Faker::Internet.email }
     password { "Secr3tP@ssw0rd" }
-    admin { false }
+    admin { true }
 
     trait :ea do
       after(:create) do |user|
