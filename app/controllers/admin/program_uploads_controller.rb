@@ -4,13 +4,6 @@ module Admin
   class ProgramUploadsController < ApplicationController
     before_action :authenticate_user!
 
-    def index
-      page = params.fetch(:page, "1").to_i
-
-      @uploads = PafsCore::ProgramUpload.all
-                                        .order(created_at: :desc).page(page).per(10)
-    end
-
     def show
       page = params.fetch(:page, 1)
       items_per_page = params.fetch(:per, 50)
@@ -21,10 +14,6 @@ module Admin
       else
         render "show"
       end
-    end
-
-    def new
-      @upload = PafsCore::ProgramUpload.new
     end
 
     def create

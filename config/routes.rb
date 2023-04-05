@@ -24,8 +24,7 @@ Rails.application.routes.draw do
       end
     end
     resources :confirmations, only: [:index]
-    resources :refresh, only: %i[index]
-    resources :program_uploads, except: %i[edit update] do
+    resources :program_uploads, only: %i[show create] do
       resources :program_upload_items, only: [:show]
     end
     resources :camc3, only: [:show], controller: :camc3
