@@ -81,6 +81,7 @@ module Admin
       user_areas_attributes.each do |index, user_area|
         params["user_areas_attributes"].delete(index) if user_area["area_id"].blank? && user_area["primary"] != "true"
       end
+      params[:admin] = true if params[:admin]
 
       if @user.update!(params)
         redirect_to admin_users_path
@@ -114,7 +115,10 @@ module Admin
     private
 
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :admin,
+      params.require(:user).permit(:first_name,
+                                   :last_name,
+                                   :email,
+                                   admin: [],
                                    user_areas_attributes: %i[id area_id user_id primary])
     end
 
