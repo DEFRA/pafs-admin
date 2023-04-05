@@ -6,13 +6,14 @@
 
   <div class="govuk-grid-column-three-quarters">
 
-    <h3 class="govuk-heading-m"><%= t(".current_rma") %></h3>
+    <h2 class="govuk-heading-m"><%= t(".current_rma") %></h2>
     <%= @project.owner.name %>
     <p>
 
-    <h3 class="govuk-heading-m"><%= t(".select_new_rma") %></h3>
+    <h2 class="govuk-heading-m"><%= t(".select_new_rma") %></h2>
 
     <%= form_tag save_admin_project_path(@project), method: "patch" do %>
+      <label for="rma_id" class="govuk-visually-hidden">Select new RMA</label>
       <%= select_tag :rma_id,
           options_for_select(PafsCore::Area.rma_areas.map { |a| [a.name, a.id] }, @project.owner.id),
           class: "govuk-select"
@@ -23,6 +24,6 @@
     <% end %>
     <p>
 
-    <%= link_to t(".cancel"), :back %>
+    <%= link_to t(".cancel"), admin_projects_path %>
   </div>
 </div>
