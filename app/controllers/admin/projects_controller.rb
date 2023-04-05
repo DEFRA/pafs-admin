@@ -22,11 +22,11 @@ module Admin
     end
 
     def edit
-      @project = PafsCore::Project.find_by(reference_number: params[:id].gsub("-", "/"))
+      @project = project_from_reference_number_param(params[:id])
     end
 
     def save
-      @project = PafsCore::Project.find_by(reference_number: params[:id].gsub("-", "/"))
+      @project = project_from_reference_number_param(params[:id])
       @new_rma = PafsCore::Area.find(params[:rma_id])
 
       return redirect_save_no_change if @new_rma == @project.owner
@@ -43,6 +43,12 @@ module Admin
     end
 
     private
+
+    def project_from_reference_number_param(id_param)
+      # Map the project national reference number from "WXC123E-000A-012A" format
+      # as per rails routes to "WXC123E/000A/012A" format as per DB
+      PafsCore::Project.find_by(reference_number: id_param.gsub("-", "/"))
+    end
 
     def navigator
       @navigator ||= PafsCore::ProjectNavigator.new current_resource
