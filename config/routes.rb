@@ -24,9 +24,6 @@ Rails.application.routes.draw do
       end
     end
     resources :confirmations, only: [:index]
-    resources :program_uploads, only: %i[show create] do
-      resources :program_upload_items, only: [:show]
-    end
     resources :camc3, only: [:show], controller: :camc3
   end
   devise_for :users, controllers: { passwords: "passwords" }

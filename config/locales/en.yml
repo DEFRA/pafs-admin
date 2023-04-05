@@ -49,31 +49,6 @@ en:
         2nd_area: 2nd Area
         3rd_area: 3rd Area
         admin_label: Administrator
-    program_uploads:
-      new:
-        heading: "Import programme"
-        description: "Import the completed Flood and Coastal Erosion Risk Management programme."
-        notice: "Check the box below to reset the consented status for all projects in the service."
-        reset_label: "Reset consented status for all projects"
-        upload_and_process_label: "Import"
-        import_help_title: "Do not want to import the full programme?"
-        import_help_html: >
-          <p>To import a partial programme or data fixes:
-          <ul class="list-bullet"><li>Select the file to upload</li>
-          <li><strong>DO NOT</strong> check the
-          'Reset consented status for all projects' box</li>
-          <li>Click the 'Import' button</li>
-          </ul>
-          </p>
-
-      show:
-        heading: "Import programme"
-      status:
-        new: "Awaiting file upload"
-        uploaded: "File uploaded"
-        processing: "Importing records"
-        completed: "Upload complete"
-        failed: "Import failure"
   activerecord:
     attributes:
       user:

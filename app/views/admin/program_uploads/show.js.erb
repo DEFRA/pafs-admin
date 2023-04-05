@@ -1,5 +1,0 @@
-<% if @upload.finished_processing? %>
-window.location.reload(true);
-<% else %>
-<%= escape_javascript render partial: "status.html.erb", layout: false %>
-<% end %>
