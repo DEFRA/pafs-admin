@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe "Update a user" do
-  let(:admin) { create(:admin, :pso) }
+  let(:admin) { create(:back_office_user, :pso) }
   let(:user) { create(:user, :pso) }
   let!(:main_area) { create(:rma_area, name: "North East") }
 
@@ -9,7 +9,7 @@ RSpec.describe "Update a user" do
     login_as(admin)
   end
 
-  context "when updating a users main area" do
+  context "when updating a user's main area" do
     it "updates the user with the new area" do
       visit("/admin/users/#{user.id}/edit")
       select("North East", from: "Main Area")
@@ -22,7 +22,7 @@ RSpec.describe "Update a user" do
     end
   end
 
-  context "when removing a users first area" do
+  context "when removing a user's first area" do
     let!(:first_area) { create(:pso_area, name: "South West") }
 
     before do
@@ -30,7 +30,7 @@ RSpec.describe "Update a user" do
       user.save!
     end
 
-    it "updating the user with a new area" do
+    it "updates the user with a new area" do
       visit("/admin/users/#{user.id}/edit")
 
       expect(page).to have_content("Edit User")
@@ -40,6 +40,15 @@ RSpec.describe "Update a user" do
 
       expect(user.reload.areas.map(&:name)).not_to include("South West")
       expect(page).to have_content("Edit User")
+    end
+  end
+
+  context "when selecting Administator" do
+    it "makes the user an admin" do
+      visit("/admin/users/#{user.id}/edit")
+      page.check("user[admin][]")
+
+      expect { click_on "Save" }.to change { user.reload.admin }
     end
   end
 end
