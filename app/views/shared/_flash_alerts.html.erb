@@ -23,7 +23,7 @@
         %>
 
         <% messages.reject(&:blank?).each do |text| %>
-          <div class= "alert alert-<%= clazz %>" role="alert" >
+          <div class= "govuk-error-summary alert alert-<%= clazz %>" role="alert" >
             <%= text.to_s %>
           </div>
         <% end %>

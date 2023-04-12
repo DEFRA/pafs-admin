@@ -17,6 +17,13 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :projects do
+      member do
+        get :edit
+        patch :save
+      end
+    end
+
     resources :user_areas, only: [:destroy]
     resources :users do
       member do

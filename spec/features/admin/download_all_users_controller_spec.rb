@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 RSpec.describe Admin::DownloadAllUsersController, type: :controller do
-  let!(:user) { create(:admin, :pso) }
+  let!(:user) { create(:back_office_user, :pso) }
 
   context "when a user downloads an xls file of all the users" do
 
@@ -31,9 +31,9 @@ RSpec.describe Admin::DownloadAllUsersController, type: :controller do
       worksheet = spreadsheet.worksheet(0)
 
       expect(worksheet.row(1)[0]).to be(true)
-      expect(worksheet.row(1)[1]).to eq("admin@example.com")
-      expect(worksheet.row(1)[2]).to eq("Admin")
-      expect(worksheet.row(1)[4]).to eq("User")
+      expect(worksheet.row(1)[1]).to eq(PafsCore::User.last.email)
+      expect(worksheet.row(1)[2]).to eq(PafsCore::User.last.first_name)
+      expect(worksheet.row(1)[4]).to eq(PafsCore::User.last.last_name)
       expect(worksheet.row(1)[5]).to be_nil
     end
 

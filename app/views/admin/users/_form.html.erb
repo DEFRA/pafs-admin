@@ -51,14 +51,11 @@
     </div>
   </div>
 
-  <%= form_group f.object, :base, :base do %>
-    <%= error_message f.object, :base, :base %>
-    <div class="govuk-grid-row govuk-body">
-      <div class="govuk-grid-column-full">
-        <%= f.govuk_check_box :admin, :admin, label: { text: t(".admin_label") } %>
-      </div>
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-full">
+      <%= f.govuk_check_box :admin, :admin, label: { text: t(".admin_label") } %>
     </div>
-  <% end %>
+  </div>
 
   <% if action_name != "new" && @user.persisted? %>
     <div class="form-group">
