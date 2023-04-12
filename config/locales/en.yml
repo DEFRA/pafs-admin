@@ -39,7 +39,7 @@ en:
   global_proposition_header: "Project Application and Funding Service Admin"
   all_projects: View all projects
   users: Users
-  fcerm_programme_refresh: FCERM programme refresh
+  download_all_projects: Download all projects
   submissions: Submissions
   failed_submissions: Failed Submissions
   logout_link: Sign out

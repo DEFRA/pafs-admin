@@ -4,7 +4,7 @@
       <li>Signed in as: <%= current_user.full_name %></li>
       <li><%= link_to t("all_projects"), main_app.admin_projects_path %></li>
       <li><%= link_to t("users"), main_app.admin_users_path %></li>
-      <li><%= link_to "Download all projects", main_app.admin_download_path %></li>
+      <li><%= link_to t("download_all_projects"), main_app.admin_download_path %></li>
       <li><%= link_to t("submissions"), main_app.admin_confirmations_path %></li>
       <% if ENV.fetch('POL_FAILURE_NOTIFICATION_EMAIL', false) %>
         <li><%= link_to t("failed_submissions"), main_app.admin_failed_submissions_path %></li>
