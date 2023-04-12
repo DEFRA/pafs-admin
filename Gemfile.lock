@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 803599123895f0c836c7a75cc1f69ee12ae48135
+  revision: 69612b03706dcd48c06c8c63ea1999e394eedb2b
   branch: main
   specs:
     pafs_core (0.0.2)
@@ -10,6 +10,7 @@ GIT
       defra_ruby_alert (~> 2.1)
       defra_ruby_template (~> 3)
       faraday
+      faraday-retry
       govuk_design_system_formbuilder (~> 3)
       kaminari
       net-smtp
@@ -116,7 +117,7 @@ GEM
     async-pool (0.3.12)
       async (>= 1.25)
     aws-eventstream (1.2.0)
-    aws-partitions (1.741.0)
+    aws-partitions (1.745.0)
     aws-sdk-core (3.171.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
@@ -125,7 +126,7 @@ GEM
     aws-sdk-kms (1.63.0)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.120.0)
+    aws-sdk-s3 (1.120.1)
       aws-sdk-core (~> 3, >= 3.165.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.4)
@@ -209,6 +210,8 @@ GEM
     faraday-http-cache (2.4.1)
       faraday (>= 0.8)
     faraday-net_http (3.0.2)
+    faraday-retry (2.1.0)
+      faraday (~> 2.0)
     ffi (1.15.5)
     fiber-local (1.0.0)
     font-awesome-sass (5.15.1)
