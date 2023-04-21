@@ -2,10 +2,57 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.3.0...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.3.1...HEAD)
 
 **Merged pull requests:**
 
+- Bump pafs\_core from `89dcf45` to `2bb55d0` [\#377](https://github.com/DEFRA/pafs-admin/pull/377) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update defra\_ruby\_alert gem version [\#376](https://github.com/DEFRA/pafs-admin/pull/376) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump pafs\_core from `6cf8ad7` to `89dcf45` [\#374](https://github.com/DEFRA/pafs-admin/pull/374) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `69612b0` to `6cf8ad7` [\#367](https://github.com/DEFRA/pafs-admin/pull/367) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.49.0 to 1.50.1 [\#365](https://github.com/DEFRA/pafs-admin/pull/365) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `8035991` to `69612b0` [\#364](https://github.com/DEFRA/pafs-admin/pull/364) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rails from 2.18.0 to 2.19.0 [\#361](https://github.com/DEFRA/pafs-admin/pull/361) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump stackprof from 0.2.24 to 0.2.25 [\#360](https://github.com/DEFRA/pafs-admin/pull/360) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Remove redundant import functionality [\#358](https://github.com/DEFRA/pafs-admin/pull/358) ([jjromeo](https://github.com/jjromeo))
+- Bump pafs\_core from `2c9a398` to `b0ede19` [\#356](https://github.com/DEFRA/pafs-admin/pull/356) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Edit project rma [\#355](https://github.com/DEFRA/pafs-admin/pull/355) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump devise from 4.9.0 to 4.9.2 [\#353](https://github.com/DEFRA/pafs-admin/pull/353) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.48.1 to 1.49.0 [\#352](https://github.com/DEFRA/pafs-admin/pull/352) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump capybara from 3.38.0 to 3.39.0 [\#351](https://github.com/DEFRA/pafs-admin/pull/351) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `69ed189` to `2c9a398` [\#349](https://github.com/DEFRA/pafs-admin/pull/349) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `6ef325c` to `69ed189` [\#348](https://github.com/DEFRA/pafs-admin/pull/348) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `3efff63` to `6ef325c` [\#347](https://github.com/DEFRA/pafs-admin/pull/347) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `006fc9c` to `3efff63` [\#345](https://github.com/DEFRA/pafs-admin/pull/345) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `f0c7ba8` to `006fc9c` [\#344](https://github.com/DEFRA/pafs-admin/pull/344) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump stackprof from 0.2.23 to 0.2.24 [\#343](https://github.com/DEFRA/pafs-admin/pull/343) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Remove refresh options [\#342](https://github.com/DEFRA/pafs-admin/pull/342) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump pafs\_core from `4e719c1` to `0a2bea2` [\#340](https://github.com/DEFRA/pafs-admin/pull/340) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update README.md [\#338](https://github.com/DEFRA/pafs-admin/pull/338) ([jjromeo](https://github.com/jjromeo))
+- Bump pafs\_core from `6059344` to `4e719c1` [\#334](https://github.com/DEFRA/pafs-admin/pull/334) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `710014d` to `6059344` [\#333](https://github.com/DEFRA/pafs-admin/pull/333) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `9ccb94e` to `710014d` [\#332](https://github.com/DEFRA/pafs-admin/pull/332) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `fd31245` to `9ccb94e` [\#331](https://github.com/DEFRA/pafs-admin/pull/331) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `7654ae1` to `fd31245` [\#330](https://github.com/DEFRA/pafs-admin/pull/330) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump engine version [\#329](https://github.com/DEFRA/pafs-admin/pull/329) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump pafs\_core from `de5ee8d` to `7654ae1` [\#328](https://github.com/DEFRA/pafs-admin/pull/328) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `55bd622` to `de5ee8d` [\#327](https://github.com/DEFRA/pafs-admin/pull/327) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Drop rails\_12factor [\#326](https://github.com/DEFRA/pafs-admin/pull/326) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Force logging to file [\#325](https://github.com/DEFRA/pafs-admin/pull/325) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Move changelog gem out of development group [\#324](https://github.com/DEFRA/pafs-admin/pull/324) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump core and other gem versions [\#323](https://github.com/DEFRA/pafs-admin/pull/323) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump gem versions [\#322](https://github.com/DEFRA/pafs-admin/pull/322) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Debug logging [\#319](https://github.com/DEFRA/pafs-admin/pull/319) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump faker from 3.1.0 to 3.1.1 [\#292](https://github.com/DEFRA/pafs-admin/pull/292) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.3.1](https://github.com/defra/pafs-admin/tree/v1.3.1) (2023-02-15)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.3.0...v1.3.1)
+
+**Merged pull requests:**
+
+- Version 1.3.1 [\#301](https://github.com/DEFRA/pafs-admin/pull/301) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Version 1.3.1 [\#299](https://github.com/DEFRA/pafs-admin/pull/299) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
 - Bump pafs\_core from `6b6b6e9` to `b2f7638` [\#298](https://github.com/DEFRA/pafs-admin/pull/298) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump engine version and pin CI ubuntu version [\#291](https://github.com/DEFRA/pafs-admin/pull/291) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
 - Bump globalid from 1.0.0 to 1.0.1 [\#285](https://github.com/DEFRA/pafs-admin/pull/285) ([dependabot[bot]](https://github.com/apps/dependabot))
