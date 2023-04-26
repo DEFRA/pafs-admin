@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
+## [v1.4.0](https://github.com/defra/pafs-admin/tree/v1.4.0) (2023-04-21)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.3.1...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.3.1...v1.4.0)
 
 **Merged pull requests:**
 
+- Version 1.4.0 [\#378](https://github.com/DEFRA/pafs-admin/pull/378) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
 - Bump pafs\_core from `89dcf45` to `2bb55d0` [\#377](https://github.com/DEFRA/pafs-admin/pull/377) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Update defra\_ruby\_alert gem version [\#376](https://github.com/DEFRA/pafs-admin/pull/376) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
 - Bump pafs\_core from `6cf8ad7` to `89dcf45` [\#374](https://github.com/DEFRA/pafs-admin/pull/374) ([dependabot[bot]](https://github.com/apps/dependabot))
