@@ -1,6 +1,6 @@
 <div class="govuk-grid-row govuk-body">
   <div class="govuk-grid-column-two-thirds">
-    <p>FCRM1 generation completed at <%= DateTime.parse(meta['last_update']).localtime.to_s(:long) %></p>
+    <p>FCRM1 generation completed at <%= DateTime.parse(meta['last_update']).localtime.to_fs(:long) %></p>
   </div>
 </div>
 

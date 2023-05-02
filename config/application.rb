@@ -22,7 +22,7 @@ module PafsAdmin
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-    config.load_defaults 5.0
+    config.load_defaults 6.1
 
     # load decorators
     config.to_prepare do
@@ -46,5 +46,8 @@ module PafsAdmin
 
     # exception handling
     config.exceptions_app = routes
+
+    # For Rails 7: https://guides.rubyonrails.org/active_record_multiple_databases.html#migrate-to-the-new-connection-handling
+    config.active_record.legacy_connection_handling = false
   end
 end
