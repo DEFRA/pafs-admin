@@ -26,6 +26,9 @@ module PafsAdmin
 
     # load decorators
     config.to_prepare do
+      # Exclude these from autoloading as we are loading them manually:
+      Rails.autoloaders.main.ignore(Rails.root.join("app/decorators"))
+
       Rails.root.glob("app/decorators/**/*_decorator*.rb").each do |c|
         require_dependency(c)
       end
