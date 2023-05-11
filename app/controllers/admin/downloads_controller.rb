@@ -32,7 +32,7 @@ module Admin
     end
 
     def render_state
-      render partial: "pending.html.erb"
+      render partial: "pending"
     end
 
     def download_state
