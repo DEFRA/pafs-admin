@@ -1,5 +1,27 @@
 # Changelog
 
+## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.1...HEAD)
+
+**Merged pull requests:**
+
+- Bump pafs\_core from `dc8cee6` to `3f375e3` [\#403](https://github.com/DEFRA/pafs-admin/pull/403) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `5e921e4` to `dc8cee6` [\#401](https://github.com/DEFRA/pafs-admin/pull/401) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `f3f9068` to `5e921e4` [\#393](https://github.com/DEFRA/pafs-admin/pull/393) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Adjust render call for pending download partial [\#392](https://github.com/DEFRA/pafs-admin/pull/392) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Fix/autoload [\#391](https://github.com/DEFRA/pafs-admin/pull/391) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Upgrade ruby [\#387](https://github.com/DEFRA/pafs-admin/pull/387) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump pafs\_core from `2bb55d0` to `5bba967` [\#385](https://github.com/DEFRA/pafs-admin/pull/385) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.4.1](https://github.com/defra/pafs-admin/tree/v1.4.1) (2023-04-26)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.0...v1.4.1)
+
+**Merged pull requests:**
+
+- Version 1.4.1 [\#383](https://github.com/DEFRA/pafs-admin/pull/383) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+
 ## [v1.4.0](https://github.com/defra/pafs-admin/tree/v1.4.0) (2023-04-21)
 
 [Full Changelog](https://github.com/defra/pafs-admin/compare/v1.3.1...v1.4.0)
