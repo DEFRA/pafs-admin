@@ -2,7 +2,17 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.1...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.2...HEAD)
+
+**Merged pull requests:**
+
+- Bump pafs\_core from `eff5a38` to `1e8109b` [\#422](https://github.com/DEFRA/pafs-admin/pull/422) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Updating dependencies [\#414](https://github.com/DEFRA/pafs-admin/pull/414) ([brujeo](https://github.com/brujeo))
+- Update CHANGELOG [\#404](https://github.com/DEFRA/pafs-admin/pull/404) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+
+## [v1.4.2](https://github.com/defra/pafs-admin/tree/v1.4.2) (2023-05-31)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.1...v1.4.2)
 
 **Merged pull requests:**
 
