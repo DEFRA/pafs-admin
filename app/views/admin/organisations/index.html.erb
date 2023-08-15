@@ -1,0 +1,51 @@
+<% content_for :title, "Manage organisations" %>
+
+<h1 class="govuk-heading-l">Manage organisations</h1>
+<div class="govuk-grid-row govuk-body">
+  <div class="govuk-grid-column-two-thirds">
+    <%= form_for admin_organisations_path, method: "get", class: "search-bar" do |f| %>
+      <p>
+        <%= label_tag(:q, "Enter an organisation name") %><br/>
+        <%= text_field_tag(:q, params[:q] || "", class: "govuk-input govuk-!-width-one-half") %>
+      </p>
+      <p>
+        <%= label_tag(:q, "Select an organisation type") %><br/>
+        <%= select_tag :type, options_for_select(PafsCore::Organisation::ORGANISATION_TYPES, params[:type]), {class: "govuk-select govuk-!-width-one-half area-select", selected: 1} %>
+      </p>
+      <p>
+        <%= f.govuk_submit "Search" %>
+      </p>
+    <% end %>
+  </div>
+</div>
+
+<table class="users-table govuk-table govuk-!-font-size-16">
+  <caption class="govuk-visually-hidden">Organisations</caption> 
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @organisations.each do |org| %>
+      <tr>
+        <td><%= org.name %></td>
+        <td><%= org.organisation_type %></td>
+        <td><%= link_to "Edit", '#' + edit_admin_organisation_path(org) %>
+          <span class="govuk-visually-hidden"> details for <%= org.name %></span>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="govuk-grid-row govuk-body page-nav">
+  <div class="govuk-grid-column-one-third">
+    <%= page_entries_info @organisations %>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <div class="pagination-area">
+      <%= paginate @organisations, left: 0, right: 0, window: 2 %>
+    </div>
+  </div>
+</div>
