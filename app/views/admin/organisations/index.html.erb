@@ -10,7 +10,7 @@
       </p>
       <p>
         <%= label_tag(:q, t(".search_type_label")) %><br/>
-        <%= select_tag :type, options_for_select(PafsCore::Organisation::ORGANISATION_TYPES, params[:type]), {class: "govuk-select govuk-!-width-one-half area-select", selected: 1} %>
+        <%= select_tag :type, options_for_select(Organisation::AREA_TYPES, params[:type] || Organisation::RMA_AREA), {class: "govuk-select govuk-!-width-one-half area-select"} %>
       </p>
       <p>
         <%= f.govuk_submit t(".search_btn") %>
@@ -30,7 +30,7 @@
     <% @organisations.each do |org| %>
       <tr>
         <td><%= org.name %></td>
-        <td><%= org.organisation_type %></td>
+        <td><%= org.area_type %></td>
         <td><%= link_to t(".edit_link"), '#' + edit_admin_organisation_path(org) %>
           <span class="govuk-visually-hidden"> <%= t(".details_for") %> <%= org.name %></span>
         </td>

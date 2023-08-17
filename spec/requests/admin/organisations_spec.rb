@@ -6,14 +6,14 @@ RSpec.describe "Admin::Organisations" do
 
   let(:admin) { create(:back_office_user, :rma, admin: true) }
   let(:rma_organisations) { create_list(:organisation, 25, :rma) }
-  let(:authority_organisations) { create_list(:organisation, 5, :authority) }
   let(:pso_organisations) { create_list(:organisation, 5, :pso) }
+  let(:ea_organisations) { create_list(:organisation, 5, :ea) }
 
   before do
     sign_in(admin)
     rma_organisations
-    authority_organisations
     pso_organisations
+    ea_organisations
   end
 
   context "when no query or type is provided" do
@@ -29,7 +29,8 @@ RSpec.describe "Admin::Organisations" do
     end
 
     it "shows organisations count (paginated)" do
-      expect(response.body).to match(%r{Showing <b>1&nbsp;-&nbsp;20</b> of <b>#{rma_organisations.count}</b> organisations})
+      count = Organisation.where(area_type: Organisation::RMA_AREA).count
+      expect(response.body).to match(%r{Showing <b>1&nbsp;-&nbsp;20</b> of <b>#{count}</b> organisations})
     end
   end
 
@@ -51,7 +52,7 @@ RSpec.describe "Admin::Organisations" do
   end
 
   context "when a type is provided" do
-    before { get admin_organisations_path(type: PafsCore::Organisation::PSO) }
+    before { get admin_organisations_path(type: Organisation::PSO_AREA) }
 
     it "renders the organisations table" do
       assert_select "table", 1

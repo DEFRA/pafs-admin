@@ -6,16 +6,16 @@ module Admin
 
     def index
       q = params.fetch(:q, nil)
-      type = params.fetch(:type, PafsCore::Organisation::RMA)
+      type = params.fetch(:type, Organisation::RMA_AREA)
       page = params.fetch(:page, "1").to_i
 
-      unless PafsCore::Organisation::ORGANISATION_TYPES.include?(type)
+      unless Organisation::AREA_TYPES.include?(type)
         flash[:notice] = "Invalid organisation type: #{type}"
-        type = PafsCore::Organisation::RMA
+        type = PafsCore::Area::RMA_AREA
       end
 
       @organisations = Organisation.all
-      @organisations = @organisations.where(organisation_type: type) if type.present?
+      @organisations = @organisations.where(area_type: type) if type.present?
       @organisations = @organisations.where("name ILIKE ?", "%#{q}%") if q.present?
       @organisations = @organisations.order(name: "asc").page(page)
     end
