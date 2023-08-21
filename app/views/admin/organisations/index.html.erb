@@ -9,7 +9,7 @@
         <%= text_field_tag(:q, params[:q] || "", class: "govuk-input govuk-!-width-one-half") %>
       </p>
       <p>
-        <%= label_tag(:q, t(".search_type_label")) %><br/>
+        <%= label_tag(:type, t(".search_type_label")) %><br/>
         <%= select_tag :type, options_for_select(Organisation::AREA_TYPES, params[:type] || Organisation::RMA_AREA), {class: "govuk-select govuk-!-width-one-half area-select"} %>
       </p>
       <p>
@@ -21,16 +21,11 @@
 
 <table class="users-table govuk-table govuk-!-font-size-16">
   <caption class="govuk-visually-hidden"><%= t(".heading_table") %></caption> 
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
   <tbody>
+    <t><td colspan="2"></tr>
     <% @organisations.each do |org| %>
       <tr>
         <td><%= org.name %></td>
-        <td><%= org.area_type %></td>
         <td><%= link_to t(".edit_link"), '#' + edit_admin_organisation_path(org) %>
           <span class="govuk-visually-hidden"> <%= t(".details_for") %> <%= org.name %></span>
         </td>
