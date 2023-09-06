@@ -1,0 +1,18 @@
+<%= pafs_form_for [:edit_admin, @organisation] do |f| %>
+  <%= csrf_meta_tags %>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_text_field :name, width: "three-quarters", label: { text: t(".name") } %>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_submit t("continue_label") %>
+    </div>
+  </div>
+
+
+  
+<% end %>

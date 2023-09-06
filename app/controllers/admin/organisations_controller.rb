@@ -3,6 +3,7 @@
 module Admin
   class OrganisationsController < ApplicationController
     before_action :authenticate_user!
+    before_action :set_organisation, only: [:edit, :save]
 
     def index
       q = params.fetch(:q, nil)
@@ -19,5 +20,33 @@ module Admin
       @organisations = @organisations.where("name ILIKE ?", "%#{q}%") if q.present?
       @organisations = @organisations.order(name: "asc").page(page)
     end
+
+    def edit
+      case @organisation.area_type
+      when Organisation::RMA_AREA
+        template = "admin/organisations/edit_rma"
+      when Organisation::PSO_AREA
+        template = "admin/organisations/edit_pso"
+      when Organisation::EA_AREA
+        template = "admin/organisations/edit_ea"
+      else
+        raise "Unknown organisation type: #{@organisation.area_type}"
+      end
+
+      render template
+    end
+
+    def save
+      @organisation = Organisation.find(params[:id])
+      @organisation.update(organisation_params)
+      redirect_to admin_organisations_path
+    end
+
+    private
+
+    def set_organisation
+      @organisation = Organisation.find(params[:id])
+    end
+
   end
 end

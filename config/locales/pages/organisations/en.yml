@@ -10,3 +10,7 @@ en:
         search_type_label: Select an organisation type
         search_btn: Search
         edit_link: Edit
+      edit_rma:
+        heading: Edit an RMA
+      form_rma:
+        name: Name of organisation
