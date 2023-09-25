@@ -15,7 +15,7 @@ module Admin
     protected
 
     def endpoint_enabled?
-      return if ENV.fetch("ENABLE_ADMIN_JSON_PREVIEW", false)
+      return false if ENV.fetch("ENABLE_ADMIN_JSON_PREVIEW", false)
 
       head status: 404
     end
