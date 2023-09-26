@@ -27,10 +27,10 @@ module Admin
         template = "admin/organisations/edit_rma"
       when Organisation::PSO_AREA
         template = "admin/organisations/edit_pso"
-      when Organisation::EA_AREA
-        template = "admin/organisations/edit_ea"
+      when Organisation::AUTHORITY
+        template = "admin/organisations/edit_authority"
       else
-        raise "Unknown organisation type: #{@organisation.area_type}"
+        raise "Unsupported organisation type: #{@organisation.area_type}"
       end
 
       render template

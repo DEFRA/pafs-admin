@@ -26,7 +26,7 @@
     <% @organisations.each do |org| %>
       <tr>
         <td><%= org.name %></td>
-        <td><%= link_to t(".edit_link"), '#' + edit_admin_organisation_path(org) %>
+        <td><%= link_to t(".edit_link"), (org.rma? ? '' : '#') + edit_admin_organisation_path(org) %>
           <span class="govuk-visually-hidden"> <%= t(".details_for") %> <%= org.name %></span>
         </td>
       </tr>
