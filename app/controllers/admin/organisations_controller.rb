@@ -25,10 +25,10 @@ module Admin
       case @organisation.area_type
       when Organisation::RMA_AREA
         template = "admin/organisations/edit_rma"
-      when Organisation::PSO_AREA
-        template = "admin/organisations/edit_pso"
-      when Organisation::AUTHORITY
-        template = "admin/organisations/edit_authority"
+      # when Organisation::PSO_AREA
+      #   template = "admin/organisations/edit_pso"
+      # when Organisation::AUTHORITY
+      #   template = "admin/organisations/edit_authority"
       else
         raise "Unsupported organisation type: #{@organisation.area_type}"
       end
