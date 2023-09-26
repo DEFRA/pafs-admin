@@ -85,4 +85,10 @@ module ApplicationHelper
   def item_upload_status(error_count)
     error_count.zero? ? "OK" : "#{error_count} #{'error'.pluralize(error_count)}"
   end
+
+  def grouped_authority_types
+    PafsCore::Area.where(area_type: PafsCore::Area::AUTHORITY_AREA).select(:name, :identifier).map do |a|
+      ["#{a.identifier} - #{a.name}", a.identifier]
+    end
+  end
 end

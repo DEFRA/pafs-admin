@@ -1,4 +1,4 @@
-<%= pafs_form_for [:edit_admin, @organisation] do |f| %>
+<%= pafs_form_for [:admin, @organisation] do |f| %>
   <%= csrf_meta_tags %>
 
   <div class="govuk-grid-row govuk-body">
@@ -9,10 +9,42 @@
 
   <div class="govuk-grid-row govuk-body">
     <div class="govuk-grid-column-two-thirds">
-      <%= f.govuk_submit t("continue_label") %>
+      <%= f.govuk_text_field :identifier, width: "three-quarters", label: { text: t(".identifier") } %>
     </div>
   </div>
 
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.label :sub_type, t(".sub_type") %><br>
+      <%= f.select :sub_type,
+                grouped_authority_types,
+                { prompt: t(".sub_type") },
+                { class: "govuk-select govuk-grid-column-three-quarters area-select" }
+      %>
+    </div>
+  </div>
 
-  
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.label :parent_id, t(".parent_id") %><br>
+      <%= f.select :parent_id,
+                pso_grouped_areas,
+                { prompt: t(".parent_id") },
+                { class: "govuk-select govuk-grid-column-three-quarters area-select" }
+      %>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.label :end_date, t(".end_date") %><br>
+      <%= f.date_field :end_date, class: "govuk-select govuk-grid-column-three-quarters area-select" %>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row govuk-body">
+    <div class="govuk-grid-column-two-thirds">
+      <%= f.govuk_submit t("continue_label") %>
+    </div>
+  </div>
 <% end %>

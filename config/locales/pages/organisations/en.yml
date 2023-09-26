@@ -14,3 +14,7 @@ en:
         heading: Edit an RMA
       form_rma:
         name: Name of organisation
+        sub_type: Authority code
+        parent_id: Select an associated PSO
+        identifier: Identifier code
+        end_date: End date if available

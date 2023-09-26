@@ -3,7 +3,7 @@
 module Admin
   class OrganisationsController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_organisation, only: [:edit, :save]
+    before_action :set_organisation, only: %i[edit update]
 
     def index
       q = params.fetch(:q, nil)
@@ -36,7 +36,7 @@ module Admin
       render template
     end
 
-    def save
+    def update
       @organisation = Organisation.find(params[:id])
       @organisation.update(organisation_params)
       redirect_to admin_organisations_path
@@ -48,5 +48,12 @@ module Admin
       @organisation = Organisation.find(params[:id])
     end
 
+    def organisation_params
+      params.require(:organisation).permit(:name,
+                                           :parent_id,
+                                           :sub_type,
+                                           :identifier,
+                                           :end_date)
+    end
   end
 end

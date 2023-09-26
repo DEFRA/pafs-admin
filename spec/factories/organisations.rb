@@ -6,9 +6,10 @@ FactoryBot.define do
 
     trait :rma do
       area_type { Organisation::RMA_AREA }
-      sub_type { "Local Authority" }
+      sub_type { "LA" }
+      identifier { "123" }
 
-      parent { PafsCore::Area.country || create(:country) }
+      parent { PafsCore::Area.pso_areas.first || create(:organisation, :pso) }
     end
 
     trait :ea do
