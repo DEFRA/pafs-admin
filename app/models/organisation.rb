@@ -2,7 +2,7 @@
 
 class Organisation < PafsCore::Area
   AREA_TYPES = [
-    AUTHORITY      = "Authority",
+    AUTHORITY = "Authority",
     PSO_AREA     = "PSO Area",
     RMA_AREA     = "RMA"
   ].freeze
