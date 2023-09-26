@@ -87,7 +87,7 @@ module ApplicationHelper
   end
 
   def grouped_authority_types
-    PafsCore::Area.where(area_type: PafsCore::Area::AUTHORITY_AREA).select(:name, :identifier).map do |a|
+    PafsCore::Area.where(area_type: PafsCore::Area::AUTHORITY).select(:name, :identifier).map do |a|
       ["#{a.identifier} - #{a.name}", a.identifier]
     end
   end
