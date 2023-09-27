@@ -57,16 +57,17 @@ module Admin
     private
 
     def org_template(org, action = :new)
-      case org.area_type
-      when Organisation::RMA_AREA
-        action == :new ? :new_rma : :edit_rma
-      when Organisation::PSO_AREA
-        action == :new ? :new_pso : :edit_pso
-      when Organisation::AUTHORITY
-        action == :new ? :new_authority : :edit_authority
-      else
-        action == :new ? :new : :edit
-      end
+      type = case org.area_type
+             when Organisation::RMA_AREA
+               "_rma"
+             when Organisation::PSO_AREA
+               "_pso"
+             when Organisation::AUTHORITY
+               "_authority"
+             else
+               ""
+             end
+      action == :new ? "new#{type}".to_sym : "edit#{type}".to_sym
     end
 
     def set_organisation
