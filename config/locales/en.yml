@@ -45,6 +45,7 @@ en:
   logout_link: Sign out
   table_caption: Proposals
   manage_organisations: Manage Organisations
+  add_organisation: Add a new organisation
   admin:
     projects:
       view_all_projects: View all projects

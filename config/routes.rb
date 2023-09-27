@@ -32,7 +32,7 @@ Rails.application.routes.draw do
     end
     resources :confirmations, only: [:index]
     resources :camc3, only: [:show], controller: :camc3
-    resources :organisations, only: %i[index edit update]
+    resources :organisations, only: %i[index new create edit update]
   end
   devise_for :users, controllers: { passwords: "passwords" }
 

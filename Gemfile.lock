@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 0122d5ac9b9dff5b9bd44bb0468f8f99ece8c7a9
+  revision: c5d507b101b4677400da899c72c6c3ddc9e44134
   branch: main
   specs:
     pafs_core (0.0.2)
@@ -133,7 +133,7 @@ GEM
     aws-sdk-kms (1.71.0)
       aws-sdk-core (~> 3, >= 3.177.0)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.135.0)
+    aws-sdk-s3 (1.136.0)
       aws-sdk-core (~> 3, >= 3.181.0)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.6)
