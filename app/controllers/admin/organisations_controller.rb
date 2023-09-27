@@ -23,9 +23,7 @@ module Admin
 
     def new
       @organisation = Organisation.new
-      return if params[:type].blank?
-
-      @organisation.area_type = params[:type]
+      @organisation.area_type = params[:type] if params[:type].present?
 
       render org_template(@organisation)
     end
@@ -66,6 +64,8 @@ module Admin
         action == :new ? :new_pso : :edit_pso
       when Organisation::AUTHORITY
         action == :new ? :new_authority : :edit_authority
+      else
+        action == :new ? :new : :edit
       end
     end
 
