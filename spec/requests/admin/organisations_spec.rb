@@ -146,25 +146,25 @@ RSpec.describe "Admin::Organisations" do
     before { sign_in admin }
 
     context "with invalid details" do
-      it "raises an error when organisation name is missing" do
+      it "does not update organisation name when name is not passed" do
         expect do
           patch admin_organisation_path(rma, organisation: { name: nil })
         end.not_to change { rma.reload.name }
       end
 
-      it "raises an error when authority code is missing" do
+      it "does not update authority code when sub_type is not passed" do
         expect do
           patch admin_organisation_path(rma, organisation: { sub_type: nil })
         end.not_to change { rma.reload.sub_type }
       end
 
-      it "raises an error when associated PSO is missing" do
+      it "does not update associated PSO when parent_id is not passed" do
         expect do
           patch admin_organisation_path(rma, organisation: { parent_id: nil })
         end.not_to change { rma.reload.parent_id }
       end
 
-      it "raises an error when end date is missing" do
+      it "does not update end date when end_date is not passed" do
         expect do
           patch admin_organisation_path(rma, organisation: { end_date: nil })
         end.not_to change { rma.reload.end_date }
