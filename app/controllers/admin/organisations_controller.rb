@@ -37,7 +37,7 @@ module Admin
 
       if @organisation.valid?
         @organisation.save
-        redirect_to admin_organisations_path
+        redirect_to admin_organisations_path(type: @organisation.area_type)
       else
         render org_template(@organisation)
       end
@@ -48,7 +48,7 @@ module Admin
 
       if @organisation.valid?
         @organisation.save
-        redirect_to admin_organisations_path
+        redirect_to admin_organisations_path(type: @organisation.area_type)
       else
         render org_template(@organisation, :edit)
       end

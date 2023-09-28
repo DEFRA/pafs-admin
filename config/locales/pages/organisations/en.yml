@@ -19,6 +19,10 @@ en:
         heading: Add an RMA
       edit_rma:
         heading: Edit an RMA
+      new_authority:
+        heading: Add an Authority Code
+      edit_authority:
+        heading: Edit an Authority Code
       form_rma:
         name: Name of organisation
         sub_type: Authority code
@@ -26,4 +30,8 @@ en:
         parent_id: Associated PSO
         parent_id_prompt: Select an associated PSO
         identifier: Identifier code
+        end_date: End date if available
+      form_authority:
+        name: Authority type
+        identifier: Authority code
         end_date: End date if available

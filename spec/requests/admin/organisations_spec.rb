@@ -108,10 +108,6 @@ RSpec.describe "Admin::Organisations" do
       assert_select "input[name='organisation[name]']", 1
     end
 
-    it "includes sub_type dropdown" do
-      assert_select "select[name='organisation[sub_type]']", 1
-    end
-
     it "includes end_date field" do
       assert_select "input[name='organisation[end_date]']", 1
     end
@@ -141,8 +137,26 @@ RSpec.describe "Admin::Organisations" do
         assert_select "input[name='organisation[identifier]']", 1
       end
 
+      it "includes sub_type dropdown" do
+        assert_select "select[name='organisation[sub_type]']", 1
+      end
+
       it "includes associated PSO dropdown" do
         assert_select "select[name='organisation[parent_id]']", 1
+      end
+    end
+
+    context "when adding an Authority" do
+      before { get new_admin_organisation_path(type: "Authority") }
+
+      it_behaves_like "organisation form"
+
+      it "has correct page title" do
+        assert_select "h1", "Add an Authority Code"
+      end
+
+      it "includes identifier code field" do
+        assert_select "input[name='organisation[identifier]']", 1
       end
     end
   end
@@ -150,14 +164,17 @@ RSpec.describe "Admin::Organisations" do
   describe "GET edit" do
     let(:admin) { create(:back_office_user, :rma, admin: true) }
     let(:rma) { create(:organisation, :rma) }
+    let(:authority) { create(:organisation, :authority) }
 
     before do
       sign_in(admin)
-      rma
     end
 
     context "when editing an RMA" do
-      before { get edit_admin_organisation_path(rma) }
+      before do
+        rma
+        get edit_admin_organisation_path(rma)
+      end
 
       it_behaves_like "organisation form"
 
@@ -167,6 +184,10 @@ RSpec.describe "Admin::Organisations" do
 
       it "includes identifier code field" do
         assert_select "input[name='organisation[identifier]']", 1
+      end
+
+      it "includes sub_type dropdown" do
+        assert_select "select[name='organisation[sub_type]']", 1
       end
 
       it "shows the current sub_type by default" do
@@ -183,6 +204,23 @@ RSpec.describe "Admin::Organisations" do
         assert_select "select[name='organisation[parent_id]']" do |elements|
           expect(elements[0].search('option[@selected="selected"]')[0].attr("value").to_i).to eq rma.parent_id
         end
+      end
+    end
+
+    context "when editing an Authority" do
+      before do
+        authority
+        get edit_admin_organisation_path(authority)
+      end
+
+      it_behaves_like "organisation form"
+
+      it "has correct page title" do
+        assert_select "h1", "Edit an Authority Code"
+      end
+
+      it "includes identifier code field" do
+        assert_select "input[name='organisation[identifier]']", 1
       end
     end
   end
@@ -237,42 +275,85 @@ RSpec.describe "Admin::Organisations" do
       it "redirects to the view all organisations page" do
         submit_create_form
 
-        expect(response).to redirect_to admin_organisations_path
+        expect(response).to redirect_to admin_organisations_path(type: "RMA")
       end
     end
   end
 
-  describe "PATCH update" do
-    subject(:submit_change_form) { patch admin_organisation_path(rma, organisation: update_params) }
+  describe "PATCH create Authority" do
+    subject(:submit_create_form) { post admin_organisations_path(organisation: organisation_params) }
 
+    let(:organisation_params) { { area_type: "Authority", name: "Test Authority", identifier: "T987", end_date: "2026-10-01" } }
+    let(:admin) { create(:back_office_user, :rma, admin: true) }
+
+    before { sign_in admin }
+
+    context "with invalid details" do
+      it "shows an error when organisation name is not passed" do
+        organisation_params[:name] = nil
+        submit_create_form
+        expect(response.body).to match(/organisation-name-field-error/)
+      end
+
+      it "shows an error when identifier is not passed" do
+        organisation_params[:identifier] = nil
+        submit_create_form
+        expect(response.body).to match(/organisation-identifier-field-error/)
+      end
+    end
+
+    context "with valid details" do
+      it "Creates organisation record" do
+        submit_create_form
+
+        rma = Organisation.last
+        expect(rma.area_type).to eq("Authority")
+        expect(rma.name).to eq("Test Authority")
+        expect(rma.identifier).to eq("T987")
+        expect(rma.end_date.to_s).to eq("2026-10-01")
+      end
+
+      it "redirects to the view all organisations page" do
+        submit_create_form
+
+        expect(response).to redirect_to admin_organisations_path(type: "Authority")
+      end
+    end
+  end
+
+  describe "PATCH update RMA" do
     let(:admin) { create(:back_office_user, :rma, admin: true) }
     let(:rma) { create(:organisation, :rma) }
 
     before { sign_in admin }
 
     context "with invalid details" do
-      it "does not update organisation name when name is not passed" do
-        expect do
-          patch admin_organisation_path(rma, organisation: { name: nil })
-        end.not_to change { rma.reload.name }
+      subject(:submit_change_form) { patch admin_organisation_path(rma, organisation: organisation_params) }
+
+      let(:organisation_params) { { area_type: "RMA", name: "Test Org Name", identifier: "T987", sub_type: "IDC", parent_id: 999, end_date: "2026-10-01" } }
+
+      it "shows an error when organisation name is not passed" do
+        organisation_params[:name] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-name-field-error/)
       end
 
-      it "does not update authority code when sub_type is not passed" do
-        expect do
-          patch admin_organisation_path(rma, organisation: { sub_type: nil })
-        end.not_to change { rma.reload.sub_type }
+      it "shows an error when identifier is not passed" do
+        organisation_params[:identifier] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-identifier-field-error/)
       end
 
-      it "does not update associated PSO when parent_id is not passed" do
-        expect do
-          patch admin_organisation_path(rma, organisation: { parent_id: nil })
-        end.not_to change { rma.reload.parent_id }
+      it "shows an error when sub_type is not passed" do
+        organisation_params[:sub_type] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-sub-type-field-error/)
       end
 
-      it "does not update end date when end_date is not passed" do
-        expect do
-          patch admin_organisation_path(rma, organisation: { end_date: nil })
-        end.not_to change { rma.reload.end_date }
+      it "shows an error when parent_id is not passed" do
+        organisation_params[:parent_id] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-parent-id-field-error/)
       end
     end
 
@@ -310,7 +391,58 @@ RSpec.describe "Admin::Organisations" do
       it "redirects to the view all organisations page" do
         patch admin_organisation_path(rma, organisation: { name: "test" })
 
-        expect(response).to redirect_to admin_organisations_path
+        expect(response).to redirect_to admin_organisations_path(type: "RMA")
+      end
+    end
+  end
+
+  describe "PATCH update Authority" do
+    let(:admin) { create(:back_office_user, :rma, admin: true) }
+    let(:authority) { create(:organisation, :authority) }
+
+    before { sign_in admin }
+
+    context "with invalid details" do
+      subject(:submit_change_form) { patch admin_organisation_path(authority, organisation: organisation_params) }
+
+      let(:organisation_params) { { area_type: "Authority", name: "Test Authority", identifier: "T987", end_date: "2026-10-01" } }
+
+      it "shows an error when organisation name is not passed" do
+        organisation_params[:name] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-name-field-error/)
+      end
+
+      it "shows an error when identifier is not passed" do
+        organisation_params[:identifier] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-identifier-field-error/)
+      end
+    end
+
+    context "with valid details" do
+      it "updates the organisation's name" do
+        expect do
+          patch admin_organisation_path(authority, organisation: { name: "Test Org Name" })
+        end.to change { authority.reload.name }.to("Test Org Name")
+      end
+
+      it "updates the organisation's identifier" do
+        expect do
+          patch admin_organisation_path(authority, organisation: { identifier: "T987" })
+        end.to change { authority.reload.identifier }.to("T987")
+      end
+
+      it "updates the organisation's end date" do
+        expect do
+          patch admin_organisation_path(authority, organisation: { end_date: "2026-10-01" })
+        end.to change { authority.reload.end_date.to_s }.to("2026-10-01")
+      end
+
+      it "redirects to the view all organisations page" do
+        patch admin_organisation_path(authority, organisation: { name: "test" })
+
+        expect(response).to redirect_to admin_organisations_path(type: "Authority")
       end
     end
   end
