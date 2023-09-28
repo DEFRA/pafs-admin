@@ -1,6 +1,8 @@
 <%= pafs_form_for [:admin, @organisation] do |f| %>
   <%= csrf_meta_tags %>
 
+  <%= f.hidden_field :area_type %>
+
   <div class="govuk-grid-row govuk-body">
     <div class="govuk-grid-column-two-thirds">
       <%= f.govuk_text_field :name, width: "three-quarters", label: { text: t(".name") } %>
@@ -15,22 +17,22 @@
 
   <div class="govuk-grid-row govuk-body">
     <div class="govuk-grid-column-two-thirds">
-      <%= f.label :sub_type, t(".sub_type") %><br>
-      <%= f.select :sub_type,
+      <%= f.govuk_select :sub_type,
                 grouped_authority_types,
-                { prompt: t(".sub_type") },
-                { class: "govuk-select govuk-grid-column-three-quarters area-select" }
+                label: { text: t(".sub_type") },
+                options: { prompt: t(".sub_type_prompt") },
+                class: "govuk-select govuk-grid-column-three-quarters area-select"  
       %>
     </div>
   </div>
 
   <div class="govuk-grid-row govuk-body">
     <div class="govuk-grid-column-two-thirds">
-      <%= f.label :parent_id, t(".parent_id") %><br>
-      <%= f.select :parent_id,
+      <%= f.govuk_select :parent_id,
                 pso_grouped_areas,
-                { prompt: t(".parent_id") },
-                { class: "govuk-select govuk-grid-column-three-quarters area-select" }
+                label: { text: t(".parent_id") },
+                options: { prompt: t(".parent_id_prompt") },
+                class: "govuk-select govuk-grid-column-three-quarters area-select"  
       %>
     </div>
   </div>

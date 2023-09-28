@@ -10,11 +10,20 @@ en:
         search_type_label: Select an organisation type
         search_btn: Search
         edit_link: Edit
+      new:
+        title: Add a new organisation
+        heading_h1: Add a new organisation
+        organisation_type_label: Select an organisation type
+        submit_btn: Continue
+      new_rma:
+        heading: Add an RMA
       edit_rma:
         heading: Edit an RMA
       form_rma:
         name: Name of organisation
         sub_type: Authority code
-        parent_id: Select an associated PSO
+        sub_type_prompt: Select an authority code
+        parent_id: Associated PSO
+        parent_id_prompt: Select an associated PSO
         identifier: Identifier code
         end_date: End date if available
