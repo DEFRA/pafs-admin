@@ -23,5 +23,10 @@ FactoryBot.define do
 
       parent { PafsCore::Area.country || create(:country) }
     end
+
+    trait :authority do
+      area_type { Organisation::AUTHORITY }
+      identifier { Faker::Lorem.characters(number: 10) }
+    end
   end
 end
