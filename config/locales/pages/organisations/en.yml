@@ -16,17 +16,17 @@ en:
         organisation_type_label: Select an organisation type
         submit_btn: Continue
       new_rma:
-        heading: Add an RMA
+        heading: Add a RMA
       edit_rma:
-        heading: Edit an RMA
+        heading: Edit a RMA
       new_authority:
         heading: Add an Authority Code
       edit_authority:
         heading: Edit an Authority Code
       new_pso:
-        heading: Add an PSO
+        heading: Add a PSO
       edit_pso:
-        heading: Edit an PSO
+        heading: Edit a PSO
       form_rma:
         name: Name of organisation
         sub_type: Authority code
