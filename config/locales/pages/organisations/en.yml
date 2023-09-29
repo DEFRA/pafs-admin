@@ -23,6 +23,10 @@ en:
         heading: Add an Authority Code
       edit_authority:
         heading: Edit an Authority Code
+      new_pso:
+        heading: Add an PSO
+      edit_pso:
+        heading: Edit an PSO
       form_rma:
         name: Name of organisation
         sub_type: Authority code
@@ -34,4 +38,9 @@ en:
       form_authority:
         name: Authority type
         identifier: Authority code
+        end_date: End date if available
+      form_pso:
+        name: Name of PSO
+        parent_id: Associated EA Area
+        parent_id_prompt: Select an associated EA Area
         end_date: End date if available

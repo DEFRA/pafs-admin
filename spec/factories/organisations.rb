@@ -21,7 +21,7 @@ FactoryBot.define do
     trait :pso do
       area_type { Organisation::PSO_AREA }
 
-      parent { PafsCore::Area.country || create(:country) }
+      parent { PafsCore::Area.ea_areas.first || create(:organisation, :ea) }
     end
 
     trait :authority do

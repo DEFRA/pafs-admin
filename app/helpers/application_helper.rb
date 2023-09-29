@@ -24,6 +24,12 @@ module ApplicationHelper
     }
   end
 
+  def ea_grouped_areas
+    {
+      "EA Areas" => PafsCore::Area.ea_areas.order(:name).map { |a| [a.name, a.id] }
+    }
+  end
+
   def grouped_areas
     {
       "RMAs" => PafsCore::Area.rma_areas.order(:name).map { |a| [a.name, a.id] },
