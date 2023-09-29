@@ -130,7 +130,7 @@ RSpec.describe "Admin::Organisations" do
       it_behaves_like "organisation form"
 
       it "has correct page title" do
-        assert_select "h1", "Add an RMA"
+        assert_select "h1", "Add a RMA"
       end
 
       it "includes identifier code field" do
@@ -166,7 +166,7 @@ RSpec.describe "Admin::Organisations" do
       it_behaves_like "organisation form"
 
       it "has correct page title" do
-        assert_select "h1", "Add an PSO"
+        assert_select "h1", "Add a PSO"
       end
 
       it "includes associated PSO dropdown" do
@@ -194,7 +194,7 @@ RSpec.describe "Admin::Organisations" do
       it_behaves_like "organisation form"
 
       it "has correct page title" do
-        assert_select "h1", "Edit an RMA"
+        assert_select "h1", "Edit a RMA"
       end
 
       it "includes identifier code field" do
@@ -248,7 +248,7 @@ RSpec.describe "Admin::Organisations" do
       it_behaves_like "organisation form"
 
       it "has correct page title" do
-        assert_select "h1", "Edit an PSO"
+        assert_select "h1", "Edit a PSO"
       end
 
       it "includes associated PSO dropdown" do
