@@ -97,4 +97,10 @@ module ApplicationHelper
       ["#{a.identifier} - #{a.name}", a.identifier]
     end
   end
+
+  def grouped_rfcc_codes
+    PafsCore::RFCC_CODE_NAMES_MAP.map do |code, name|
+      ["#{code} - #{name}", code]
+    end
+  end
 end

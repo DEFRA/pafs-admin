@@ -9,7 +9,7 @@
       <%= form_for new_admin_organisation_path, method: "get", class: "search-bar" do |f| %>
         <p>
           <%= label_tag(:type, t(".organisation_type_label")) %><br/>
-          <%= select_tag :type, options_for_select(Organisation::AREA_TYPES, params[:type]), {class: "govuk-select govuk-!-width-one-half area-select", include_blank: t(".organisation_type_label")} %>
+          <%= select_tag :type, options_for_select(Organisation::AREA_TYPES, params[:type]), {class: "govuk-select govuk-!-width-one-half", include_blank: t(".organisation_type_label")} %>
         </p>
         <p>
           <%= f.govuk_submit t(".submit_btn") %>

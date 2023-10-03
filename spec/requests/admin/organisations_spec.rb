@@ -362,7 +362,7 @@ RSpec.describe "Admin::Organisations" do
   describe "PATCH create PSO" do
     subject(:submit_create_form) { post admin_organisations_path(organisation: organisation_params) }
 
-    let(:organisation_params) { { area_type: "PSO Area", name: "Test PSO Area", parent_id: 999, end_date: "2026-10-01" } }
+    let(:organisation_params) { { area_type: "PSO Area", name: "Test PSO Area", parent_id: 999, sub_type: "TH", end_date: "2026-10-01" } }
     let(:admin) { create(:back_office_user, :rma, admin: true) }
 
     before { sign_in admin }

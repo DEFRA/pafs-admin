@@ -43,4 +43,6 @@ en:
         name: Name of PSO
         parent_id: Associated EA Area
         parent_id_prompt: Select an associated EA Area
+        sub_type: RFCC code
+        sub_type_prompt: Select a RFCC code
         end_date: End date if available
