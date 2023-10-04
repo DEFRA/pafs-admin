@@ -46,3 +46,4 @@ en:
         sub_type: RFCC code
         sub_type_prompt: Select a RFCC code
         end_date: End date if available
+  select_organisation_type: "Select an organisation type"
