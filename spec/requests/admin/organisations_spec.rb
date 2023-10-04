@@ -362,7 +362,7 @@ RSpec.describe "Admin::Organisations" do
   describe "PATCH create PSO" do
     subject(:submit_create_form) { post admin_organisations_path(organisation: organisation_params) }
 
-    let(:organisation_params) { { area_type: "PSO Area", name: "Test PSO Area", parent_id: 999, end_date: "2026-10-01" } }
+    let(:organisation_params) { { area_type: "PSO Area", name: "Test PSO Area", parent_id: 999, sub_type: "TH", end_date: "2026-10-01" } }
     let(:admin) { create(:back_office_user, :rma, admin: true) }
 
     before { sign_in admin }
@@ -378,6 +378,12 @@ RSpec.describe "Admin::Organisations" do
         organisation_params[:parent_id] = nil
         submit_create_form
         expect(response.body).to match(/organisation-parent-id-field-error/)
+      end
+
+      it "shows an error when sub_type is not passed" do
+        organisation_params[:sub_type] = nil
+        submit_create_form
+        expect(response.body).to match(/organisation-sub-type-field-error/)
       end
     end
 
@@ -535,7 +541,7 @@ RSpec.describe "Admin::Organisations" do
     context "with invalid details" do
       subject(:submit_change_form) { patch admin_organisation_path(pso, organisation: organisation_params) }
 
-      let(:organisation_params) { { area_type: "PSO Area", name: "Test PSO Area", parent_id: 999, end_date: "2026-10-01" } }
+      let(:organisation_params) { { area_type: "PSO Area", name: "Test PSO Area", parent_id: 999, sub_type: "TH", end_date: "2026-10-01" } }
 
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
@@ -547,6 +553,12 @@ RSpec.describe "Admin::Organisations" do
         organisation_params[:parent_id] = nil
         submit_change_form
         expect(response.body).to match(/organisation-parent-id-field-error/)
+      end
+
+      it "shows an error when sub_type is not passed" do
+        organisation_params[:sub_type] = nil
+        submit_change_form
+        expect(response.body).to match(/organisation-sub-type-field-error/)
       end
     end
 
