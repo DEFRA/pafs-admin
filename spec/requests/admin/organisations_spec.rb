@@ -72,8 +72,8 @@ RSpec.describe "Admin::Organisations" do
     context "when an invalid type is provided" do
       before { get admin_organisations_path(type: "invalid_type") }
 
-      it "sets a flash notice" do
-        expect(flash[:notice]).to eq("Invalid organisation type: invalid_type")
+      it "sets an alert notice" do
+        expect(flash[:alert]).to eq("Invalid organisation type: invalid_type")
       end
     end
 

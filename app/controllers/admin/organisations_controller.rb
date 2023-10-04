@@ -11,7 +11,7 @@ module Admin
       page = params.fetch(:page, "1").to_i
 
       unless Organisation::AREA_TYPES.include?(type)
-        flash[:notice] = "Invalid organisation type: #{type}"
+        flash[:alert] = "Invalid organisation type: #{type}"
         type = PafsCore::Area::RMA_AREA
       end
 
@@ -23,7 +23,14 @@ module Admin
 
     def new
       @organisation = Organisation.new
-      @organisation.area_type = params[:type] if params[:type].present?
+
+      if params[:type]
+        if params[:type].empty?
+          flash[:alert] = t("select_organisation_type")
+        else
+          @organisation.area_type = params[:type]
+        end
+      end
 
       render org_template(@organisation)
     end

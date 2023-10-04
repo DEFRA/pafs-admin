@@ -4,13 +4,11 @@
 <div class="govuk-grid-row govuk-body">
   <div class="govuk-grid-column-two-thirds">
     <%= form_for admin_organisations_path, method: "get", class: "search-bar" do |f| %>
-      <p>
-        <%= label_tag(:q, t(".search_query_label")) %><br/>
-        <%= text_field_tag(:q, params[:q] || "", class: "govuk-input govuk-!-width-one-half") %>
-      </p>
+      <%= label_tag(:q, t(".search_query_label")) %><br/>
+      <%= text_field_tag(:q, params[:q] || "", class: "govuk-input govuk-!-width-one-half") %>
       <p>
         <%= label_tag(:type, t(".search_type_label")) %><br/>
-        <%= select_tag :type, options_for_select(Organisation::AREA_TYPES, params[:type] || Organisation::RMA_AREA), {class: "govuk-select govuk-!-width-one-half area-select"} %>
+        <%= select_tag :type, options_for_select(Organisation::ORGANISATION_TO_AREA_MAPPING, params[:type] || Organisation::RMA_AREA), {class: "govuk-select govuk-!-width-one-half"} %>
       </p>
       <p>
         <%= f.govuk_submit t(".search_btn") %>
