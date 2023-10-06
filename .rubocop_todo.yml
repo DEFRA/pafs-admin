@@ -21,12 +21,6 @@ RSpec/LetSetup:
     - 'spec/lib/projects_sent_to_pol/report/failure_spec.rb'
     - 'spec/lib/projects_sent_to_pol/report/success_spec.rb'
 
-# Offense count: 4
-# Configuration parameters: .
-# SupportedStyles: have_received, receive
-RSpec/MessageSpies:
-  EnforcedStyle: receive
-
 # Offense count: 12
 RSpec/MultipleExpectations:
   Max: 6

@@ -14,7 +14,7 @@ RSpec.describe "Update a user" do
       visit("/admin/users/#{user.id}/edit")
       select("North East", from: "Main Area")
 
-      expect { click_on "Save" }
+      expect { click_button "Save" }
         .to change { user.reload.updated_at }
         .and change { user.areas.map(&:name) }.to(["North East"])
 
@@ -36,7 +36,7 @@ RSpec.describe "Update a user" do
       expect(page).to have_content("Edit User")
       expect(user.areas.map(&:name)).to include("South West")
 
-      expect { click_on "remove" }.to change { user.reload.updated_at }
+      expect { click_link "remove" }.to change { user.reload.updated_at }
 
       expect(user.reload.areas.map(&:name)).not_to include("South West")
       expect(page).to have_content("Edit User")
@@ -48,7 +48,7 @@ RSpec.describe "Update a user" do
       visit("/admin/users/#{user.id}/edit")
       page.check("user[admin][]")
 
-      expect { click_on "Save" }.to change { user.reload.admin }
+      expect { click_button "Save" }.to change { user.reload.admin }
     end
   end
 end

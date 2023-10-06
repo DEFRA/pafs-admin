@@ -15,7 +15,7 @@ module Admin
       @users = if q
                  User.search(q)
                else
-                 User.all.includes(:areas)
+                 User.includes(:areas)
                end
       @users = if o && o == "area"
                  @users.joins(:areas).merge(PafsCore::Area.order(name: d)).page(page)

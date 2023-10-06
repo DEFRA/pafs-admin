@@ -24,7 +24,7 @@ RSpec.describe "Failed to Send Report" do
 
     it "listing failed submissions" do
       visit "/"
-      click_on "Failed Submissions"
+      click_link "Failed Submissions"
       expect(page).to have_content("There are no failed submissions")
     end
   end
@@ -34,7 +34,7 @@ RSpec.describe "Failed to Send Report" do
 
     it "listing the failed projects" do
       visit "/"
-      click_on "Failed Submissions"
+      click_link "Failed Submissions"
 
       expect(page).not_to have_content("There are no failed submissions")
       expect(page).to have_content(project.reference_number)
@@ -42,20 +42,20 @@ RSpec.describe "Failed to Send Report" do
 
     it "setting the project as submitted" do
       visit "/"
-      click_on "Failed Submissions"
+      click_link "Failed Submissions"
 
       expect do
-        click_on "Proposal in PoL"
+        click_button "Proposal in PoL"
         expect(page).to have_content("There are no failed submissions")
       end.to change { project.reload.submitted_to_pol }
     end
 
     it "resubmitting the project" do
       visit "/"
-      click_on "Failed Submissions"
+      click_link "Failed Submissions"
 
       expect do
-        click_on "Resend to PoL"
+        click_button "Resend to PoL"
         expect(page).to have_content("There are no failed submissions")
       end.to change { project.reload.submitted_to_pol }
     end

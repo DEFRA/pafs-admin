@@ -2,18 +2,18 @@
 
 # rubocop:disable RSpec/Rails/HaveHttpStatus
 RSpec.describe "Status update callback" do
+
+  subject(:perform) do
+    post "/admin/api/project/status", params: payload.to_json,
+                                      headers: {
+                                        Authorization: auth_token,
+                                        "Content-Type": "application/json"
+                                      }
+  end
+
   let(:project) { create(:project, :submitted) }
   let(:status) { "Draft" }
   let(:payload) { { NPN: project.reference_number, Status: status } }
-
-  let(:headers) do
-    {
-      Authorization: auth_token,
-      "Content-Type": "application/json"
-    }
-  end
-
-  let(:perform) { post "/admin/api/project/status", params: payload.to_json, headers: headers }
   let(:auth_token) { "Bearer VALID" }
 
   before do
