@@ -3,7 +3,7 @@
 module Admin
   class DownloadAllUsersController < ApplicationController
     def show
-      @users = User.all.select("id", "email", "first_name", "last_name", "last_sign_in_at", "admin")
+      @users = User.select("id", "email", "first_name", "last_name", "last_sign_in_at", "admin")
 
       respond_to do |format|
         format.html

@@ -2,18 +2,18 @@
 
 # rubocop:disable RSpec/Rails/HaveHttpStatus
 RSpec.describe "Status update callback" do
+
+  subject(:perform) do
+    post "/admin/api/project/status", params: payload.to_json,
+                                      headers: {
+                                        Authorization: auth_token,
+                                        "Content-Type": "application/json"
+                                      }
+  end
+
   let(:project) { create(:project, :submitted) }
   let(:status) { "Draft" }
   let(:payload) { { NPN: project.reference_number, Status: status } }
-
-  let(:headers) do
-    {
-      Authorization: auth_token,
-      "Content-Type": "application/json"
-    }
-  end
-
-  let(:perform) { post "/admin/api/project/status", params: payload.to_json, headers: headers }
   let(:auth_token) { "Bearer VALID" }
 
   before do
@@ -55,22 +55,30 @@ RSpec.describe "Status update callback" do
       end
 
       it "no changes happen to the project" do
-        expect do
-          perform
-        end.not_to change { project.reload.status }
+        expect { perform }.not_to change { project.reload.status }
       end
     end
 
     context "with a valid payload" do
+      let(:remove_previous_years_service) { instance_double(PafsCore::RemovePreviousYearsService) }
+
+      before do
+        allow(PafsCore::RemovePreviousYearsService).to receive(:new).and_return(remove_previous_years_service)
+        allow(remove_previous_years_service).to receive(:run)
+      end
+
       it "the endpoint responds with a 204" do
         perform
         expect(response.status).to be(204)
       end
 
       it "the status of the project is set to draft" do
-        expect do
-          perform
-        end.to change { project.reload.status }.to(:draft)
+        expect { perform }.to change { project.reload.status }.to(:draft)
+      end
+
+      it "calls the RemovePreviousYears service" do
+        perform
+        expect(remove_previous_years_service).to have_received(:run)
       end
     end
   end

@@ -5,6 +5,7 @@ describe ProjectsSentToPol::Notification::Failure do
   let(:report) { double(:report) }
 
   before do
+    allow(email).to receive(:deliver_now)
     allow(PolIntegrationMailer).to receive(:failure_notification).with(report).and_return(email)
   end
 
@@ -16,8 +17,8 @@ describe ProjectsSentToPol::Notification::Failure do
     end
 
     it "does not send a notification" do
-      expect(email).not_to receive(:deliver_now)
       described_class.perform(report)
+      expect(email).not_to have_received(:deliver_now)
     end
   end
 
@@ -29,8 +30,8 @@ describe ProjectsSentToPol::Notification::Failure do
     end
 
     it "sends the email" do
-      expect(email).to receive(:deliver_now)
       described_class.perform(report)
+      expect(email).to have_received(:deliver_now)
     end
   end
 end
