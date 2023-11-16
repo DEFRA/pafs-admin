@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: d9a57901bb3a302e50ca5d3ce91b157af317c6fa
+  revision: d297c34b78f6f547506879799f77b22bccb916df
   branch: feature/fcerm1_report_adjustments
   specs:
     pafs_core (0.0.2)
@@ -132,7 +132,7 @@ GEM
     async-pool (0.4.0)
       async (>= 1.25)
     aws-eventstream (1.2.0)
-    aws-partitions (1.850.0)
+    aws-partitions (1.851.0)
     aws-sdk-core (3.186.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
@@ -319,7 +319,7 @@ GEM
       timeout
     net-smtp (0.4.0)
       net-protocol
-    nio4r (2.5.9)
+    nio4r (2.6.0)
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
