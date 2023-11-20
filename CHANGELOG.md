@@ -2,10 +2,57 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.2...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.3...HEAD)
 
 **Merged pull requests:**
 
+- Bump net-imap from 0.4.1 to 0.4.4 [\#487](https://github.com/DEFRA/pafs-admin/pull/487) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump faker from 3.2.1 to 3.2.2 [\#486](https://github.com/DEFRA/pafs-admin/pull/486) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump defra\_ruby\_style from 0.3.0 to 0.4.0 [\#485](https://github.com/DEFRA/pafs-admin/pull/485) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump devise\_invitable from 2.0.8 to 2.0.9 [\#484](https://github.com/DEFRA/pafs-admin/pull/484) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rails from 2.21.2 to 2.22.1 [\#482](https://github.com/DEFRA/pafs-admin/pull/482) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rake from 13.0.6 to 13.1.0 [\#481](https://github.com/DEFRA/pafs-admin/pull/481) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 2.24.1 to 2.25.0 [\#480](https://github.com/DEFRA/pafs-admin/pull/480) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.57.0 to 1.57.2 [\#478](https://github.com/DEFRA/pafs-admin/pull/478) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `d182563` to `6247d19` [\#475](https://github.com/DEFRA/pafs-admin/pull/475) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump devise from 4.9.2 to 4.9.3 [\#474](https://github.com/DEFRA/pafs-admin/pull/474) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.56.4 to 1.57.0 [\#473](https://github.com/DEFRA/pafs-admin/pull/473) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump net-imap from 0.4.0 to 0.4.1 [\#472](https://github.com/DEFRA/pafs-admin/pull/472) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Fix/previous years [\#470](https://github.com/DEFRA/pafs-admin/pull/470) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- \[RUBY-2363\] error handling for select an organisation type page [\#469](https://github.com/DEFRA/pafs-admin/pull/469) ([brujeo](https://github.com/brujeo))
+- Making rfcc code mandatory for PSO area [\#467](https://github.com/DEFRA/pafs-admin/pull/467) ([brujeo](https://github.com/brujeo))
+- RUBY-2447: Add/Edit PSO pages [\#464](https://github.com/DEFRA/pafs-admin/pull/464) ([brujeo](https://github.com/brujeo))
+- Bump rubocop from 1.56.3 to 1.56.4 [\#463](https://github.com/DEFRA/pafs-admin/pull/463) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Ruby 2446 2450 pafs bau back office add edit authority [\#461](https://github.com/DEFRA/pafs-admin/pull/461) ([brujeo](https://github.com/brujeo))
+- Feature/ruby 2448 pafs bau back office add rma [\#460](https://github.com/DEFRA/pafs-admin/pull/460) ([brujeo](https://github.com/brujeo))
+- Feature/ruby 2445 pafs bau back office edit rma [\#459](https://github.com/DEFRA/pafs-admin/pull/459) ([brujeo](https://github.com/brujeo))
+- Bump pafs\_core from `08e5254` to `5795b82` [\#454](https://github.com/DEFRA/pafs-admin/pull/454) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.56.2 to 1.56.3 [\#453](https://github.com/DEFRA/pafs-admin/pull/453) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 2.23.2 to 2.24.0 [\#451](https://github.com/DEFRA/pafs-admin/pull/451) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump web-console from 4.2.0 to 4.2.1 [\#449](https://github.com/DEFRA/pafs-admin/pull/449) ([dependabot[bot]](https://github.com/apps/dependabot))
+- updating dependencies [\#448](https://github.com/DEFRA/pafs-admin/pull/448) ([brujeo](https://github.com/brujeo))
+- Bump webmock from 3.18.1 to 3.19.1 [\#446](https://github.com/DEFRA/pafs-admin/pull/446) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `a72636e` to `93c587c` [\#443](https://github.com/DEFRA/pafs-admin/pull/443) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `d3bd6ac` to `a72636e` [\#442](https://github.com/DEFRA/pafs-admin/pull/442) ([dependabot[bot]](https://github.com/apps/dependabot))
+- RUBY-2444: styling adjustments [\#439](https://github.com/DEFRA/pafs-admin/pull/439) ([brujeo](https://github.com/brujeo))
+- RUBY-2444: Adding Manage Organisations page [\#438](https://github.com/DEFRA/pafs-admin/pull/438) ([brujeo](https://github.com/brujeo))
+- Feature/ruby 2444 pafs bau back office manage organisations [\#436](https://github.com/DEFRA/pafs-admin/pull/436) ([brujeo](https://github.com/brujeo))
+- Bump pafs\_core from `1e8109b` to `b5e5ce0` [\#435](https://github.com/DEFRA/pafs-admin/pull/435) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump faker from 3.2.0 to 3.2.1 [\#434](https://github.com/DEFRA/pafs-admin/pull/434) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.15.3 to 1.15.4 [\#433](https://github.com/DEFRA/pafs-admin/pull/433) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 2.23.1 to 2.23.2 [\#432](https://github.com/DEFRA/pafs-admin/pull/432) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 2.22.0 to 2.23.1 [\#430](https://github.com/DEFRA/pafs-admin/pull/430) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump protocol-http1 from 0.15.0 to 0.15.1 [\#429](https://github.com/DEFRA/pafs-admin/pull/429) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump net-imap from 0.3.6 to 0.3.7 [\#426](https://github.com/DEFRA/pafs-admin/pull/426) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump jquery-rails from 4.5.1 to 4.6.0 [\#417](https://github.com/DEFRA/pafs-admin/pull/417) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.4.3](https://github.com/defra/pafs-admin/tree/v1.4.3) (2023-07-13)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.2...v1.4.3)
+
+**Merged pull requests:**
+
+- Release/v1.4.3 [\#423](https://github.com/DEFRA/pafs-admin/pull/423) ([brujeo](https://github.com/brujeo))
 - Bump pafs\_core from `eff5a38` to `1e8109b` [\#422](https://github.com/DEFRA/pafs-admin/pull/422) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Updating dependencies [\#414](https://github.com/DEFRA/pafs-admin/pull/414) ([brujeo](https://github.com/brujeo))
 - Update CHANGELOG [\#404](https://github.com/DEFRA/pafs-admin/pull/404) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
