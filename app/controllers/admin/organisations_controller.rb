@@ -74,7 +74,7 @@ module Admin
              else
                ""
              end
-      action == :new ? "new#{type}".to_sym : "edit#{type}".to_sym
+      action == :new ? :"new#{type}" : :"edit#{type}"
     end
 
     def set_organisation
