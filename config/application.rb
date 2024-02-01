@@ -49,5 +49,7 @@ module PafsAdmin
 
     # exception handling
     config.exceptions_app = routes
+
+    config.active_support.cache_format_version = 7.0
   end
 end
