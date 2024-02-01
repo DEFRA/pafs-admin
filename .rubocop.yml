@@ -9,3 +9,7 @@ require:
   - rubocop-rails
   - rubocop-rake
   - rubocop-rspec
+
+FactoryBot/ExcessiveCreateList:
+  # default value of 10 is just not sufficient in order to test pagination 
+  MaxAmount: 30
