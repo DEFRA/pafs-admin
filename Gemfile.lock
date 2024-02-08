@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core
-  revision: 282b143d305ff17eeb11bbddee886e9652eedb69
+  revision: e41490dcf8bc430acdceece4862c95fb5cf40001
   branch: main
   specs:
     pafs_core (0.0.2)
@@ -133,8 +133,8 @@ GEM
     async-pool (0.4.0)
       async (>= 1.25)
     aws-eventstream (1.3.0)
-    aws-partitions (1.887.0)
-    aws-sdk-core (3.191.0)
+    aws-partitions (1.888.0)
+    aws-sdk-core (3.191.1)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.651.0)
       aws-sigv4 (~> 1.8)
@@ -265,7 +265,7 @@ GEM
       concurrent-ruby (~> 1.0)
     io-console (0.7.2)
     io-event (1.4.2)
-    irb (1.11.1)
+    irb (1.11.2)
       rdoc
       reline (>= 0.4.2)
     jbuilder (2.11.5)
@@ -307,7 +307,7 @@ GEM
     method_source (1.0.0)
     mini_mime (1.1.5)
     mini_portile2 (2.8.5)
-    minitest (5.22.1)
+    minitest (5.22.2)
     msgpack (1.7.2)
     multi_json (1.15.0)
     mutex_m (0.2.0)
