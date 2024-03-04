@@ -2,10 +2,33 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.3...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.0...HEAD)
 
 **Merged pull requests:**
 
+- Bump pafs\_core from `fcb9c96` to `62286e6` [\#540](https://github.com/DEFRA/pafs-admin/pull/540) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `9b4950f` to `fcb9c96` [\#539](https://github.com/DEFRA/pafs-admin/pull/539) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump defra\_ruby\_template from 3.13.0 to 3.15.0 [\#536](https://github.com/DEFRA/pafs-admin/pull/536) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `97a0c23` to `9b4950f` [\#531](https://github.com/DEFRA/pafs-admin/pull/531) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `619cfcd` to `97a0c23` [\#530](https://github.com/DEFRA/pafs-admin/pull/530) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `a9bbe4f` to `619cfcd` [\#529](https://github.com/DEFRA/pafs-admin/pull/529) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `e41490d` to `a9bbe4f` [\#527](https://github.com/DEFRA/pafs-admin/pull/527) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `282b143` to `e41490d` [\#526](https://github.com/DEFRA/pafs-admin/pull/526) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `43fa259` to `282b143` [\#525](https://github.com/DEFRA/pafs-admin/pull/525) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump webmock from 3.19.1 to 3.20.0 [\#524](https://github.com/DEFRA/pafs-admin/pull/524) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump net-imap from 0.4.9.1 to 0.4.10 [\#523](https://github.com/DEFRA/pafs-admin/pull/523) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.16.0 to 1.16.2 [\#522](https://github.com/DEFRA/pafs-admin/pull/522) ([dependabot[bot]](https://github.com/apps/dependabot))
+- adding cache\_format\_version setting to get rid of deprecation warning [\#521](https://github.com/DEFRA/pafs-admin/pull/521) ([brujeo](https://github.com/brujeo))
+- \[RUBY-2574\] updating dependencies + code styling fixes [\#520](https://github.com/DEFRA/pafs-admin/pull/520) ([brujeo](https://github.com/brujeo))
+- Bump pafs\_core from `6247d19` to `3217703` [\#504](https://github.com/DEFRA/pafs-admin/pull/504) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.5.0](https://github.com/defra/pafs-admin/tree/v1.5.0) (2023-11-20)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.4.3...v1.5.0)
+
+**Merged pull requests:**
+
+- Release/v1.5.0 [\#492](https://github.com/DEFRA/pafs-admin/pull/492) ([brujeo](https://github.com/brujeo))
 - Bump net-imap from 0.4.1 to 0.4.4 [\#487](https://github.com/DEFRA/pafs-admin/pull/487) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump faker from 3.2.1 to 3.2.2 [\#486](https://github.com/DEFRA/pafs-admin/pull/486) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump defra\_ruby\_style from 0.3.0 to 0.4.0 [\#485](https://github.com/DEFRA/pafs-admin/pull/485) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -221,7 +244,7 @@
 - Bump benchmark-ips from 2.8.2 to 2.10.0 [\#118](https://github.com/DEFRA/pafs-admin/pull/118) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump devise-security from 0.14.3 to 0.17.0 [\#108](https://github.com/DEFRA/pafs-admin/pull/108) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump jbuilder from 2.10.0 to 2.11.5 [\#105](https://github.com/DEFRA/pafs-admin/pull/105) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Allow admin to download all users to xls file [\#96](https://github.com/DEFRA/pafs-admin/pull/96) ([georgeschena](https://github.com/georgeschena))
+- Allow admin to download all users to xls file [\#96](https://github.com/DEFRA/pafs-admin/pull/96) ([georges1996](https://github.com/georges1996))
 - Bump web-console from 4.0.4 to 4.2.0 [\#94](https://github.com/DEFRA/pafs-admin/pull/94) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `557829d` to `574aaab` [\#91](https://github.com/DEFRA/pafs-admin/pull/91) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump devise from 4.7.2 to 4.7.3 [\#90](https://github.com/DEFRA/pafs-admin/pull/90) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -229,7 +252,7 @@
 - Bump faker from 2.13.0 to 2.19.0 [\#83](https://github.com/DEFRA/pafs-admin/pull/83) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump database\_cleaner from 1.8.5 to 2.0.1 [\#82](https://github.com/DEFRA/pafs-admin/pull/82) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump govuk\_frontend\_toolkit from 9.0.0 to 9.0.1 [\#81](https://github.com/DEFRA/pafs-admin/pull/81) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Fix passenger critical severity security alert [\#78](https://github.com/DEFRA/pafs-admin/pull/78) ([georgeschena](https://github.com/georgeschena))
+- Fix passenger critical severity security alert [\#78](https://github.com/DEFRA/pafs-admin/pull/78) ([georges1996](https://github.com/georges1996))
 - Bump rdoc from 6.2.1 to 6.3.2 [\#77](https://github.com/DEFRA/pafs-admin/pull/77) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump kramdown from 2.3.0 to 2.3.1 [\#75](https://github.com/DEFRA/pafs-admin/pull/75) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump overcommit from 0.55.0 to 0.58.0 [\#73](https://github.com/DEFRA/pafs-admin/pull/73) ([dependabot[bot]](https://github.com/apps/dependabot))
