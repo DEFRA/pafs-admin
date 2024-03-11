@@ -2,10 +2,20 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.0...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.1...HEAD)
 
 **Merged pull requests:**
 
+- Bump pafs\_core from `ec1b30f` to `72be31d` [\#554](https://github.com/DEFRA/pafs-admin/pull/554) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump defra\_ruby\_template from 3.15.0 to 3.15.1 [\#549](https://github.com/DEFRA/pafs-admin/pull/549) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.5.1](https://github.com/defra/pafs-admin/tree/v1.5.1) (2024-03-04)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.0...v1.5.1)
+
+**Merged pull requests:**
+
+- Release/v1.5.1 [\#545](https://github.com/DEFRA/pafs-admin/pull/545) ([brujeo](https://github.com/brujeo))
 - Bump pafs\_core from `fcb9c96` to `62286e6` [\#540](https://github.com/DEFRA/pafs-admin/pull/540) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `9b4950f` to `fcb9c96` [\#539](https://github.com/DEFRA/pafs-admin/pull/539) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump defra\_ruby\_template from 3.13.0 to 3.15.0 [\#536](https://github.com/DEFRA/pafs-admin/pull/536) ([dependabot[bot]](https://github.com/apps/dependabot))
