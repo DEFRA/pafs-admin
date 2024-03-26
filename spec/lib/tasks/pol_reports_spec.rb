@@ -2,9 +2,11 @@
 
 require "rails_helper"
 
-Rails.application.load_tasks
-
 RSpec.describe "Admin", type: :rake do
+
+  before do
+    task.reenable
+  end
 
   describe "admin:send_success_report", type: :rake do
     let(:task) { Rake::Task["admin:send_success_report"] }
