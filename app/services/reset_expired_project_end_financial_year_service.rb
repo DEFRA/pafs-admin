@@ -9,7 +9,7 @@ class ResetExpiredProjectEndFinancialYearService < PafsCore::BaseService
     Rails.logger.info "Number of projects with expired project end FY - #{projects_expired.count}"
 
     projects_expired.each do |project|
-      project.update(project_end_financial_year: nil)
+      project.update(project_end_financial_year: current_financial_year)
     end
   end
 

@@ -5,6 +5,9 @@ require "rails_helper"
 Rails.application.load_tasks
 
 RSpec.describe "OneOff", type: :rake do
+
+  include PafsCore::FinancialYear
+
   describe "one_off:reset_expired_project_end_financial_years", type: :rake do
     let(:task) { Rake::Task["one_off:reset_expired_project_end_financial_years"] }
 
@@ -24,7 +27,7 @@ RSpec.describe "OneOff", type: :rake do
       it "sets project_end_financial_year to nil for expired project" do
         expect(expired_project.project_end_financial_year).to be_positive
         task.invoke
-        expect(expired_project.reload.project_end_financial_year).to be_nil
+        expect(expired_project.reload.project_end_financial_year).to eq(current_financial_year)
       end
 
       it "doesn't modify the project with not expired project end FY" do
