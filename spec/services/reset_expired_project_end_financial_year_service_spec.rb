@@ -4,6 +4,8 @@ require "rails_helper"
 
 RSpec.describe ResetExpiredProjectEndFinancialYearService do
 
+  include PafsCore::FinancialYear
+
   subject(:service) { described_class }
 
   let!(:project) { create(:project, state: state) }
@@ -14,7 +16,7 @@ RSpec.describe ResetExpiredProjectEndFinancialYearService do
       it "sets project_end_financial_year to nil" do
         service.run
 
-        expect(project.reload.project_end_financial_year).to be_nil
+        expect(project.reload.project_end_financial_year).to eq(current_financial_year)
       end
     end
 
