@@ -48,7 +48,7 @@ gem "whenever", require: false
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
     git: "https://github.com/DEFRA/pafs_core",
-    branch: "main"
+    branch: "feature/RUBY-2881-pa-fs-bau-bo-add-new-columns-to-fcrm-1-report"
 
 gem "dibble", "~> 0.1",
     git: "https://github.com/tonyheadford/dibble",
