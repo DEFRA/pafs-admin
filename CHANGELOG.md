@@ -2,10 +2,21 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.1...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.2...HEAD)
 
 **Merged pull requests:**
 
+- \[RUBY-2984\] adjusting reset tool to set expired FY to current FY for all draft/archived projects [\#565](https://github.com/DEFRA/pafs-admin/pull/565) ([brujeo](https://github.com/brujeo))
+- Feature/ruby 2984 pafs reset project end financial year [\#564](https://github.com/DEFRA/pafs-admin/pull/564) ([brujeo](https://github.com/brujeo))
+- Bump pafs\_core from `72be31d` to `6c3746b` [\#558](https://github.com/DEFRA/pafs-admin/pull/558) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.5.2](https://github.com/defra/pafs-admin/tree/v1.5.2) (2024-03-11)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.1...v1.5.2)
+
+**Merged pull requests:**
+
+- Update CHANGELOG [\#555](https://github.com/DEFRA/pafs-admin/pull/555) ([brujeo](https://github.com/brujeo))
 - Bump pafs\_core from `ec1b30f` to `72be31d` [\#554](https://github.com/DEFRA/pafs-admin/pull/554) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump defra\_ruby\_template from 3.15.0 to 3.15.1 [\#549](https://github.com/DEFRA/pafs-admin/pull/549) ([dependabot[bot]](https://github.com/apps/dependabot))
 
