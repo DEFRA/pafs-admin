@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 describe ProjectsSentToPol::Notification::Failure do
   let(:email) { double(:email) }
   let(:report) { double(:report) }

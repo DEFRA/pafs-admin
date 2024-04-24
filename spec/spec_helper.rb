@@ -104,4 +104,15 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
   # rubocop:enable Style/BlockComments
+
+  config.color = true
+  config.formatter = :documentation
+
+  # load rake tasks
+  config.before(:suite) do
+    Rake.application = Rake::Application.new
+    Rails.application.load_tasks
+
+    Rake::Task.define_task(:environment)
+  end
 end

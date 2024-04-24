@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 describe ProjectsSentToPol::Report::Failure do
   subject(:report_failure) { described_class.new }
 

@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rails_helper"
+
 RSpec.describe Admin::DownloadAllUsersController, type: :controller do
   let!(:user) { create(:back_office_user, :pso) }
 
