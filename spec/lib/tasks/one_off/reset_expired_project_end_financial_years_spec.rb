@@ -2,8 +2,6 @@
 
 require "rails_helper"
 
-Rails.application.load_tasks
-
 RSpec.describe "OneOff", type: :rake do
 
   include PafsCore::FinancialYear
