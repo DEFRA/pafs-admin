@@ -2,10 +2,30 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.2...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.3...HEAD)
 
 **Merged pull requests:**
 
+- Feature/ruby 2557 drop pso projects [\#586](https://github.com/DEFRA/pafs-admin/pull/586) ([PaulDoyle-DEFRA](https://github.com/PaulDoyle-DEFRA))
+- Bump pafs\_core from `25c2b85` to `8c8adc6` [\#583](https://github.com/DEFRA/pafs-admin/pull/583) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `b3f00bc` to `25c2b85` [\#582](https://github.com/DEFRA/pafs-admin/pull/582) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.62.1 to 1.63.2 [\#581](https://github.com/DEFRA/pafs-admin/pull/581) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.16.3 to 1.16.4 [\#580](https://github.com/DEFRA/pafs-admin/pull/580) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump devise from 4.9.3 to 4.9.4 [\#579](https://github.com/DEFRA/pafs-admin/pull/579) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump spring from 4.1.3 to 4.2.0 [\#578](https://github.com/DEFRA/pafs-admin/pull/578) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 2.27.1 to 2.29.1 [\#575](https://github.com/DEFRA/pafs-admin/pull/575) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rake from 13.1.0 to 13.2.1 [\#574](https://github.com/DEFRA/pafs-admin/pull/574) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Feature/ruby-2881 Keep track of who last updated the project and show it on FCRM1 report [\#572](https://github.com/DEFRA/pafs-admin/pull/572) ([brujeo](https://github.com/brujeo))
+- Bump faker from 3.3.0 to 3.3.1 [\#571](https://github.com/DEFRA/pafs-admin/pull/571) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump letter\_opener from 1.9.0 to 1.10.0 [\#569](https://github.com/DEFRA/pafs-admin/pull/569) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.5.3](https://github.com/defra/pafs-admin/tree/v1.5.3) (2024-03-28)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.2...v1.5.3)
+
+**Merged pull requests:**
+
+- release/v1.5.3 [\#566](https://github.com/DEFRA/pafs-admin/pull/566) ([brujeo](https://github.com/brujeo))
 - \[RUBY-2984\] adjusting reset tool to set expired FY to current FY for all draft/archived projects [\#565](https://github.com/DEFRA/pafs-admin/pull/565) ([brujeo](https://github.com/brujeo))
 - Feature/ruby 2984 pafs reset project end financial year [\#564](https://github.com/DEFRA/pafs-admin/pull/564) ([brujeo](https://github.com/brujeo))
 - Bump pafs\_core from `72be31d` to `6c3746b` [\#558](https://github.com/DEFRA/pafs-admin/pull/558) ([dependabot[bot]](https://github.com/apps/dependabot))
