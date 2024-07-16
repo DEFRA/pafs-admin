@@ -12,6 +12,7 @@
       <li><%= link_to(t('logout_link'), main_app.destroy_user_session_path) %></li>
     </ul>
     <ul class="user-menu stacked-menu govuk-!-font-size-16">
+      <li><%= link_to t("download_rma_list"), admin_download_all_rmas_path(({:format => :xls})) %></li>
       <li><%= link_to t("add_organisation"), main_app.new_admin_organisation_path %></li>
       <li><%= link_to t("manage_organisations"), main_app.admin_organisations_path %></li>
     </ul>

@@ -46,6 +46,7 @@ en:
   table_caption: Proposals
   manage_organisations: Manage Organisations
   add_organisation: Add a new organisation
+  download_rma_list: Download RMA list
   admin:
     projects:
       view_all_projects: View all projects
