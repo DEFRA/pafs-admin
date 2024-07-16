@@ -9,6 +9,7 @@ Rails.application.routes.draw do
 
     resource :download, only: %i[show create]
     resource :download_all_users, only: [:show]
+    resource :download_all_rmas, only: [:show]
 
     resources :failed_submissions, only: :index do
       member do
