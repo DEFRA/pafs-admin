@@ -18,7 +18,7 @@ class ResetExpiredProjectEndFinancialYearService < PafsCore::BaseService
   def expired_projects
     PafsCore::Project.joins(:state)
                      .where(pafs_core_states: { state: %i[draft archived] })
-                     .where("project_end_financial_year < ?", current_financial_year)
+                     .where(project_end_financial_year: ...current_financial_year)
                      .limit(500)
   end
 end
