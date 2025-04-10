@@ -21,7 +21,7 @@ RSpec.describe "OneOff", type: :rake do
       context "when the project state is draft" do
         let(:project_state) { "draft" }
 
-        it "sets project state to sumitted" do
+        it "sets project state to submitted" do
           expect(project.state.state).to eq(project_state)
           task.invoke
           expect(project.reload.state.state).to eq("submitted")
