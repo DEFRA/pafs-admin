@@ -2,10 +2,38 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.4...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...HEAD)
 
 **Merged pull requests:**
 
+- \[RUBY-3753\] Add Rake task to set listed draft projects as submitted [\#751](https://github.com/DEFRA/pafs-admin/pull/751) ([brujeo](https://github.com/brujeo))
+- Bump net-imap from 0.5.4 to 0.5.5 [\#715](https://github.com/DEFRA/pafs-admin/pull/715) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `cbb101c` to `afe13dc` [\#714](https://github.com/DEFRA/pafs-admin/pull/714) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pry from 0.15.0 to 0.15.2 [\#713](https://github.com/DEFRA/pafs-admin/pull/713) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump engine version plus lint fixes [\#712](https://github.com/DEFRA/pafs-admin/pull/712) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
+- Bump spreadsheet from 1.3.1 to 1.3.3 [\#694](https://github.com/DEFRA/pafs-admin/pull/694) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump database\_cleaner from 2.0.2 to 2.1.0 [\#692](https://github.com/DEFRA/pafs-admin/pull/692) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump faker from 3.4.2 to 3.5.1 [\#691](https://github.com/DEFRA/pafs-admin/pull/691) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pry from 0.14.2 to 0.15.0 [\#690](https://github.com/DEFRA/pafs-admin/pull/690) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ruby-prof from 1.7.0 to 1.7.1 [\#689](https://github.com/DEFRA/pafs-admin/pull/689) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump factory\_bot\_rails from 6.4.3 to 6.4.4 [\#688](https://github.com/DEFRA/pafs-admin/pull/688) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rspec-rails from 6.1.4 to 7.1.0 [\#683](https://github.com/DEFRA/pafs-admin/pull/683) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.65.1 to 1.68.0 [\#681](https://github.com/DEFRA/pafs-admin/pull/681) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rexml from 3.3.6 to 3.3.9 [\#680](https://github.com/DEFRA/pafs-admin/pull/680) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pg from 1.5.7 to 1.5.9 [\#677](https://github.com/DEFRA/pafs-admin/pull/677) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actiontext from 7.2.1 to 7.2.1.1 [\#674](https://github.com/DEFRA/pafs-admin/pull/674) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump uglifier from 4.2.0 to 4.2.1 [\#670](https://github.com/DEFRA/pafs-admin/pull/670) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump dotenv-rails from 3.1.2 to 3.1.4 [\#668](https://github.com/DEFRA/pafs-admin/pull/668) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump jbuilder from 2.12.0 to 2.13.0 [\#666](https://github.com/DEFRA/pafs-admin/pull/666) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump benchmark-ips from 2.13.0 to 2.14.0 [\#661](https://github.com/DEFRA/pafs-admin/pull/661) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v1.5.5](https://github.com/defra/pafs-admin/tree/v1.5.5) (2024-10-17)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.4...v1.5.5)
+
+**Merged pull requests:**
+
+- Update CHANGELOG [\#675](https://github.com/DEFRA/pafs-admin/pull/675) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump pafs\_core from `673169d` to `56f2593` [\#667](https://github.com/DEFRA/pafs-admin/pull/667) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `6e93e31` to `673169d` [\#665](https://github.com/DEFRA/pafs-admin/pull/665) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `e6ecc1f` to `6e93e31` [\#657](https://github.com/DEFRA/pafs-admin/pull/657) ([dependabot[bot]](https://github.com/apps/dependabot))
