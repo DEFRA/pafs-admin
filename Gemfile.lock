@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/DEFRA/pafs_core.git
-  revision: 1368e4c2592504c4d9386f42a95c1e0d0b57db35
+  revision: 1fbb70f5f662733463e17ec0f66038fcca745f67
   branch: main
   specs:
-    pafs_core (0.0.2)
+    pafs_core (1.0.1)
       aws-sdk-s3
       bstard
       clamav-client
@@ -618,7 +618,7 @@ DEPENDENCIES
   net-pop
   net-smtp
   nokogiri
-  pafs_core (~> 0.0)!
+  pafs_core (~> 1.0.1)!
   passenger
   pg
   poltergeist

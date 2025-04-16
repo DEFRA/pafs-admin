@@ -8,4 +8,6 @@ updates:
   versioning-strategy: lockfile-only
   ignore:
   - dependency-name: "dibble"
-
+  - dependency-name: "pafs_core"
+    versions:
+    - "< 1.0.1"
