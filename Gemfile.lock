@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:DEFRA/pafs_core.git
+  remote: https://github.com/DEFRA/pafs_core.git
   revision: 1368e4c2592504c4d9386f42a95c1e0d0b57db35
   branch: main
   specs:
@@ -650,4 +650,4 @@ DEPENDENCIES
   whenever
 
 BUNDLED WITH
-   2.3.24
+   2.6.8
