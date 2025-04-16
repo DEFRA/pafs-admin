@@ -6,6 +6,18 @@ updates:
     interval: daily
   open-pull-requests-limit: 10
   versioning-strategy: lockfile-only
+  target-branch: main
+  ignore:
+  - dependency-name: "dibble"
+  - dependency-name: "pafs_core"
+
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  versioning-strategy: lockfile-only
+  target-branch: dependabot-setup
   ignore:
   - dependency-name: "dibble"
 
