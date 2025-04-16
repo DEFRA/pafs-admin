@@ -47,9 +47,8 @@ gem "whenever", require: false
 
 # shared PAFS code
 gem "pafs_core", "~> 0.0",
-    github: "DEFRA/pafs_core",
-    branch: "main",
-    glob: "pafs_core.gemspec"
+    git: "git@github.com:DEFRA/pafs_core.git",
+    branch: "main"
 
 gem "dibble", "~> 0.1",
     git: "https://github.com/tonyheadford/dibble",

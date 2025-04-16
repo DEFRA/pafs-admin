@@ -1,8 +1,7 @@
 GIT
-  remote: https://github.com/DEFRA/pafs_core.git
+  remote: git@github.com:DEFRA/pafs_core.git
   revision: 1368e4c2592504c4d9386f42a95c1e0d0b57db35
   branch: main
-  glob: pafs_core.gemspec
   specs:
     pafs_core (0.0.2)
       aws-sdk-s3
