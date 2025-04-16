@@ -1,5 +1,10 @@
 version: 2
 updates:
+# Dependabot (dependabot/dependabot-updater-bundler) is now failing to pull changes from repositories hosted on Github only. 
+# It still works fine for repositories hosted on RubyGems.
+# Temporary workaround is to create 2 checks: 
+#    1 without pafs_core included so it can check for other dependencies
+#    2 with pafs_core included so it will pass once dependabot-updater-bundler is fixed
 - package-ecosystem: bundler
   directory: "/"
   schedule:
@@ -17,7 +22,6 @@ updates:
     interval: daily
   open-pull-requests-limit: 10
   versioning-strategy: lockfile-only
-  target-branch: dependabot-setup
+  target-branch: main
   ignore:
   - dependency-name: "dibble"
-
