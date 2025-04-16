@@ -46,9 +46,7 @@ gem "passenger", require: false
 gem "whenever", require: false
 
 # shared PAFS code
-gem "pafs_core", "~> 1.0.1",
-    github: "DEFRA/pafs_core",
-    branch: "main"
+gem "pafs_core", "~> 1.0.1", github: "DEFRA/pafs_core"
 
 gem "dibble", "~> 0.1",
     git: "https://github.com/tonyheadford/dibble",
