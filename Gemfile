@@ -35,7 +35,9 @@ gem "devise-security"
 gem "dotenv-rails"
 
 # GOV.UK styling
-gem "defra_ruby_template"
+gem "defra_ruby_template",
+    git: "https://github.com/DEFRA/defra-ruby-template",
+    branch: "feature/RUBY_3809_govuk-frontend_upgrade"
 gem "govuk_design_system_formbuilder"
 
 # active job backend
