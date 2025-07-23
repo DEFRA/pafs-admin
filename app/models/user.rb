@@ -50,6 +50,6 @@ class User < PafsCore::User
   end
 
   def other_admins_exist?
-    User.where.not(id: id).admins.active.count.positive?
+    User.where.not(id: id).admins.active.any?
   end
 end

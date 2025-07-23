@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# rubocop:disable RSpec/Rails/HaveHttpStatus
+# rubocop:disable RSpecRails/HaveHttpStatus
 RSpec.describe "Status update callback" do
 
   subject(:perform) do
@@ -83,4 +83,4 @@ RSpec.describe "Status update callback" do
     end
   end
 end
-# rubocop:enable RSpec/Rails/HaveHttpStatus
+# rubocop:enable RSpecRails/HaveHttpStatus
