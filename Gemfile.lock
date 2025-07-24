@@ -1,6 +1,7 @@
 GIT
-  remote: https://github.com/DEFRA/pafs_core.git
+  remote: https://github.com/DEFRA/pafs_core
   revision: f0408574599805c50c3dbd74602c394d67f6b491
+  branch: feature/RUBY-3800-pafs-carbon-net-zero
   specs:
     pafs_core (1.0.1)
       aws-sdk-s3
@@ -620,7 +621,7 @@ DEPENDENCIES
   net-pop
   net-smtp
   nokogiri
-  pafs_core (~> 1.0.1)!
+  pafs_core!
   passenger
   pg
   poltergeist
