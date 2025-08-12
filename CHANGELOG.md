@@ -1,12 +1,19 @@
 # Changelog
 
-## [v1.5.6](https://github.com/defra/pafs-admin/tree/v1.5.6) (2025-04-11)
+## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...v1.5.6)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...HEAD)
 
 **Merged pull requests:**
 
-- Release/v1.5.6 [\#752](https://github.com/DEFRA/pafs-admin/pull/752) ([brujeo](https://github.com/brujeo))
+- Bump pafs\_core from `bef2be0` to `44b60e0` [\#818](https://github.com/DEFRA/pafs-admin/pull/818) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `6dc95d2` to `bef2be0` [\#815](https://github.com/DEFRA/pafs-admin/pull/815) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `09e5b09` to `6dc95d2` [\#814](https://github.com/DEFRA/pafs-admin/pull/814) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `0e10e90` to `09e5b09` [\#810](https://github.com/DEFRA/pafs-admin/pull/810) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `f040857` to `0e10e90` [\#808](https://github.com/DEFRA/pafs-admin/pull/808) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump engine and other gem versions plus lint fixes [\#806](https://github.com/DEFRA/pafs-admin/pull/806) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
+- \[RUBY-3893\] Update defra\_ruby\_template gem from 5.4.1 to 5.11.0 in Gemfile.lock [\#800](https://github.com/DEFRA/pafs-admin/pull/800) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
+- Bump pafs\_core from `f4c876a` to `fe84972` [\#798](https://github.com/DEFRA/pafs-admin/pull/798) ([dependabot[bot]](https://github.com/apps/dependabot))
 - \[RUBY-3753\] Add Rake task to set listed draft projects as submitted [\#751](https://github.com/DEFRA/pafs-admin/pull/751) ([brujeo](https://github.com/brujeo))
 - Bump net-imap from 0.5.4 to 0.5.5 [\#715](https://github.com/DEFRA/pafs-admin/pull/715) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `cbb101c` to `afe13dc` [\#714](https://github.com/DEFRA/pafs-admin/pull/714) ([dependabot[bot]](https://github.com/apps/dependabot))
