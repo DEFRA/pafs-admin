@@ -2,10 +2,54 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.6...HEAD)
 
 **Merged pull requests:**
 
+- Bump pafs\_core from `bef2be0` to `44b60e0` [\#818](https://github.com/DEFRA/pafs-admin/pull/818) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `6dc95d2` to `bef2be0` [\#815](https://github.com/DEFRA/pafs-admin/pull/815) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `09e5b09` to `6dc95d2` [\#814](https://github.com/DEFRA/pafs-admin/pull/814) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `0e10e90` to `09e5b09` [\#810](https://github.com/DEFRA/pafs-admin/pull/810) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `f040857` to `0e10e90` [\#808](https://github.com/DEFRA/pafs-admin/pull/808) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump engine and other gem versions plus lint fixes [\#806](https://github.com/DEFRA/pafs-admin/pull/806) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
+- \[RUBY-3893\] Update defra\_ruby\_template gem from 5.4.1 to 5.11.0 in Gemfile.lock [\#800](https://github.com/DEFRA/pafs-admin/pull/800) ([jjromeo](https://github.com/jjromeo))
+- Bump pafs\_core from `f4c876a` to `fe84972` [\#798](https://github.com/DEFRA/pafs-admin/pull/798) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump faker from 3.5.1 to 3.5.2 [\#797](https://github.com/DEFRA/pafs-admin/pull/797) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Add dependabot configuration [\#795](https://github.com/DEFRA/pafs-admin/pull/795) ([brujeo](https://github.com/brujeo))
+- Bump net-imap from 0.5.7 to 0.5.9 [\#791](https://github.com/DEFRA/pafs-admin/pull/791) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rbtrace from 0.5.1 to 0.5.2 [\#785](https://github.com/DEFRA/pafs-admin/pull/785) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump factory\_bot\_rails from 6.4.4 to 6.5.0 [\#784](https://github.com/DEFRA/pafs-admin/pull/784) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rails from 2.31.0 to 2.32.0 [\#777](https://github.com/DEFRA/pafs-admin/pull/777) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump shoulda-matchers from 6.4.0 to 6.5.0 [\#771](https://github.com/DEFRA/pafs-admin/pull/771) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.18.7 to 1.18.8 [\#767](https://github.com/DEFRA/pafs-admin/pull/767) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 3.5.0 to 3.6.0 [\#766](https://github.com/DEFRA/pafs-admin/pull/766) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update pafs\_core gem revision in Gemfile.lock to include latest changes [\#794](https://github.com/DEFRA/pafs-admin/pull/794) ([jjromeo](https://github.com/jjromeo))
+- Update pafs\_core gem to revision ccd0d3f2 on main branch in Gemfile.lock [\#793](https://github.com/DEFRA/pafs-admin/pull/793) ([jjromeo](https://github.com/jjromeo))
+- Update pafs\_core gem to revision dfc779a09bef45df1c1caf72547e515508daba9d in Gemfile.lock [\#788](https://github.com/DEFRA/pafs-admin/pull/788) ([jjromeo](https://github.com/jjromeo))
+- Bump devise\_invitable from 2.0.10 to 2.0.11 [\#780](https://github.com/DEFRA/pafs-admin/pull/780) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump ruby-prof from 1.7.1 to 1.7.2 [\#778](https://github.com/DEFRA/pafs-admin/pull/778) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Dependabot adjustments [\#765](https://github.com/DEFRA/pafs-admin/pull/765) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#764](https://github.com/DEFRA/pafs-admin/pull/764) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#763](https://github.com/DEFRA/pafs-admin/pull/763) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#762](https://github.com/DEFRA/pafs-admin/pull/762) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#761](https://github.com/DEFRA/pafs-admin/pull/761) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#760](https://github.com/DEFRA/pafs-admin/pull/760) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#759](https://github.com/DEFRA/pafs-admin/pull/759) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#758](https://github.com/DEFRA/pafs-admin/pull/758) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#757](https://github.com/DEFRA/pafs-admin/pull/757) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#756](https://github.com/DEFRA/pafs-admin/pull/756) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#755](https://github.com/DEFRA/pafs-admin/pull/755) ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#754](https://github.com/DEFRA/pafs-admin/pull/754) ([brujeo](https://github.com/brujeo))
+- Restoring dependabot settings so it can pull engine updates ([brujeo](https://github.com/brujeo))
+- Dependabot adjustments [\#753](https://github.com/DEFRA/pafs-admin/pull/753) ([brujeo](https://github.com/brujeo))
+
+## [v1.5.6](https://github.com/defra/pafs-admin/tree/v1.5.6) (2025-04-11)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...v1.5.6)
+
+**Merged pull requests:**
+
+- Update CHANGELOG [\#752](https://github.com/DEFRA/pafs-admin/pull/752) ([brujeo](https://github.com/brujeo))
 - \[RUBY-3753\] Add Rake task to set listed draft projects as submitted [\#751](https://github.com/DEFRA/pafs-admin/pull/751) ([brujeo](https://github.com/brujeo))
 - Bump net-imap from 0.5.4 to 0.5.5 [\#715](https://github.com/DEFRA/pafs-admin/pull/715) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `cbb101c` to `afe13dc` [\#714](https://github.com/DEFRA/pafs-admin/pull/714) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -26,6 +70,12 @@
 - Bump dotenv-rails from 3.1.2 to 3.1.4 [\#668](https://github.com/DEFRA/pafs-admin/pull/668) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump jbuilder from 2.12.0 to 2.13.0 [\#666](https://github.com/DEFRA/pafs-admin/pull/666) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump benchmark-ips from 2.13.0 to 2.14.0 [\#661](https://github.com/DEFRA/pafs-admin/pull/661) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update CI workflow to use Ubuntu 24.04 ([brujeo](https://github.com/brujeo))
+- Add Rails helper requirement to failed submissions spec ([brujeo](https://github.com/brujeo))
+- Update .rubocop.yml to include plugins for Capybara, Factory Bot, and Rails ([brujeo](https://github.com/brujeo))
+- Update Gemfile.lock to bump various gem versions for improved stability and security ([brujeo](https://github.com/brujeo))
+- \[RUBY-3753\] Rename variable for clarity ([brujeo](https://github.com/brujeo))
+- Update spec/lib/tasks/one_off/set_listed_projects_as_submitted_spec.rb ([brujeo](https://github.com/brujeo))
 
 ## [v1.5.5](https://github.com/defra/pafs-admin/tree/v1.5.5) (2024-10-17)
 
