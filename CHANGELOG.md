@@ -1,11 +1,12 @@
 # Changelog
 
-## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
+## [v1.5.6](https://github.com/defra/pafs-admin/tree/v1.5.6) (2025-04-11)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.5.5...v1.5.6)
 
 **Merged pull requests:**
 
+- Release/v1.5.6 [\#752](https://github.com/DEFRA/pafs-admin/pull/752) ([brujeo](https://github.com/brujeo))
 - \[RUBY-3753\] Add Rake task to set listed draft projects as submitted [\#751](https://github.com/DEFRA/pafs-admin/pull/751) ([brujeo](https://github.com/brujeo))
 - Bump net-imap from 0.5.4 to 0.5.5 [\#715](https://github.com/DEFRA/pafs-admin/pull/715) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `cbb101c` to `afe13dc` [\#714](https://github.com/DEFRA/pafs-admin/pull/714) ([dependabot[bot]](https://github.com/apps/dependabot))
