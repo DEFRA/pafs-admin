@@ -41,7 +41,9 @@ module Admin
     end
 
     def project
-      @project ||= scope.find_by(slug: params[:id])
+      return @project if defined?(@project)
+
+      @project = scope.find_by(slug: params[:id])
     end
 
     def project_sort_column
