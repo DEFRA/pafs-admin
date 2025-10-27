@@ -2,10 +2,32 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.5.6...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.6.0...HEAD)
 
 **Merged pull requests:**
 
+- Bump webmock from 3.25.1 to 3.25.2 [\#861](https://github.com/DEFRA/pafs-admin/pull/861) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `bce6624` to `c784316` [\#860](https://github.com/DEFRA/pafs-admin/pull/860) ([dependabot[bot]](https://github.com/apps/dependabot))
+- updated dependencies [\#859](https://github.com/DEFRA/pafs-admin/pull/859) ([brujeo](https://github.com/brujeo))
+- Bump rubocop-rails from 2.33.3 to 2.33.4 [\#857](https://github.com/DEFRA/pafs-admin/pull/857) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump jquery-rails from 4.6.0 to 4.6.1 [\#856](https://github.com/DEFRA/pafs-admin/pull/856) ([dependabot[bot]](https://github.com/apps/dependabot))
+- replacing deprecated  sonarcloud-github-action with sonarqube-scan-action [\#855](https://github.com/DEFRA/pafs-admin/pull/855) ([brujeo](https://github.com/brujeo))
+- Updated CI config to use global sonar cloud token [\#854](https://github.com/DEFRA/pafs-admin/pull/854) ([brujeo](https://github.com/brujeo))
+- Bump rubocop from 1.80.1 to 1.81.6 [\#853](https://github.com/DEFRA/pafs-admin/pull/853) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump sdoc from 2.6.2 to 2.6.5 [\#852](https://github.com/DEFRA/pafs-admin/pull/852) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump passenger from 6.0.27 to 6.1.0 [\#842](https://github.com/DEFRA/pafs-admin/pull/842) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.18.9 to 1.18.10 [\#841](https://github.com/DEFRA/pafs-admin/pull/841) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump factory\_bot\_rails from 6.5.0 to 6.5.1 [\#840](https://github.com/DEFRA/pafs-admin/pull/840) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 3.6.0 to 3.7.0 [\#833](https://github.com/DEFRA/pafs-admin/pull/833) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rake from 13.2.1 to 13.3.0 [\#786](https://github.com/DEFRA/pafs-admin/pull/786) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v2.6.0](https://github.com/defra/pafs-admin/tree/v2.6.0) (2025-09-05)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.5.6...v2.6.0)
+
+**Merged pull requests:**
+
+- Update CHANGELOG [\#837](https://github.com/DEFRA/pafs-admin/pull/837) ([brujeo](https://github.com/brujeo))
 - Update pafs\_core version and other dependencies [\#832](https://github.com/DEFRA/pafs-admin/pull/832) ([brujeo](https://github.com/brujeo))
 
 ## [v2.5.6](https://github.com/defra/pafs-admin/tree/v2.5.6) (2025-08-12)
@@ -92,7 +114,7 @@
 - \[RUBY-2880\] Refactoring user export to include more data [\#656](https://github.com/DEFRA/pafs-admin/pull/656) ([brujeo](https://github.com/brujeo))
 - RUBY-3142:  rake task to remove unnecessary PFCs from draft and archived projects [\#652](https://github.com/DEFRA/pafs-admin/pull/652) ([brujeo](https://github.com/brujeo))
 - Bump net-imap from 0.4.14 to 0.4.15 [\#649](https://github.com/DEFRA/pafs-admin/pull/649) ([dependabot[bot]](https://github.com/apps/dependabot))
-- \[RUBY-3226\] Update `pafs_core` gem to revision d790f27a1dfa396e8167f49d2f03e33a5839a474 in `Gemfile.lock` [\#648](https://github.com/DEFRA/pafs-admin/pull/648) ([jjromeo](https://github.com/jjromeo))
+- \[RUBY-3226\] Update `pafs\_core` gem to revision d790f27a1dfa396e8167f49d2f03e33a5839a474 in `Gemfile.lock` [\#648](https://github.com/DEFRA/pafs-admin/pull/648) ([jjromeo](https://github.com/jjromeo))
 - Bump rexml from 3.3.4 to 3.3.6 [\#644](https://github.com/DEFRA/pafs-admin/pull/644) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump shoulda-matchers from 6.2.0 to 6.4.0 [\#642](https://github.com/DEFRA/pafs-admin/pull/642) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump rspec-rails from 6.1.3 to 6.1.4 [\#641](https://github.com/DEFRA/pafs-admin/pull/641) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -305,7 +327,6 @@
 - Drop rails\_12factor [\#326](https://github.com/DEFRA/pafs-admin/pull/326) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Force logging to file [\#325](https://github.com/DEFRA/pafs-admin/pull/325) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Move changelog gem out of development group [\#324](https://github.com/DEFRA/pafs-admin/pull/324) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
-- Bump core and other gem versions [\#323](https://github.com/DEFRA/pafs-admin/pull/323) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump gem versions [\#322](https://github.com/DEFRA/pafs-admin/pull/322) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Debug logging [\#319](https://github.com/DEFRA/pafs-admin/pull/319) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump faker from 3.1.0 to 3.1.1 [\#292](https://github.com/DEFRA/pafs-admin/pull/292) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -316,6 +337,7 @@
 
 **Merged pull requests:**
 
+- Bump core and other gem versions [\#323](https://github.com/DEFRA/pafs-admin/pull/323) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Version 1.3.1 [\#301](https://github.com/DEFRA/pafs-admin/pull/301) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Version 1.3.1 [\#299](https://github.com/DEFRA/pafs-admin/pull/299) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump pafs\_core from `6b6b6e9` to `b2f7638` [\#298](https://github.com/DEFRA/pafs-admin/pull/298) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -361,6 +383,13 @@
 - Upgrade to ruby3 [\#226](https://github.com/DEFRA/pafs-admin/pull/226) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Upgrade to ruby3 [\#215](https://github.com/DEFRA/pafs-admin/pull/215) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - CI updates [\#203](https://github.com/DEFRA/pafs-admin/pull/203) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
+
+## [v1.2.0](https://github.com/defra/pafs-admin/tree/v1.2.0) (2022-10-05)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.1.2...v1.2.0)
+
+**Merged pull requests:**
+
 - Merge develop into main [\#199](https://github.com/DEFRA/pafs-admin/pull/199) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Merge develop into main [\#198](https://github.com/DEFRA/pafs-admin/pull/198) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump pafs\_core from `9c626a3` to `edc0d71` [\#197](https://github.com/DEFRA/pafs-admin/pull/197) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -380,10 +409,6 @@
 - Bump capybara-webmock from 0.5.5 to 0.6.0 [\#155](https://github.com/DEFRA/pafs-admin/pull/155) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump spring from 2.1.0 to 4.0.0 [\#153](https://github.com/DEFRA/pafs-admin/pull/153) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump jquery-rails from 4.4.0 to 4.5.0 [\#152](https://github.com/DEFRA/pafs-admin/pull/152) ([dependabot[bot]](https://github.com/apps/dependabot))
-
-## [v1.2.0](https://github.com/defra/pafs-admin/tree/v1.2.0) (2022-10-05)
-
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v1.1.2...v1.2.0)
 
 ## [v1.1.2](https://github.com/defra/pafs-admin/tree/v1.1.2) (2022-06-16)
 
