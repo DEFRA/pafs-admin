@@ -54,7 +54,7 @@ gem "dibble", "~> 0.1",
 
 gem "nokogiri"
 
-gem "github_changelog_generator"
+gem "github_changelog_generator", "1.15.2"
 
 group :development, :test do
   gem "byebug"
