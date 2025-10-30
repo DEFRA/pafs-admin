@@ -2,10 +2,19 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.6.0...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.6.1...HEAD)
 
 **Merged pull requests:**
 
+- Bump pafs\_core from `c784316` to `e180344` [\#867](https://github.com/DEFRA/pafs-admin/pull/867) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v2.6.1](https://github.com/defra/pafs-admin/tree/v2.6.1) (2025-10-27)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.6.0...v2.6.1)
+
+**Merged pull requests:**
+
+- Downgraded github\_changelog\_generator to working version 1.15.2 and updated CHANGELOG [\#862](https://github.com/DEFRA/pafs-admin/pull/862) ([brujeo](https://github.com/brujeo))
 - Bump webmock from 3.25.1 to 3.25.2 [\#861](https://github.com/DEFRA/pafs-admin/pull/861) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `bce6624` to `c784316` [\#860](https://github.com/DEFRA/pafs-admin/pull/860) ([dependabot[bot]](https://github.com/apps/dependabot))
 - updated dependencies [\#859](https://github.com/DEFRA/pafs-admin/pull/859) ([brujeo](https://github.com/brujeo))
@@ -327,6 +336,7 @@
 - Drop rails\_12factor [\#326](https://github.com/DEFRA/pafs-admin/pull/326) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Force logging to file [\#325](https://github.com/DEFRA/pafs-admin/pull/325) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Move changelog gem out of development group [\#324](https://github.com/DEFRA/pafs-admin/pull/324) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
+- Bump core and other gem versions [\#323](https://github.com/DEFRA/pafs-admin/pull/323) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump gem versions [\#322](https://github.com/DEFRA/pafs-admin/pull/322) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Debug logging [\#319](https://github.com/DEFRA/pafs-admin/pull/319) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump faker from 3.1.0 to 3.1.1 [\#292](https://github.com/DEFRA/pafs-admin/pull/292) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -337,7 +347,6 @@
 
 **Merged pull requests:**
 
-- Bump core and other gem versions [\#323](https://github.com/DEFRA/pafs-admin/pull/323) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Version 1.3.1 [\#301](https://github.com/DEFRA/pafs-admin/pull/301) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Version 1.3.1 [\#299](https://github.com/DEFRA/pafs-admin/pull/299) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump pafs\_core from `6b6b6e9` to `b2f7638` [\#298](https://github.com/DEFRA/pafs-admin/pull/298) ([dependabot[bot]](https://github.com/apps/dependabot))
