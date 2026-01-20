@@ -2,10 +2,46 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.6.1...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.1...HEAD)
 
 **Merged pull requests:**
 
+- Bump pafs\_core from `4395d21` to `4445178` [\#901](https://github.com/DEFRA/pafs-admin/pull/901) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump passenger from 6.1.0 to 6.1.1 [\#900](https://github.com/DEFRA/pafs-admin/pull/900) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `76e033f` to `4395d21` [\#899](https://github.com/DEFRA/pafs-admin/pull/899) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump nokogiri from 1.18.10 to 1.19.0 [\#898](https://github.com/DEFRA/pafs-admin/pull/898) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pry from 0.15.2 to 0.16.0 [\#897](https://github.com/DEFRA/pafs-admin/pull/897) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pg from 1.6.2 to 1.6.3 [\#896](https://github.com/DEFRA/pafs-admin/pull/896) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.81.7 to 1.82.1 [\#895](https://github.com/DEFRA/pafs-admin/pull/895) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump sucker\_punch from 3.2.0 to 3.3.0 [\#894](https://github.com/DEFRA/pafs-admin/pull/894) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump aws-sdk-s3 from 1.206.0 to 1.208.0 [\#893](https://github.com/DEFRA/pafs-admin/pull/893) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump net-imap from 0.5.12 to 0.6.2 [\#892](https://github.com/DEFRA/pafs-admin/pull/892) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `3534376` to `76e033f` [\#890](https://github.com/DEFRA/pafs-admin/pull/890) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump whenever from 1.1.0 to 1.1.1 [\#888](https://github.com/DEFRA/pafs-admin/pull/888) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump dotenv-rails from 3.1.8 to 3.2.0 [\#887](https://github.com/DEFRA/pafs-admin/pull/887) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump faker from 3.5.2 to 3.5.3 [\#886](https://github.com/DEFRA/pafs-admin/pull/886) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rbtrace from 0.5.2 to 0.5.3 [\#885](https://github.com/DEFRA/pafs-admin/pull/885) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `26efca0` to `3534376` [\#883](https://github.com/DEFRA/pafs-admin/pull/883) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `5073ba3` to `26efca0` [\#882](https://github.com/DEFRA/pafs-admin/pull/882) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump whenever from 1.0.0 to 1.1.0 [\#879](https://github.com/DEFRA/pafs-admin/pull/879) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `295a83e` to `5073ba3` [\#878](https://github.com/DEFRA/pafs-admin/pull/878) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `1a79060` to `295a83e` [\#876](https://github.com/DEFRA/pafs-admin/pull/876) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-factory\_bot from 2.27.1 to 2.28.0 [\#875](https://github.com/DEFRA/pafs-admin/pull/875) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec\_rails from 2.31.0 to 2.32.0 [\#874](https://github.com/DEFRA/pafs-admin/pull/874) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop-rspec from 3.7.0 to 3.8.0 [\#873](https://github.com/DEFRA/pafs-admin/pull/873) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump pafs\_core from `e180344` to `1a79060` [\#872](https://github.com/DEFRA/pafs-admin/pull/872) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump shoulda-matchers from 6.5.0 to 7.0.1 [\#871](https://github.com/DEFRA/pafs-admin/pull/871) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rubocop from 1.81.6 to 1.81.7 [\#870](https://github.com/DEFRA/pafs-admin/pull/870) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump webmock from 3.25.2 to 3.26.1 [\#866](https://github.com/DEFRA/pafs-admin/pull/866) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rake from 13.3.0 to 13.3.1 [\#865](https://github.com/DEFRA/pafs-admin/pull/865) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v2.7.1](https://github.com/defra/pafs-admin/tree/v2.7.1) (2025-10-30)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.6.1...v2.7.1)
+
+**Merged pull requests:**
+
+- Update CHANGELOG [\#868](https://github.com/DEFRA/pafs-admin/pull/868) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump pafs\_core from `c784316` to `e180344` [\#867](https://github.com/DEFRA/pafs-admin/pull/867) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [v2.6.1](https://github.com/defra/pafs-admin/tree/v2.6.1) (2025-10-27)
@@ -514,6 +550,7 @@
 - Disallowed all in robots.txt [\#24](https://github.com/DEFRA/pafs-admin/pull/24) ([tonyheadford](https://github.com/tonyheadford))
 - Added EA area to selection list for users \(PM-304\) [\#23](https://github.com/DEFRA/pafs-admin/pull/23) ([tonyheadford](https://github.com/tonyheadford))
 - Upload projects javascript fixes [\#22](https://github.com/DEFRA/pafs-admin/pull/22) ([tonyheadford](https://github.com/tonyheadford))
+- Added Airbrake initializer [\#19](https://github.com/DEFRA/pafs-admin/pull/19) ([tonyheadford](https://github.com/tonyheadford))
 
 ## [1.0](https://github.com/defra/pafs-admin/tree/1.0) (2017-03-31)
 
@@ -523,7 +560,6 @@
 
 - Confirmation and state change for programme open [\#21](https://github.com/DEFRA/pafs-admin/pull/21) ([tonyheadford](https://github.com/tonyheadford))
 - Open programme refresh [\#20](https://github.com/DEFRA/pafs-admin/pull/20) ([tonyheadford](https://github.com/tonyheadford))
-- Added Airbrake initializer [\#19](https://github.com/DEFRA/pafs-admin/pull/19) ([tonyheadford](https://github.com/tonyheadford))
 - Added program uploads [\#18](https://github.com/DEFRA/pafs-admin/pull/18) ([tonyheadford](https://github.com/tonyheadford))
 - Update dependencies to latest [\#17](https://github.com/DEFRA/pafs-admin/pull/17) ([Cruikshanks](https://github.com/Cruikshanks))
 - Fix issue with Airbrake gem and project\_id [\#16](https://github.com/DEFRA/pafs-admin/pull/16) ([Cruikshanks](https://github.com/Cruikshanks))
