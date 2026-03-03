@@ -67,13 +67,12 @@ module Admin
     end
 
     def redirect_save_no_change
-      redirect_back fallback_location: edit_admin_project_path(@project.reference_number),
-                    flash: { alert: t(".not_changed") }
+      redirect_back_or_to(edit_admin_project_path(@project.reference_number), flash: { alert: t(".not_changed") })
     end
 
     def redirect_save_failure
-      redirect_back fallback_location: edit_admin_project_path(@project.reference_number),
-                    flash: { alert: t(".update_failed", reference_number: @project.reference_number) }
+      redirect_back_or_to(edit_admin_project_path(@project.reference_number),
+                          flash: { alert: t(".update_failed", reference_number: @project.reference_number) })
     end
   end
 end
