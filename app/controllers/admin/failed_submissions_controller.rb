@@ -7,7 +7,7 @@ module Admin
 
     def mark_as_submitted
       project.update(submitted_to_pol: Time.now.utc)
-      redirect_back(fallback_location: root_path)
+      redirect_back_or_to(root_path)
     end
 
     def retry_submission
@@ -19,13 +19,11 @@ module Admin
     private
 
     def redirect_success
-      redirect_back fallback_location: root_path,
-                    flash: { notice: "#{project.reference_number} Successfully resubmitted" }
+      redirect_back_or_to(root_path, flash: { notice: "#{project.reference_number} Successfully resubmitted" })
     end
 
     def redirect_failure
-      redirect_back fallback_location: root_path,
-                    flash: { alert: "#{project.reference_number} Failed to resubmit" }
+      redirect_back_or_to(root_path, flash: { alert: "#{project.reference_number} Failed to resubmit" })
     end
 
     def submission

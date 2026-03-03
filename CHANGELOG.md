@@ -2,10 +2,21 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.1...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.2...HEAD)
 
 **Merged pull requests:**
 
+- Bump nokogiri from 1.19.0 to 1.19.1 [\#915](https://github.com/DEFRA/pafs-admin/pull/915) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump rack from 2.2.21 to 2.2.22 [\#914](https://github.com/DEFRA/pafs-admin/pull/914) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump faraday from 2.14.0 to 2.14.1 [\#913](https://github.com/DEFRA/pafs-admin/pull/913) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v2.7.2](https://github.com/defra/pafs-admin/tree/v2.7.2) (2026-01-20)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.1...v2.7.2)
+
+**Merged pull requests:**
+
+- Update CHANGELOG [\#907](https://github.com/DEFRA/pafs-admin/pull/907) ([PaulDoyle-EA](https://github.com/PaulDoyle-EA))
 - Bump pafs\_core from `4395d21` to `4445178` [\#901](https://github.com/DEFRA/pafs-admin/pull/901) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump passenger from 6.1.0 to 6.1.1 [\#900](https://github.com/DEFRA/pafs-admin/pull/900) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `76e033f` to `4395d21` [\#899](https://github.com/DEFRA/pafs-admin/pull/899) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -550,7 +561,6 @@
 - Disallowed all in robots.txt [\#24](https://github.com/DEFRA/pafs-admin/pull/24) ([tonyheadford](https://github.com/tonyheadford))
 - Added EA area to selection list for users \(PM-304\) [\#23](https://github.com/DEFRA/pafs-admin/pull/23) ([tonyheadford](https://github.com/tonyheadford))
 - Upload projects javascript fixes [\#22](https://github.com/DEFRA/pafs-admin/pull/22) ([tonyheadford](https://github.com/tonyheadford))
-- Added Airbrake initializer [\#19](https://github.com/DEFRA/pafs-admin/pull/19) ([tonyheadford](https://github.com/tonyheadford))
 
 ## [1.0](https://github.com/defra/pafs-admin/tree/1.0) (2017-03-31)
 
@@ -560,6 +570,7 @@
 
 - Confirmation and state change for programme open [\#21](https://github.com/DEFRA/pafs-admin/pull/21) ([tonyheadford](https://github.com/tonyheadford))
 - Open programme refresh [\#20](https://github.com/DEFRA/pafs-admin/pull/20) ([tonyheadford](https://github.com/tonyheadford))
+- Added Airbrake initializer [\#19](https://github.com/DEFRA/pafs-admin/pull/19) ([tonyheadford](https://github.com/tonyheadford))
 - Added program uploads [\#18](https://github.com/DEFRA/pafs-admin/pull/18) ([tonyheadford](https://github.com/tonyheadford))
 - Update dependencies to latest [\#17](https://github.com/DEFRA/pafs-admin/pull/17) ([Cruikshanks](https://github.com/Cruikshanks))
 - Fix issue with Airbrake gem and project\_id [\#16](https://github.com/DEFRA/pafs-admin/pull/16) ([Cruikshanks](https://github.com/Cruikshanks))
