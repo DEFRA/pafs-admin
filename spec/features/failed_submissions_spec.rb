@@ -8,7 +8,8 @@ RSpec.describe "Failed to Send Report" do
   around do |example|
     ClimateControl.modify(
       POL_SUBMISSION_URL: "https://example.com/submit",
-      AZURE_VAULT_AUTH_TOKEN_KEY_NAME_SUBMISSION: "KEY_NAME"
+      AZURE_VAULT_AUTH_TOKEN_KEY_NAME_SUBMISSION: "KEY_NAME",
+      POL_FAILURE_NOTIFICATION_EMAIL: "test@example.com"
     ) do
       example.run
     end
