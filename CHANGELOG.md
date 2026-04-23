@@ -2,10 +2,20 @@
 
 ## [Unreleased](https://github.com/defra/pafs-admin/tree/HEAD)
 
-[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.2...HEAD)
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.3...HEAD)
 
 **Merged pull requests:**
 
+- Bump gem dependencies [\#929](https://github.com/DEFRA/pafs-admin/pull/929) ([brujeo](https://github.com/brujeo))
+- Bump pafs\_core from `97931d0` to `979b33c` [\#918](https://github.com/DEFRA/pafs-admin/pull/918) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [v2.7.3](https://github.com/defra/pafs-admin/tree/v2.7.3) (2026-03-03)
+
+[Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.2...v2.7.3)
+
+**Merged pull requests:**
+
+- Release v2.7.3 [\#916](https://github.com/DEFRA/pafs-admin/pull/916) ([jjromeo](https://github.com/jjromeo))
 - Bump nokogiri from 1.19.0 to 1.19.1 [\#915](https://github.com/DEFRA/pafs-admin/pull/915) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump rack from 2.2.21 to 2.2.22 [\#914](https://github.com/DEFRA/pafs-admin/pull/914) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump faraday from 2.14.0 to 2.14.1 [\#913](https://github.com/DEFRA/pafs-admin/pull/913) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -458,11 +468,9 @@
 - Bump stackprof from 0.2.17 to 0.2.21 [\#181](https://github.com/DEFRA/pafs-admin/pull/181) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump dotenv-rails from 2.7.6 to 2.8.1 [\#175](https://github.com/DEFRA/pafs-admin/pull/175) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump tzinfo from 1.2.9 to 1.2.10 [\#174](https://github.com/DEFRA/pafs-admin/pull/174) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump climate\_control from 1.1.1 to 1.2.0 [\#172](https://github.com/DEFRA/pafs-admin/pull/172) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `5b936e2` to `9c626a3` [\#167](https://github.com/DEFRA/pafs-admin/pull/167) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump devise\_invitable from 2.0.2 to 2.0.6 [\#159](https://github.com/DEFRA/pafs-admin/pull/159) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump capybara from 3.36.0 to 3.37.1 [\#158](https://github.com/DEFRA/pafs-admin/pull/158) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Bump capybara-webmock from 0.5.5 to 0.6.0 [\#155](https://github.com/DEFRA/pafs-admin/pull/155) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump spring from 2.1.0 to 4.0.0 [\#153](https://github.com/DEFRA/pafs-admin/pull/153) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump jquery-rails from 4.4.0 to 4.5.0 [\#152](https://github.com/DEFRA/pafs-admin/pull/152) ([dependabot[bot]](https://github.com/apps/dependabot))
 
@@ -472,8 +480,10 @@
 
 **Merged pull requests:**
 
+- Bump climate\_control from 1.1.1 to 1.2.0 [\#172](https://github.com/DEFRA/pafs-admin/pull/172) ([dependabot[bot]](https://github.com/apps/dependabot))
 - change pafs\_core branch to main [\#166](https://github.com/DEFRA/pafs-admin/pull/166) ([kennyevil](https://github.com/kennyevil))
 - bump pafs\_core [\#162](https://github.com/DEFRA/pafs-admin/pull/162) ([kennyevil](https://github.com/kennyevil))
+- Bump capybara-webmock from 0.5.5 to 0.6.0 [\#155](https://github.com/DEFRA/pafs-admin/pull/155) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump pafs\_core from `1e8c00e` to `57142e4` [\#154](https://github.com/DEFRA/pafs-admin/pull/154) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump overcommit from 0.58.0 to 0.59.1 [\#151](https://github.com/DEFRA/pafs-admin/pull/151) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump letter\_opener from 1.7.0 to 1.8.1 [\#150](https://github.com/DEFRA/pafs-admin/pull/150) ([dependabot[bot]](https://github.com/apps/dependabot))
