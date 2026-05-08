@@ -180,7 +180,7 @@ GEM
       airbrake
     defra_ruby_style (0.4.1)
     defra_ruby_template (5.11.1)
-    devise (5.0.3)
+    devise (5.0.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 7.0)
