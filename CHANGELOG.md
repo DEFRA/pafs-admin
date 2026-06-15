@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/defra/pafs-admin/compare/v2.7.3...HEAD)
 
+**Security fixes:**
+
+- Bump devise, devise\_invitable, faraday, jbuilder, net-imap, and nokogiri dependencies.
+
 **Merged pull requests:**
 
 - Bump gem dependencies [\#929](https://github.com/DEFRA/pafs-admin/pull/929) ([brujeo](https://github.com/brujeo))
