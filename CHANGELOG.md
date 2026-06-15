@@ -6,7 +6,7 @@
 
 **Security fixes:**
 
-- Bump devise, devise\_invitable, faraday, jbuilder, net-imap, and nokogiri dependencies.
+- Bump gem dependencies, including devise, devise\_invitable, faraday, jbuilder, net-imap, and nokogiri.
 
 **Merged pull requests:**
 
