@@ -18,7 +18,7 @@ RSpec.describe "Update a user" do
         .to change { user.reload.updated_at }
         .and change { user.areas.map(&:name) }.to(["North East"])
 
-      expect(page).to have_content("Manage users")
+      expect(page).to have_text("Manage users")
     end
   end
 
@@ -33,13 +33,13 @@ RSpec.describe "Update a user" do
     it "updates the user with a new area" do
       visit("/admin/users/#{user.id}/edit")
 
-      expect(page).to have_content("Edit User")
+      expect(page).to have_text("Edit User")
       expect(user.areas.map(&:name)).to include("South West")
 
       expect { click_on "remove" }.to change { user.reload.updated_at }
 
       expect(user.reload.areas.map(&:name)).not_to include("South West")
-      expect(page).to have_content("Edit User")
+      expect(page).to have_text("Edit User")
     end
   end
 

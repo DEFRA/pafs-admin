@@ -48,7 +48,7 @@ RSpec.describe "Admin::Organisations" do
       end
 
       it "shows organisations count" do
-        expect(response.body).to match(%r{Displaying <b>1</b> organisation})
+        expect(response.body).to include("Displaying <b>1</b> organisation")
       end
     end
 
@@ -275,25 +275,25 @@ RSpec.describe "Admin::Organisations" do
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-name-field-error/)
+        expect(response.body).to include("organisation-name-field-error")
       end
 
       it "shows an error when identifier is not passed" do
         organisation_params[:identifier] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-identifier-field-error/)
+        expect(response.body).to include("organisation-identifier-field-error")
       end
 
       it "shows an error when sub_type is not passed" do
         organisation_params[:sub_type] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-sub-type-field-error/)
+        expect(response.body).to include("organisation-sub-type-field-error")
       end
 
       it "shows an error when parent_id is not passed" do
         organisation_params[:parent_id] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-parent-id-field-error/)
+        expect(response.body).to include("organisation-parent-id-field-error")
       end
     end
 
@@ -330,13 +330,13 @@ RSpec.describe "Admin::Organisations" do
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-name-field-error/)
+        expect(response.body).to include("organisation-name-field-error")
       end
 
       it "shows an error when identifier is not passed" do
         organisation_params[:identifier] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-identifier-field-error/)
+        expect(response.body).to include("organisation-identifier-field-error")
       end
     end
 
@@ -371,19 +371,19 @@ RSpec.describe "Admin::Organisations" do
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-name-field-error/)
+        expect(response.body).to include("organisation-name-field-error")
       end
 
       it "shows an error when parent_id is not passed" do
         organisation_params[:parent_id] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-parent-id-field-error/)
+        expect(response.body).to include("organisation-parent-id-field-error")
       end
 
       it "shows an error when sub_type is not passed" do
         organisation_params[:sub_type] = nil
         submit_create_form
-        expect(response.body).to match(/organisation-sub-type-field-error/)
+        expect(response.body).to include("organisation-sub-type-field-error")
       end
     end
 
@@ -420,25 +420,25 @@ RSpec.describe "Admin::Organisations" do
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-name-field-error/)
+        expect(response.body).to include("organisation-name-field-error")
       end
 
       it "shows an error when identifier is not passed" do
         organisation_params[:identifier] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-identifier-field-error/)
+        expect(response.body).to include("organisation-identifier-field-error")
       end
 
       it "shows an error when sub_type is not passed" do
         organisation_params[:sub_type] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-sub-type-field-error/)
+        expect(response.body).to include("organisation-sub-type-field-error")
       end
 
       it "shows an error when parent_id is not passed" do
         organisation_params[:parent_id] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-parent-id-field-error/)
+        expect(response.body).to include("organisation-parent-id-field-error")
       end
     end
 
@@ -495,13 +495,13 @@ RSpec.describe "Admin::Organisations" do
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-name-field-error/)
+        expect(response.body).to include("organisation-name-field-error")
       end
 
       it "shows an error when identifier is not passed" do
         organisation_params[:identifier] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-identifier-field-error/)
+        expect(response.body).to include("organisation-identifier-field-error")
       end
     end
 
@@ -546,19 +546,19 @@ RSpec.describe "Admin::Organisations" do
       it "shows an error when organisation name is not passed" do
         organisation_params[:name] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-name-field-error/)
+        expect(response.body).to include("organisation-name-field-error")
       end
 
       it "shows an error when parent_id is not passed" do
         organisation_params[:parent_id] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-parent-id-field-error/)
+        expect(response.body).to include("organisation-parent-id-field-error")
       end
 
       it "shows an error when sub_type is not passed" do
         organisation_params[:sub_type] = nil
         submit_change_form
-        expect(response.body).to match(/organisation-sub-type-field-error/)
+        expect(response.body).to include("organisation-sub-type-field-error")
       end
     end
 
