@@ -22,6 +22,8 @@ gem "net-smtp"
 
 # Pin psych version to avoid GitHub CI failures on v5+: https://github.com/ruby/setup-ruby/issues/409
 gem "psych", "~> 4"
+# Pin cgi to the Ruby 3.2 default gem to avoid deploy-time activation conflicts.
+gem "cgi", "0.3.6"
 
 # Parsing PF Calculator
 gem "roo"

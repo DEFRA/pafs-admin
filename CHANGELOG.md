@@ -8,6 +8,10 @@
 
 - Bump gem dependencies, including devise, devise\_invitable, faraday, jbuilder, net-imap, and nokogiri.
 
+**Fixed bugs:**
+
+- Pin cgi to the Ruby default gem version to avoid deploy-time activation conflicts.
+
 **Merged pull requests:**
 
 - Bump gem dependencies [\#929](https://github.com/DEFRA/pafs-admin/pull/929) ([brujeo](https://github.com/brujeo))

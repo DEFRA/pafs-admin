@@ -155,7 +155,7 @@ GEM
       rexml (>= 3.2)
       selenium-webdriver (>= 4.0)
       webrick (>= 1.7)
-    cgi (0.5.1)
+    cgi (0.3.6)
     childprocess (5.1.0)
       logger (~> 1.5)
     chronic (0.10.2)
@@ -570,6 +570,7 @@ DEPENDENCIES
   byebug
   capybara
   capybara-webmock
+  cgi (= 0.3.6)
   climate_control
   database_cleaner
   defra_ruby_style
