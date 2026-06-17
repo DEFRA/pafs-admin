@@ -21,6 +21,7 @@ gem "net-pop"
 gem "net-smtp"
 
 # Pin psych version to avoid GitHub CI failures on v5+: https://github.com/ruby/setup-ruby/issues/409
+gem "cgi", "0.5.1"
 gem "psych", "~> 4"
 
 # Parsing PF Calculator
